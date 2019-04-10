@@ -7,14 +7,17 @@ using System.Threading.Tasks;
 
 namespace Application.Models
 {
+    /// <summary>
+    /// Class represents the structure of each address in application.
+    /// </summary>
     public class Address
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public String Flat { get; set; }
-        public String Street { get; set; }
-        public String Postcode { get; set; }
-        public String City { get; set; }
+        public string Flat { get; set; }
+        public string Street { get; set; }
+        public string Postcode { get; set; }
+        public string City { get; set; }
     }
 }
