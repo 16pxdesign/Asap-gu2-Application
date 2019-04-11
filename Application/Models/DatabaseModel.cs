@@ -38,6 +38,16 @@ namespace Application.Models
                 .HasKey(c => new { c.PlayerId, c. SkillId });
             modelBuilder.Entity<Attendance>()
                 .HasKey(c => new { c.PlayerId, c. TrainingId });
+            
+            modelBuilder.Entity<Member>().
+
+           /* modelBuilder.Entity<Member>()
+                .HasDiscriminator<String>("Type")
+                .HasValue<Member>("Member")
+                .HasValue<Player>("Player")
+                .HasValue<Junior>("Junior")
+                .HasValue<Senior>("Senior");*/
+
             base.OnModelCreating(modelBuilder);
         }
 
@@ -48,9 +58,10 @@ namespace Application.Models
         public DbSet<Kin> Kins { get; set; }
         public DbSet<PlayerPosition> PlayerPositions { get; set; }
         public DbSet<Member> Members { get; set; }
-        public DbSet<Player> Players { get; set; }
-        public DbSet<Senior> Seniors { get; set; }
+       public DbSet<Player> Players { get; set; }
         public DbSet<Junior> Juniors { get; set; }
+       public DbSet<Senior> Seniors { get; set; }
+
         public DbSet<Skill> Skills { get; set; }
         public DbSet<Profile> Profiles { get; set; }
         public DbSet<Activities> Activities { get; set; }
