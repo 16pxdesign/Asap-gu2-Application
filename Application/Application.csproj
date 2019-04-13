@@ -22,6 +22,19 @@
     <Content Update="Views\Home\Index - Copy.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Remove="Temp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Temp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Temp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Temp\**" />
   </ItemGroup>
 
 </Project>

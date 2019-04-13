@@ -1,17 +1,14 @@
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace Application.Models
 {
-    public class Junior 
+    public class Junior
     {
-        [Key]
-        [ForeignKey("Player")]
+        //Primary
         public string SRU { get; set; }
+
+        //Properties
+        public string Gurad { get; set; }
+
+        //Relations
         public virtual Player Player { get; set; }
-        //public virtual Guardian Guardian { get; set; }
-        //public virtual Guardian Guardian2 { get; set; }
-
-
     }
 }

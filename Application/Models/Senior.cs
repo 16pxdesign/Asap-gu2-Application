@@ -1,15 +1,14 @@
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace Application.Models
 {
-    public class Senior 
+    public class Senior
     {
-        [Key]
-        [ForeignKey("Player")]
+        //Primary
         public string SRU { get; set; }
-        public virtual Player Player { get; set; }
-        //public virtual Kin Kin { get; set; }
 
+        //Properties
+        public string Kin { get; set; }
+
+        //Relations
+        public virtual Player Player { get; set; }
     }
 }

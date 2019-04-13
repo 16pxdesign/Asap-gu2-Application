@@ -11,6 +11,9 @@ namespace Application.Models
      */
     public class DatabaseModel : DbContext
     {
+        public DbSet<Member> Members { get; set; }
+        public DbSet<Senior> Seniors { get; set; }
+        
         public DatabaseModel() : base()
         {
         }
@@ -34,42 +37,59 @@ namespace Application.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //MemberType
+           
+            //Member
+            modelBuilder.Entity<Member>()
+                .HasKey(k => k.SRU);
+            modelBuilder.Entity<Member>()
+                .Property(m => m.SRU)
+                .ValueGeneratedNever();
+
+            modelBuilder.Entity<Member>()
+                .Property(m => m.Type)
+                .HasConversion<string>();
+            
+           //Player
+           modelBuilder.Entity<Player>()
+               .HasKey(k => k.SRU);
+            
+           modelBuilder.Entity<Player>()
+               .HasOne<Member>(s => s.Member)
+               .WithOne(m => m.Player)
+               .HasForeignKey<Player>(m => m.SRU);
+           modelBuilder.Entity<Player>()
+               .Property(m => m.Position)
+               .HasConversion<int>();
+                
+            //Senior
+            modelBuilder.Entity<Senior>()
+                .HasKey(k => k.SRU);
+            
+            modelBuilder.Entity<Senior>()
+                .HasOne<Player>(s => s.Player)
+                .WithOne(m => m.Senior)
+                .HasForeignKey<Senior>(m => m.SRU);
+            
+            //Junior
+            modelBuilder.Entity<Junior>()
+                .HasKey(k => k.SRU);
+            
+            modelBuilder.Entity<Junior>()
+                .HasOne<Player>(s => s.Player)
+                .WithOne(m => m.Junior)
+                .HasForeignKey<Junior>(m => m.SRU);
+            
+            /*
             modelBuilder.Entity<Profile>()
                 .HasKey(c => new { c.PlayerId, c. SkillId });
             modelBuilder.Entity<Attendance>()
                 .HasKey(c => new { c.PlayerId, c. TrainingId });
             
-            modelBuilder.Entity<Member>().
-
-           /* modelBuilder.Entity<Member>()
-                .HasDiscriminator<String>("Type")
-                .HasValue<Member>("Member")
-                .HasValue<Player>("Player")
-                .HasValue<Junior>("Junior")
-                .HasValue<Senior>("Senior");*/
+            */
 
             base.OnModelCreating(modelBuilder);
         }
-
-        public DbSet<Address> Addresses { get; set; }
-        public DbSet<Doctor> Doctors { get; set; }
-        public DbSet<Guardian> Guardians { get; set; }
-        public DbSet<HealthIssue> HealthIssues { get; set; }
-        public DbSet<Kin> Kins { get; set; }
-        public DbSet<PlayerPosition> PlayerPositions { get; set; }
-        public DbSet<Member> Members { get; set; }
-       public DbSet<Player> Players { get; set; }
-        public DbSet<Junior> Juniors { get; set; }
-       public DbSet<Senior> Seniors { get; set; }
-
-        public DbSet<Skill> Skills { get; set; }
-        public DbSet<Profile> Profiles { get; set; }
-        public DbSet<Activities> Activities { get; set; }
-        public DbSet<Training> Trainings { get; set; }
-        public DbSet<Attendance> Attendance { get; set; }
-        public DbSet<GameScores> GameScores { get; set; }
-        public DbSet<GameHalf> GameHalves { get; set; }
-        public DbSet<Game> Games { get; set; }
 
 
 
