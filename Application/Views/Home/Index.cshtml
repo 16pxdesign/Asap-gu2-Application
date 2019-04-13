@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Application.Models.ViewModels.MemberForm
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -7,11 +9,20 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<div class="row">
-    <div class="col-md-6">
-        <partial name="../Home/Address.cshtml"/>
+
+<form asp-action="Index">
+    <div class="row">
+      
+            <div class="col-md-6">
+                <partial name="../Partial/MemberManagement/Form/Member.cshtml" for="Member"/>
+            </div>
+            <div class="col-md-6">
+                <partial name="../Partial/MemberManagement/Form/Address.cshtml" for="Address"/>
+            </div>
+            </div>
+    <div class="row">
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary"/>
+        </div>
     </div>
-    <div class="col-md-6">
-        <partial name="../Home/Address.cshtml" />
-    </div>
-</div>
+</form>

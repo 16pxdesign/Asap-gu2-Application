@@ -185,6 +185,10 @@ namespace Application.Models
 
         public DbSet<Application.Models.Address> Address { get; set; }
 
+        public DbSet<Application.Models.HealthIssue> HealthIssue { get; set; }
+
+        public DbSet<Application.Models.Player> Player { get; set; }
+
 
 
 
