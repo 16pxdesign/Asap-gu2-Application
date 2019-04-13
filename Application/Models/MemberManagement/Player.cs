@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Application.Models
 {
     public class Player
@@ -13,6 +15,7 @@ namespace Application.Models
         public virtual Senior Senior { get; set; }
         public virtual Junior Junior { get; set; }
         public virtual Doctor Doctor { get; set; }
+        public virtual List<HealthIssue> HealthIssues { get; set; }
         
     }
 }
