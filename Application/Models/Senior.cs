@@ -6,9 +6,11 @@ namespace Application.Models
         public string SRU { get; set; }
 
         //Properties
-        public string Kin { get; set; }
+
 
         //Relations
         public virtual Player Player { get; set; }
+        public virtual Kin Kin { get; set; }
+        
     }
 }

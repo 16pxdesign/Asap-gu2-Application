@@ -12,7 +12,8 @@ namespace Application.Models
     public class DatabaseModel : DbContext
     {
         public DbSet<Member> Members { get; set; }
-        public DbSet<Senior> Seniors { get; set; }
+        public DbSet<Player> Player { get; set; }
+      
         
         public DatabaseModel() : base()
         {
@@ -36,9 +37,7 @@ namespace Application.Models
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            //MemberType
-           
+        {           
             //Member
             modelBuilder.Entity<Member>()
                 .HasKey(k => k.SRU);
@@ -49,37 +48,74 @@ namespace Application.Models
             modelBuilder.Entity<Member>()
                 .Property(m => m.Type)
                 .HasConversion<string>();
+
+
+            modelBuilder.Entity<Member>()
+                .HasOne(m => m.Address)
+                .WithOne()
+                .HasForeignKey<Member>();
             
            //Player
            modelBuilder.Entity<Player>()
                .HasKey(k => k.SRU);
             
            modelBuilder.Entity<Player>()
-               .HasOne<Member>(s => s.Member)
+               .HasOne(s => s.Member)
                .WithOne(m => m.Player)
                .HasForeignKey<Player>(m => m.SRU);
+           
            modelBuilder.Entity<Player>()
                .Property(m => m.Position)
                .HasConversion<int>();
-                
+
+           modelBuilder.Entity<Player>()
+               .HasOne(m => m.Doctor)
+               .WithOne(m=>m.Player)
+               .HasForeignKey<Player>();
+           
             //Senior
             modelBuilder.Entity<Senior>()
                 .HasKey(k => k.SRU);
             
             modelBuilder.Entity<Senior>()
-                .HasOne<Player>(s => s.Player)
+                .HasOne(s => s.Player)
                 .WithOne(m => m.Senior)
                 .HasForeignKey<Senior>(m => m.SRU);
+
+            modelBuilder.Entity<Senior>()
+                .HasOne(s => s.Kin)
+                .WithOne(m => m.Senior)
+                .HasForeignKey<Senior>();
             
             //Junior
             modelBuilder.Entity<Junior>()
                 .HasKey(k => k.SRU);
             
             modelBuilder.Entity<Junior>()
-                .HasOne<Player>(s => s.Player)
+                .HasOne(s => s.Player)
                 .WithOne(m => m.Junior)
                 .HasForeignKey<Junior>(m => m.SRU);
+
+            modelBuilder.Entity<Junior>()
+                .HasMany(m => m.Guardians)
+                .WithOne(m => m.Junior)
+                .OnDelete(DeleteBehavior.Restrict);
+            //Doctor
+            modelBuilder.Entity<Doctor>()
+                .HasOne(m => m.Address)
+                .WithOne()
+                .HasForeignKey<Doctor>();
+          
             
+            
+            
+            /*
+            //Kin
+            modelBuilder.Entity<Kin>()
+                .HasOne<Address>(m => m.Address)
+                .WithOne()
+                .HasForeignKey<Kin>(m=>m.AddressId);
+            */
             /*
             modelBuilder.Entity<Profile>()
                 .HasKey(c => new { c.PlayerId, c. SkillId });
@@ -87,7 +123,8 @@ namespace Application.Models
                 .HasKey(c => new { c.PlayerId, c. TrainingId });
             
             */
-
+            
+            
             base.OnModelCreating(modelBuilder);
         }
 

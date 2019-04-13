@@ -19,9 +19,21 @@ namespace Application.Controllers
 
         public IActionResult About()
         {
+   
             using (var db = new DatabaseModel())
             {
-                var member = new Member {SRU = "03", Type = MemberType.Senior, Player = new Player {Position = PlayerPosition.Hooker, Senior = new Senior{Kin = "huj"}}};
+                db.Database.GetDbConnection().CreateCommand().CommandText = "PRAGMA foreign_keys=ON";
+                var member = new Member {SRU = "05", Type = MemberType.Senior, 
+                    Player = new Player
+                    {
+                        Junior = new Junior
+                        {
+                         Guardians = new List<Guardian> {new Guardian()}
+                        }
+                    },
+                    Address = new Address()
+                    
+                };
                 db.Members.Add(member);
                 db.SaveChanges();
             }
@@ -29,26 +41,36 @@ namespace Application.Controllers
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult Del()
         {
-/*
             using (var db = new DatabaseModel())
             {
-                var members = db.Members.ToList();
-                            foreach (var member in members)
-                            {
-                                Console.WriteLine($"{member.SRU} {member.Name} {member.GetType().Name}");
-                            }
-                var firstOrDefault = db.Members.FirstOrDefault(b => b.SRU == "003");
-                //firstOrDefault = new Member() {SRU = firstOrDefault.SRU, Name = firstOrDefault.Name};
+                var member = db.Members.Find("05");
                 
-                Console.WriteLine(firstOrDefault.GetType());
-
-                db.Members.Remove(firstOrDefault);
-                //db.Members.Update(firstOrDefault);
+                db.Members.Remove(member);
                 db.SaveChanges();
-            } 
-        */
+            }
+            
+            return View();
+        }
+        
+
+        public IActionResult Contact()
+        {
+            using (var db = new DatabaseModel())
+            {
+                var member = new Member {SRU = "05", Type = MemberType.Junior, 
+                    // Address = new Address(), 
+                   Player = new Player
+                   {
+                       Position = PlayerPosition.Hooker
+                   }
+                    
+                };
+                db.Members.Add(member);
+                db.SaveChanges();
+            }
+ 
             return View();
         }
 

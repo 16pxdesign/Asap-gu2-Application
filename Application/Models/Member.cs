@@ -1,3 +1,5 @@
+using System;
+
 namespace Application.Models
 {
     public class Member
@@ -9,10 +11,11 @@ namespace Application.Models
         public MemberType Type  { get; set; }
         public string Name { get; set; }  
         public string Email { get; set; }
-        public bool active { get; set; }
+        public bool Active { get; set; }
 
         //Relations
         public virtual Player Player { get; set; }
+        public virtual Address Address { get; set; }
 
   
     }

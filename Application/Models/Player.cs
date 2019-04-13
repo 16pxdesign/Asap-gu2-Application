@@ -12,5 +12,7 @@ namespace Application.Models
         public virtual Member Member { get; set; }
         public virtual Senior Senior { get; set; }
         public virtual Junior Junior { get; set; }
+        public virtual Doctor Doctor { get; set; }
+        
     }
 }
