@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "f4f08949c98a750d6f99d900e7a771c7152a1adc"
+    "signature": "450bbab8df88a807a1d06a58b10b6d2ea135af5e"
   },
   "compilationOptions": {
     "defines": [
@@ -24,6 +24,9 @@
     ".NETCoreApp,Version=v2.2": {
       "Application/1.0.0": {
         "dependencies": {
+          "Application.Business": "1.0.0",
+          "Application.Repository": "1.0.0",
+          "AutoMapper": "8.0.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.EntityFrameworkCore.Proxies": "2.2.4",
@@ -38,6 +41,21 @@
         },
         "compile": {
           "Application.dll": {}
+        }
+      },
+      "AutoMapper/8.0.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
         }
       },
       "Castle.Core/4.2.1": {
@@ -708,6 +726,28 @@
           "System.Reflection.Extensions": "4.3.0",
           "System.Resources.ResourceManager": "4.3.0",
           "System.Runtime": "4.3.0"
+        }
+      },
+      "Application.Business/1.0.0": {
+        "runtime": {
+          "Application.Business.dll": {}
+        },
+        "compile": {
+          "Application.Business.dll": {}
+        }
+      },
+      "Application.Repository/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.2.4",
+          "Microsoft.EntityFrameworkCore.Proxies": "2.2.4",
+          "Microsoft.EntityFrameworkCore.Sqlite": "2.2.4",
+          "Microsoft.EntityFrameworkCore.Sqlite.Core": "2.2.4"
+        },
+        "runtime": {
+          "Application.Repository.dll": {}
+        },
+        "compile": {
+          "Application.Repository.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3819,6 +3859,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AutoMapper/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-px8ZMtIq84dxciB29V+ZYOtsRLZP4JlflDDMW13LyeRdwsnIInzlcSHSxpWmVD6U3bbOl2FeLlgomnVtm0jvXw==",
+      "path": "automapper/8.0.0",
+      "hashPath": "automapper.8.0.0.nupkg.sha512"
+    },
     "Castle.Core/4.2.1": {
       "type": "package",
       "serviceable": true,
@@ -4119,6 +4166,16 @@
       "sha512": "sha512-Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
       "path": "system.linq.queryable/4.0.1",
       "hashPath": "system.linq.queryable.4.0.1.nupkg.sha512"
+    },
+    "Application.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Application.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",

@@ -20,4 +20,10 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application.Business\Application.Business.csproj" />
+    <ProjectReference Include="..\Application.Repository\Application.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

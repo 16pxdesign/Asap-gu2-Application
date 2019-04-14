@@ -1,0 +1,8 @@
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Business\bin\Debug\netcoreapp2.2\Application.Business.deps.json
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Business\bin\Debug\netcoreapp2.2\Application.Business.dll
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Business\bin\Debug\netcoreapp2.2\Application.Business.pdb
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Business\obj\Debug\netcoreapp2.2\Application.Business.csproj.CoreCompileInputs.cache
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Business\obj\Debug\netcoreapp2.2\Application.Business.AssemblyInfoInputs.cache
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Business\obj\Debug\netcoreapp2.2\Application.Business.AssemblyInfo.cs
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Business\obj\Debug\netcoreapp2.2\Application.Business.dll
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Business\obj\Debug\netcoreapp2.2\Application.Business.pdb

@@ -5005,6 +5005,32 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "Application.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/Application.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.Business.dll": {}
+        }
+      },
+      "Application.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.2.4",
+          "Microsoft.EntityFrameworkCore.Proxies": "2.2.4",
+          "Microsoft.EntityFrameworkCore.Sqlite": "2.2.4",
+          "Microsoft.EntityFrameworkCore.Sqlite.Core": "2.2.4"
+        },
+        "compile": {
+          "bin/placeholder/Application.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.Repository.dll": {}
+        }
       }
     }
   },
@@ -13672,10 +13698,22 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "Application.Business/1.0.0": {
+      "type": "project",
+      "path": "../Application.Business/Application.Business.csproj",
+      "msbuildProject": "../Application.Business/Application.Business.csproj"
+    },
+    "Application.Repository/1.0.0": {
+      "type": "project",
+      "path": "../Application.Repository/Application.Repository.csproj",
+      "msbuildProject": "../Application.Repository/Application.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "Application.Business >= 1.0.0",
+      "Application.Repository >= 1.0.0",
       "AutoMapper >= 8.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
@@ -13716,7 +13754,14 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application.Business\\Application.Business.csproj": {
+              "projectPath": "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application.Business\\Application.Business.csproj"
+            },
+            "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application.Repository\\Application.Repository.csproj": {
+              "projectPath": "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application.Repository\\Application.Repository.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

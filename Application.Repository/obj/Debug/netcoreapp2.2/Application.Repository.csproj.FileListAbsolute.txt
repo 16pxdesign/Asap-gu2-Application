@@ -1,0 +1,10 @@
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repository\bin\Debug\netcoreapp2.2\Application.Repository.deps.json
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repository\bin\Debug\netcoreapp2.2\Application.Repository.dll
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repository\obj\Debug\netcoreapp2.2\Application.Repository.csproj.CoreCompileInputs.cache
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repository\obj\Debug\netcoreapp2.2\Application.Repository.AssemblyInfoInputs.cache
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repository\obj\Debug\netcoreapp2.2\Application.Repository.AssemblyInfo.cs
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repository\bin\Debug\netcoreapp2.2\Application.Repository.pdb
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repository\obj\Debug\netcoreapp2.2\Application.Repository.dll
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repository\obj\Debug\netcoreapp2.2\Application.Repository.pdb
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repository\bin\Debug\netcoreapp2.2\Application.Repository.runtimeconfig.json
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repository\bin\Debug\netcoreapp2.2\Application.Repository.runtimeconfig.dev.json

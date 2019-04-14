@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Application.Business;
+using Application.Business.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Application.Models;
 
 namespace Application.Controllers
 {
     public class HomeController : Controller
     {
+        public HomeController(IRepository repository)
+        {
+
+        }
         public IActionResult Index()
         {
+
             return View();
         }
 
@@ -20,10 +26,6 @@ namespace Application.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+    
     }
 }

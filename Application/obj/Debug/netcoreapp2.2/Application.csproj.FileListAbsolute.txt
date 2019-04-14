@@ -28,4 +28,7 @@ C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netco
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Application.pdb
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Application.csproj.CopyComplete
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Application.csprojAssemblyReference.cache
-C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Home\Address.g.cshtml.cs
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\bin\Debug\netcoreapp2.2\Application.Business.dll
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\bin\Debug\netcoreapp2.2\Application.Business.pdb
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\bin\Debug\netcoreapp2.2\Application.Repository.dll
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\bin\Debug\netcoreapp2.2\Application.Repository.pdb
