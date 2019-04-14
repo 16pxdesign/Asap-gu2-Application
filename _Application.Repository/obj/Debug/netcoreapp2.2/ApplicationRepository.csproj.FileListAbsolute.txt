@@ -1,6 +1,0 @@
-C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\ApplicationRepository\bin\Debug\netcoreapp2.2\ApplicationRepository.deps.json
-C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\ApplicationRepository\bin\Debug\netcoreapp2.2\ApplicationRepository.dll
-C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\ApplicationRepository\obj\Debug\netcoreapp2.2\ApplicationRepository.csproj.CoreCompileInputs.cache
-C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\ApplicationRepository\obj\Debug\netcoreapp2.2\ApplicationRepository.AssemblyInfoInputs.cache
-C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\ApplicationRepository\obj\Debug\netcoreapp2.2\ApplicationRepository.AssemblyInfo.cs
-C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\ApplicationRepository\obj\Debug\netcoreapp2.2\ApplicationRepository.csprojAssemblyReference.cache
