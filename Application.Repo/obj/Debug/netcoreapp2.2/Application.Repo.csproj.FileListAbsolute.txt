@@ -6,3 +6,7 @@ C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repo\obj\Debug\
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repo\obj\Debug\netcoreapp2.2\Application.Repo.AssemblyInfo.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repo\obj\Debug\netcoreapp2.2\Application.Repo.dll
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repo\obj\Debug\netcoreapp2.2\Application.Repo.pdb
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repo\obj\Debug\netcoreapp2.2\Application.Repo.csprojAssemblyReference.cache
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repo\bin\Debug\netcoreapp2.2\Application.Data.dll
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repo\bin\Debug\netcoreapp2.2\Application.Data.pdb
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repo\obj\Debug\netcoreapp2.2\Application.Repo.csproj.CopyComplete

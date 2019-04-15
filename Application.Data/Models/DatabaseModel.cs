@@ -15,8 +15,11 @@ namespace Application.Data.Models
         public DbSet<Training> Training { get; set; }
         public DbSet<Profile> Profile { get; set; }
         public DbSet<Game> Game { get; set; }
-      
-        
+        public DbSet<Address> Address { get; set; }
+        public DbSet<HealthIssue> HealthIssue { get; set; }
+        public DbSet<Player> Player { get; set; }
+
+
         public DatabaseModel() : base()
         {
         }
@@ -182,11 +185,6 @@ namespace Application.Data.Models
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<Address> Address { get; set; }
-
-        public DbSet<HealthIssue> HealthIssue { get; set; }
-
-        public DbSet<Player> Player { get; set; }
 
 
 
