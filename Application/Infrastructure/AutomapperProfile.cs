@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Application.Infractructure
+namespace Application.Infrastructure
 {
     public class AutomapperProfile : AutoMapper.Profile
     {
