@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Application.Business;
 using Application.Business.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Application.Models;
+using Application.Models.ViewModels;
 
 namespace Application.Controllers
 {
@@ -13,6 +15,7 @@ namespace Application.Controllers
     {
         public HomeController(IRepository repository)
         {
+            new AddressViewModel();
 
         }
         public IActionResult Index()

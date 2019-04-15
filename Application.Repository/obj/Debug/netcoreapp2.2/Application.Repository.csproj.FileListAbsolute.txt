@@ -8,4 +8,3 @@ C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repository\obj\
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repository\obj\Debug\netcoreapp2.2\Application.Repository.pdb
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repository\bin\Debug\netcoreapp2.2\Application.Repository.runtimeconfig.json
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repository\bin\Debug\netcoreapp2.2\Application.Repository.runtimeconfig.dev.json
-C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repository\obj\Debug\netcoreapp2.2\Application.Repository.csprojAssemblyReference.cache
