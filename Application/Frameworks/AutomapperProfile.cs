@@ -11,19 +11,14 @@ namespace Application.Frameworks
     {
         public AutomapperProfile()
         {
-            CreateMap<Address, AddressVM>();
-
+            CreateMap<Address, AddressViewModel>();
         }
+
         public static void Run()
         {
-            AutoMapper.Mapper.Initialize(a =>
-            {
-                a.AddProfile<AutomapperProfile>();
-
-
-            });
+            AutoMapper.Mapper.Initialize(m => m.AddProfile<AutomapperProfile>());
         }
 
-    
-}
+
+    }
 }

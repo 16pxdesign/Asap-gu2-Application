@@ -15,8 +15,9 @@ namespace Application
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
             AutomapperProfile.Run();
+            CreateWebHostBuilder(args).Build().Run();
+           
 
         }
 

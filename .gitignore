@@ -7,3 +7,8 @@
 *.lock
 .vs/Application/v16/Server/sqlite3/storage.ide
 .vs/Application/v16/Server/sqlite3/storage.ide-shm
+.vs/Application/DesignTimeBuild/.dtbcache
+.vs/Application/v16/.suo
+.vs/Application/v16/Server/sqlite3/db.lock
+.vs/Application/v16/Server/sqlite3/storage.ide
+.vs/Application/v16/Server/sqlite3/storage.ide-wal

@@ -26,22 +26,25 @@ namespace Application.Controllers
         {
             dynamic model = new ExpandoObject();
             var address = new Address { City = "szczecin" };
-            var addressVm = new AddressVM();
+            var addressVm = new AddressViewModel();
             AutoMapper.Mapper.Map(address, addressVm);
 
 
             ViewBag.Address = addressVm;
 
-
             //this._unitOfWork.AddressRepository.Insert(address);
             //await _unitOfWork.Commit();
+            var test = new Test();
+            test.address = addressVm;
+            return View(test);
+        }
 
+        public IActionResult Member()
+        {
+            _unitOfWork.MemberRepositories.Add(new Member());
             return View();
         }
 
-
-
-  
 
         public IActionResult Privacy()
         {

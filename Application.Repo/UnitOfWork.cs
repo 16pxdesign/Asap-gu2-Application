@@ -11,11 +11,13 @@ namespace Application.Repo
     {
         private readonly DatabaseModel _context;
         public AddressRepository AddressRepository { get; private set; }
+        public MemberRepositories MemberRepositories { get; private set; }
 
         public UnitOfWork(DatabaseModel context)
         {
             _context = context;
             this.AddressRepository = new AddressRepository(context);
+            this.MemberRepositories = new MemberRepositories(context);
         }
 
         

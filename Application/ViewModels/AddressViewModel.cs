@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Application.ViewModels
 {
-    public class AddressVM
+    public class AddressViewModel
     {
         public string Flat { get; set; }
         public string Street { get; set; }
