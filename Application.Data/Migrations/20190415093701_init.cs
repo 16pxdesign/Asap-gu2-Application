@@ -154,21 +154,23 @@ namespace Application.Data.Migrations
                 name: "Doctor",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(nullable: true),
                     Surname = table.Column<string>(nullable: true),
                     Phone = table.Column<string>(nullable: true),
+                    AddressId = table.Column<int>(nullable: true),
                     PlayerSRU = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Doctor", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Doctor_Address_Id",
-                        column: x => x.Id,
+                        name: "FK_Doctor_Address_AddressId",
+                        column: x => x.AddressId,
                         principalTable: "Address",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Doctor_Player_PlayerSRU",
                         column: x => x.PlayerSRU,
@@ -313,11 +315,18 @@ namespace Application.Data.Migrations
                     Phone = table.Column<string>(nullable: true),
                     Relationship = table.Column<string>(nullable: true),
                     Signature = table.Column<DateTime>(nullable: true),
-                    JuniorSRU = table.Column<string>(nullable: true)
+                    JuniorSRU = table.Column<string>(nullable: true),
+                    AddressId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Guardian", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Guardian_Address_AddressId",
+                        column: x => x.AddressId,
+                        principalTable: "Address",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Guardian_Junior_JuniorSRU",
                         column: x => x.JuniorSRU,
@@ -330,22 +339,24 @@ namespace Application.Data.Migrations
                 name: "Kin",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(nullable: true),
                     Surname = table.Column<string>(nullable: true),
                     Phone = table.Column<string>(nullable: true),
                     Relationship = table.Column<string>(nullable: true),
-                    SeniorSRU = table.Column<string>(nullable: true)
+                    SeniorSRU = table.Column<string>(nullable: true),
+                    AddressId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Kin", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Kin_Address_Id",
-                        column: x => x.Id,
+                        name: "FK_Kin_Address_AddressId",
+                        column: x => x.AddressId,
                         principalTable: "Address",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Kin_Senior_SeniorSRU",
                         column: x => x.SeniorSRU,
@@ -372,9 +383,21 @@ namespace Application.Data.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_Doctor_AddressId",
+                table: "Doctor",
+                column: "AddressId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Doctor_PlayerSRU",
                 table: "Doctor",
                 column: "PlayerSRU",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Guardian_AddressId",
+                table: "Guardian",
+                column: "AddressId",
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -386,6 +409,12 @@ namespace Application.Data.Migrations
                 name: "IX_HealthIssue_PlayerSRU",
                 table: "HealthIssue",
                 column: "PlayerSRU");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Kin_AddressId",
+                table: "Kin",
+                column: "AddressId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Kin_SeniorSRU",

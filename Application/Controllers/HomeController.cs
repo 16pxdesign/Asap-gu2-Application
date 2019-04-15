@@ -41,7 +41,24 @@ namespace Application.Controllers
 
         public IActionResult Member()
         {
-            _unitOfWork.MemberRepositories.Add(new Member());
+            var member = new Member();
+            var memberViewModel = new MemberViewModel();
+            memberViewModel.SRU = "19";
+            memberViewModel.Name = "Frank";
+            memberViewModel.Address = new AddressViewModel();
+            memberViewModel.JuniorPlayer = new JuniorPlayerViewModel();
+            memberViewModel.JuniorPlayer.Position = PlayerPosition.Hooker;
+            memberViewModel.JuniorPlayer.Doctor = new DoctorViewModel();
+            memberViewModel.JuniorPlayer.Doctor.Address = new AddressViewModel();
+            memberViewModel.JuniorPlayer.Guardians = new List<GuardianViewModel>();
+            memberViewModel.JuniorPlayer.Guardians.Add(new GuardianViewModel(){ Address = new AddressViewModel() });
+            memberViewModel.JuniorPlayer.Guardians.Add(new GuardianViewModel(){Address = new AddressViewModel()});
+            memberViewModel.JuniorPlayer.HealthIssues = new List<HealthIssueViewModel>();
+            memberViewModel.JuniorPlayer.HealthIssues.Add(new HealthIssueViewModel());
+            memberViewModel.JuniorPlayer.HealthIssues.Add(new HealthIssueViewModel());
+            
+            AutoMapper.Mapper.Map(memberViewModel, member );
+            _unitOfWork.MemberRepositories.Add(member);
             return View();
         }
 

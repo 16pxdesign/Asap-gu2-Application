@@ -115,14 +115,19 @@ namespace Application.Data.Models
             modelBuilder.Entity<Doctor>()
                 .HasOne(m => m.Address)
                 .WithOne()
-                .HasForeignKey<Doctor>();
+                .HasForeignKey<Doctor>("AddressId");
           
             //Kin
             modelBuilder.Entity<Kin>()
                 .HasOne<Address>(m => m.Address)
                 .WithOne()
-                .HasForeignKey<Kin>();
-            
+                .HasForeignKey<Kin>("AddressId");
+
+            //Guradian
+            modelBuilder.Entity<Guardian>()
+                .HasOne<Address>(m => m.Address)
+                .WithOne()
+                .HasForeignKey<Guardian>("AddressId");
             //Training
             modelBuilder.Entity<Training>()
                 .HasMany(m => m.Activitieses)

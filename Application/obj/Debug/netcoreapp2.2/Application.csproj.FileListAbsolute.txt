@@ -33,3 +33,4 @@ C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\bin\Debug\netco
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\Address.g.cshtml.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\HealthIssues.g.cshtml.cs
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Home\Member.g.cshtml.cs

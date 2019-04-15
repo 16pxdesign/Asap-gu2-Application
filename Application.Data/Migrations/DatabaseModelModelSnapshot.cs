@@ -69,7 +69,10 @@ namespace Application.Data.Migrations
 
             modelBuilder.Entity("Application.Data.Models.Doctor", b =>
                 {
-                    b.Property<int>("Id");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("AddressId");
 
                     b.Property<string>("Name");
 
@@ -80,6 +83,9 @@ namespace Application.Data.Migrations
                     b.Property<string>("Surname");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AddressId")
+                        .IsUnique();
 
                     b.HasIndex("PlayerSRU")
                         .IsUnique();
@@ -112,6 +118,8 @@ namespace Application.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int?>("AddressId");
+
                     b.Property<string>("JuniorSRU");
 
                     b.Property<string>("Name");
@@ -123,6 +131,9 @@ namespace Application.Data.Migrations
                     b.Property<DateTime?>("Signature");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AddressId")
+                        .IsUnique();
 
                     b.HasIndex("JuniorSRU");
 
@@ -160,7 +171,10 @@ namespace Application.Data.Migrations
 
             modelBuilder.Entity("Application.Data.Models.Kin", b =>
                 {
-                    b.Property<int>("Id");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("AddressId");
 
                     b.Property<string>("Name");
 
@@ -173,6 +187,9 @@ namespace Application.Data.Migrations
                     b.Property<string>("Surname");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AddressId")
+                        .IsUnique();
 
                     b.HasIndex("SeniorSRU")
                         .IsUnique();
@@ -337,8 +354,7 @@ namespace Application.Data.Migrations
                 {
                     b.HasOne("Application.Data.Models.Address", "Address")
                         .WithOne()
-                        .HasForeignKey("Application.Data.Models.Doctor", "Id")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("Application.Data.Models.Doctor", "AddressId");
 
                     b.HasOne("Application.Data.Models.Player", "Player")
                         .WithOne("Doctor")
@@ -347,6 +363,10 @@ namespace Application.Data.Migrations
 
             modelBuilder.Entity("Application.Data.Models.Guardian", b =>
                 {
+                    b.HasOne("Application.Data.Models.Address", "Address")
+                        .WithOne()
+                        .HasForeignKey("Application.Data.Models.Guardian", "AddressId");
+
                     b.HasOne("Application.Data.Models.Junior", "Junior")
                         .WithMany("Guardians")
                         .HasForeignKey("JuniorSRU")
@@ -373,8 +393,7 @@ namespace Application.Data.Migrations
                 {
                     b.HasOne("Application.Data.Models.Address", "Address")
                         .WithOne()
-                        .HasForeignKey("Application.Data.Models.Kin", "Id")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("Application.Data.Models.Kin", "AddressId");
 
                     b.HasOne("Application.Data.Models.Senior", "Senior")
                         .WithOne("Kin")

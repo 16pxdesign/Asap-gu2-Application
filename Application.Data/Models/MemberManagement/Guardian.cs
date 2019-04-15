@@ -15,5 +15,6 @@ namespace Application.Data.Models
 
         //Relations
         public virtual Junior Junior { get; set; }
+        public virtual Address Address { get; set; }
     }
 }
