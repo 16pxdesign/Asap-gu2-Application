@@ -5009,11 +5009,25 @@
       "Application.Business/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "Application.Domain": "1.0.0",
+          "Application.Repository": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Application.Business.dll": {}
         },
         "runtime": {
           "bin/placeholder/Application.Business.dll": {}
+        }
+      },
+      "Application.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/Application.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.Domain.dll": {}
         }
       },
       "Application.Repository/1.0.0": {
@@ -13704,6 +13718,11 @@
       "path": "../Application.Business/Application.Business.csproj",
       "msbuildProject": "../Application.Business/Application.Business.csproj"
     },
+    "Application.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Application.Domain/Application.Domain.csproj",
+      "msbuildProject": "../Application.Domain/Application.Domain.csproj"
+    },
     "Application.Repository/1.0.0": {
       "type": "project",
       "path": "../Application.Repository/Application.Repository.csproj",
@@ -13713,7 +13732,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "Application.Business >= 1.0.0",
-      "Application.Repository >= 1.0.0",
+      "Application.Domain >= 1.0.0",
       "AutoMapper >= 8.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
@@ -13758,8 +13777,8 @@
             "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application.Business\\Application.Business.csproj": {
               "projectPath": "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application.Business\\Application.Business.csproj"
             },
-            "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application.Repository\\Application.Repository.csproj": {
-              "projectPath": "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application.Repository\\Application.Repository.csproj"
+            "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application.Domain\\Application.Domain.csproj": {
+              "projectPath": "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application.Domain\\Application.Domain.csproj"
             }
           }
         }

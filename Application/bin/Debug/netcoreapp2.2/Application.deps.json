@@ -25,7 +25,7 @@
       "Application/1.0.0": {
         "dependencies": {
           "Application.Business": "1.0.0",
-          "Application.Repository": "1.0.0",
+          "Application.Domain": "1.0.0",
           "AutoMapper": "8.0.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
@@ -729,11 +729,23 @@
         }
       },
       "Application.Business/1.0.0": {
+        "dependencies": {
+          "Application.Domain": "1.0.0",
+          "Application.Repository": "1.0.0"
+        },
         "runtime": {
           "Application.Business.dll": {}
         },
         "compile": {
           "Application.Business.dll": {}
+        }
+      },
+      "Application.Domain/1.0.0": {
+        "runtime": {
+          "Application.Domain.dll": {}
+        },
+        "compile": {
+          "Application.Domain.dll": {}
         }
       },
       "Application.Repository/1.0.0": {
@@ -4168,6 +4180,11 @@
       "hashPath": "system.linq.queryable.4.0.1.nupkg.sha512"
     },
     "Application.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Application.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

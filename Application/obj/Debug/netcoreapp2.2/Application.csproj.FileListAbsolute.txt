@@ -32,3 +32,5 @@ C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\bin\Debug\netco
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\bin\Debug\netcoreapp2.2\Application.Business.pdb
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\bin\Debug\netcoreapp2.2\Application.Repository.dll
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\bin\Debug\netcoreapp2.2\Application.Repository.pdb
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\bin\Debug\netcoreapp2.2\Application.Domain.dll
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\bin\Debug\netcoreapp2.2\Application.Domain.pdb
