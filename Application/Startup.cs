@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Application.Business;
 using Application.Business.Interfaces;
+using Application.Models.ViewModels;
+using Application.Repository.Infrastructure;
+using Application.Repository.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -34,7 +37,8 @@ namespace Application
             });
 
             //services.AddScoped<IRepository>(s => new Class1(1));
-            services.AddScoped<IRepository, Class1>();
+            services.AddScoped<IAddressBusiness, AddressBusiness>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

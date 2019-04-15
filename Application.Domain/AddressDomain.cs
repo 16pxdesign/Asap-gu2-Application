@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace Application.Models.ViewModels
+namespace Application.Domain
 {
-    public class AddressViewModel
+    public class AddressDomain
     {
-
+        public int Id { get; set; }
         public string Flat { get; set; }
         public string Street { get; set; }
         public string Postcode { get; set; }

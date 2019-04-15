@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Application.Repository.Infrastructure
 {
@@ -34,12 +35,12 @@ namespace Application.Repository.Infrastructure
             return DbSet.Where(whereCondition).AsEnumerable();
         }
 
-        public virtual T Insert(T entity)
+        public virtual EntityEntry<T> Insert(T entity)
         {
-            dynamic obj = DbSet.Add(entity);
+            EntityEntry<T> obj = DbSet.Add(entity);
             this._unitOfWork.Db.SaveChanges();
-            return obj;
 
+            return obj;
         }
 
         public virtual void Update(T entity)

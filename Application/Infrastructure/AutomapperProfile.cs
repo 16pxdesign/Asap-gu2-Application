@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Application.Domain;
+using Application.Models.ViewModels;
 
 namespace Application.Infrastructure
 {
@@ -9,7 +11,7 @@ namespace Application.Infrastructure
     {
         public AutomapperProfile()
         {
-
+            CreateMap<AddressViewModel, AddressDomain>();
         }
 
         public static void Run()

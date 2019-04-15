@@ -16,6 +16,7 @@ namespace Application.Repository
         public DbSet<Training> Training { get; set; }
         public DbSet<Profile> Profile { get; set; }
         public DbSet<Game> Game { get; set; }
+        public DbSet<Address> Address { get; set; }
       
         
         public DatabaseModel() : base()
@@ -34,7 +35,7 @@ namespace Application.Repository
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseLazyLoadingProxies();
-                optionsBuilder.UseSqlite("Data Source=file:Data/db.db");
+                optionsBuilder.UseSqlite(@"Data Source=C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Repository\Data\Database.db");
             }
 
         }
@@ -183,8 +184,7 @@ namespace Application.Repository
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<Address> Address { get; set; }
-
+       
 
 
 

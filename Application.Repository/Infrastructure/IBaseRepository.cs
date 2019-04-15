@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Application.Repository.Infrastructure
 {
@@ -26,7 +27,7 @@ namespace Application.Repository.Infrastructure
         /// <summary>
         /// Inserts the data into the table
         /// </summary>
-        T Insert(T entity);
+        EntityEntry<T> Insert(T entity);
 
         /// <summary>
         /// Updates this entity in the database using it's primary key

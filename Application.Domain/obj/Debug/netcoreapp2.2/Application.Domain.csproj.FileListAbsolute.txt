@@ -6,3 +6,4 @@ C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Domain\obj\Debu
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Domain\obj\Debug\netcoreapp2.2\Application.Domain.AssemblyInfo.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Domain\obj\Debug\netcoreapp2.2\Application.Domain.dll
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Domain\obj\Debug\netcoreapp2.2\Application.Domain.pdb
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Domain\obj\Debug\netcoreapp2.2\Application.Domain.csprojAssemblyReference.cache

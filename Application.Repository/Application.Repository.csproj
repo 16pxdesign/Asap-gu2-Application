@@ -5,15 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20190414234743_init.cs" />
-    <Compile Remove="Migrations\20190414234743_init.Designer.cs" />
-    <Compile Remove="Migrations\20190415000631_init.cs" />
-    <Compile Remove="Migrations\20190415000631_init.Designer.cs" />
-    <Compile Remove="Migrations\20190415010429_init.cs" />
-    <Compile Remove="Migrations\20190415010429_init.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="2.2.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.4" />
@@ -22,10 +13,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>
