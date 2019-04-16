@@ -20,6 +20,11 @@ namespace Application.Data.Models
         public DbSet<Player> Player { get; set; }
 
 
+        public DbSet<Guardian> Guardian { get; set; }
+        public DbSet<Doctor> Doctor { get; set; }
+        public DbSet<Kin> Kin { get; set; }
+
+
         public DatabaseModel() : base()
         {
         }

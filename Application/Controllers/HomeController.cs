@@ -43,19 +43,20 @@ namespace Application.Controllers
         {
             var member = new Member();
             var memberViewModel = new MemberViewModel();
-            memberViewModel.SRU = "19";
+            memberViewModel.SRU = "3001";
             memberViewModel.Name = "Frank";
             memberViewModel.Address = new AddressViewModel();
+            memberViewModel.Player = new PlayerViewModel();
             memberViewModel.JuniorPlayer = new JuniorPlayerViewModel();
-            memberViewModel.JuniorPlayer.Position = PlayerPosition.Hooker;
-            memberViewModel.JuniorPlayer.Doctor = new DoctorViewModel();
-            memberViewModel.JuniorPlayer.Doctor.Address = new AddressViewModel();
+            memberViewModel.Player.Position = PlayerPosition.Bolt;
+            memberViewModel.Player.Doctor = new DoctorViewModel();
+            memberViewModel.Player.Doctor.Address = new AddressViewModel();
             memberViewModel.JuniorPlayer.Guardians = new List<GuardianViewModel>();
             memberViewModel.JuniorPlayer.Guardians.Add(new GuardianViewModel(){ Address = new AddressViewModel() });
             memberViewModel.JuniorPlayer.Guardians.Add(new GuardianViewModel(){Address = new AddressViewModel()});
-            memberViewModel.JuniorPlayer.HealthIssues = new List<HealthIssueViewModel>();
-            memberViewModel.JuniorPlayer.HealthIssues.Add(new HealthIssueViewModel());
-            memberViewModel.JuniorPlayer.HealthIssues.Add(new HealthIssueViewModel());
+            memberViewModel.Player.HealthIssues = new List<HealthIssueViewModel>();
+            memberViewModel.Player.HealthIssues.Add(new HealthIssueViewModel());
+            memberViewModel.Player.HealthIssues.Add(new HealthIssueViewModel());
             
             AutoMapper.Mapper.Map(memberViewModel, member );
             _unitOfWork.MemberRepositories.Add(member);

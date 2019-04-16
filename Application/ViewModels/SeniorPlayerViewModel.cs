@@ -6,13 +6,8 @@ using Application.Data.Models;
 
 namespace Application.ViewModels
 {
-    public class JuniorPlayerViewModel
+    public class SeniorPlayerViewModel
     {
-
-        public List<GuardianViewModel> Guardians { get; set; }
-
-        
-
-
+        public List<KinViewModel> Kin { get; set; }
     }
 }

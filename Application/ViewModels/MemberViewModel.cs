@@ -17,7 +17,9 @@ namespace Application.ViewModels
         public string Phone { get; set; }
         public string Mobile { get; set; }
         public AddressViewModel Address { get; set; }
+        public PlayerViewModel Player { get; set; }
         public JuniorPlayerViewModel JuniorPlayer { get; set; }
+        public SeniorPlayerViewModel SeniorPlayer { get; set; }
 
     }
 }
