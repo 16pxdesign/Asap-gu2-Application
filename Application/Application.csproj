@@ -20,4 +20,9 @@
     <ProjectReference Include="..\Application.Repo\Application.Repo.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <None Include="wwwroot\css\Forms.css" />
+  </ItemGroup>
+
 </Project>

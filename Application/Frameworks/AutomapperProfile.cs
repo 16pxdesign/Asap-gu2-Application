@@ -21,7 +21,8 @@ namespace Application.Frameworks
 
             CreateMap<Address, AddressViewModel>();
             CreateMap<AddressViewModel, Address>();
-            CreateMap<Member, MemberViewModel>();
+
+
 
 
             CreateMap<MemberViewModel, Member>()
@@ -32,8 +33,7 @@ namespace Application.Frameworks
                 .ForPath(d => d.Player.Senior, o =>
                 {
                     o.MapFrom(s => Mapper.Map<SeniorPlayerViewModel, Senior>(s.SeniorPlayer));
-                })
-                ;
+                });
 
             CreateMap<PlayerViewModel, Player>();
             CreateMap<JuniorPlayerViewModel, Junior>();

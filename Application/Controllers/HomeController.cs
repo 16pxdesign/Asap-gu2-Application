@@ -41,14 +41,14 @@ namespace Application.Controllers
 
         public IActionResult Member()
         {
-            var member = new Member();
+            /*var member = new Member();
             var memberViewModel = new MemberViewModel();
-            memberViewModel.SRU = "3001";
+            memberViewModel.SRU = "4002";
             memberViewModel.Name = "Frank";
             memberViewModel.Address = new AddressViewModel();
             memberViewModel.Player = new PlayerViewModel();
             memberViewModel.JuniorPlayer = new JuniorPlayerViewModel();
-            memberViewModel.Player.Position = PlayerPosition.Bolt;
+            memberViewModel.Player.Position = PlayerPosition.TightheadProp;
             memberViewModel.Player.Doctor = new DoctorViewModel();
             memberViewModel.Player.Doctor.Address = new AddressViewModel();
             memberViewModel.JuniorPlayer.Guardians = new List<GuardianViewModel>();
@@ -59,7 +59,7 @@ namespace Application.Controllers
             memberViewModel.Player.HealthIssues.Add(new HealthIssueViewModel());
             
             AutoMapper.Mapper.Map(memberViewModel, member );
-            _unitOfWork.MemberRepositories.Add(member);
+            _unitOfWork.MemberRepositories.Add(member);*/
             return View();
         }
 
