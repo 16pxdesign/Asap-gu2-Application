@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Threading.Tasks;
 using Application.Data.Models;
 using Application.ViewModels;
@@ -18,26 +19,31 @@ namespace Application.Frameworks
             CreateMap<DoctorViewModel, Doctor>();
             CreateMap<GuardianViewModel, Guardian>();
             CreateMap<HealthIssueViewModel, HealthIssue>();
+            CreateMap<KinViewModel, Kin>();
+            CreateMap<Kin, KinViewModel>();
 
             CreateMap<Address, AddressViewModel>();
             CreateMap<AddressViewModel, Address>();
 
+            CreateMap<MemberViewModel, Member>();                
+            CreateMap<Member, MemberViewModel>();
+            
+            CreateMap<PlayerViewModel, Player>();        
+            CreateMap<Player, PlayerViewModel>();
 
+            
 
-
-            CreateMap<MemberViewModel, Member>()
-                .ForPath(d => d.Player.Junior, o =>
+           
+            /*    .ForPath(d => d.Player.Senior, o =>
                 {
-                    o.MapFrom(s=> Mapper.Map<JuniorPlayerViewModel, Junior>(s.JuniorPlayer));
-                })
-                .ForPath(d => d.Player.Senior, o =>
-                {
+                    o.Condition(s=>s.Source.Type==MemberType.Senior);
                     o.MapFrom(s => Mapper.Map<SeniorPlayerViewModel, Senior>(s.SeniorPlayer));
                 });
-
-            CreateMap<PlayerViewModel, Player>();
+*/
             CreateMap<JuniorPlayerViewModel, Junior>();
+            CreateMap<Junior, JuniorPlayerViewModel>();
             CreateMap<SeniorPlayerViewModel, Senior>();
+            CreateMap<Senior, SeniorPlayerViewModel>();
                 
 
             /*CreateMap<MemberViewModel, Member>()
@@ -114,13 +120,7 @@ namespace Application.Frameworks
 
         }
 
-        public static void MapFromIfNotNull<TSource, TDestination, TProperty>(IMemberConfigurationExpression<TSource, TDestination, TProperty> map,
-            Expression<Func<TSource, object>> selector)
-        {
-            var function = selector.Compile();
-            map.Condition(source => function(source) != null);
-            map.MapFrom(selector);
-        }
+
 
         public static void Run()
         {

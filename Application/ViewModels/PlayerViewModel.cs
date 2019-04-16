@@ -12,6 +12,8 @@ namespace Application.ViewModels
         public PlayerPosition Position { get; set; }
         public DoctorViewModel Doctor { get; set; }
         public List<HealthIssueViewModel> HealthIssues { get; set; }
+        public JuniorPlayerViewModel JuniorPlayer { get; set; }
+        public SeniorPlayerViewModel SeniorPlayer { get; set; }
 
     }
 }

@@ -8,6 +8,6 @@ namespace Application.ViewModels
 {
     public class SeniorPlayerViewModel
     {
-        public List<KinViewModel> Kin { get; set; }
+        public KinViewModel Kin { get; set; }
     }
 }

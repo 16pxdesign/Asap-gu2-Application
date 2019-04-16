@@ -1,0 +1,23 @@
+@model Application.ViewModels.MemberViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<form asp-controller="Wizard" asp-action="MemberDoctor" method="post">
+    
+    @Html.HiddenFor(m=>m.SRU)
+
+    @Html.EditorFor(m => m.Player.Doctor, "~/Views/Partial/AddOrEdit/Doctor.cshtml")
+
+    <div class="form-row">
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-primary " id="btnSave"/>
+            </div>
+        </div>
+    </div>
+
+
+</form>

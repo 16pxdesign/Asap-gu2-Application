@@ -58,7 +58,7 @@ namespace Application
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Members}/{action=Add}/{id?}");
+                    template: "{controller=Wizard}/{action=Member}/{id?}");
             });
         }
     }
