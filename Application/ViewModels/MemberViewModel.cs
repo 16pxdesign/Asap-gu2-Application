@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.Data.Models;
@@ -8,7 +9,7 @@ namespace Application.ViewModels
 {
     public class MemberViewModel
     {
-
+        [Required]
         public string SRU { get; set; }
         public MemberType Type { get; set; }
         public string Name { get; set; }

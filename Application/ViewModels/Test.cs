@@ -9,5 +9,6 @@ namespace Application.ViewModels
     {
         public string Name { get; set; }
         public List<AddressViewModel> Address { get; set; }
+        public List<HealthIssueViewModel> Health { get; set; }
     }
 }

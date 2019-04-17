@@ -1,120 +1,85 @@
 @using Application.Data.Models
 @using Application.ViewModels
-@model PlayerViewModel
+@model List<HealthIssueViewModel>
+@{
+	ViewBag.Source = "Player.HealthIssues";
+	ViewBag.FormName = "HealthIssues";
+		
+}
+@(ViewBag.FormName) 
 <div class="col-md mt-4">
 		    <div class="card bg-transparent">
 		        <div class="card-body">
-                    @*  <div class="row">
-		                <div class="col-md-2 border-right">
-		                    <h4>Categories</h4>
-		                </div>
-		                <div class="col-md-6">
-		                    <button type="button" class="btn btn-sm btn-primary">Add New</button>
-		                </div>
-		                
-		            </div>
-		            <hr>*@
-		            <div class="row">
-        @*****@		@*        <div class="col-md-4 bg-light card-body">
-        		            <h5>Add New Category</h5>
-        		            <form>
-                       
-                 <div class="form-group row">
-                                <label for="text" class="col-12 col-form-label">Name</label> 
-                                <div class="col-12">
-                                  <input id="text" name="text" class="form-control here" type="text">
-                                </div>
-                              </div>
-                              <div class="form-group row">
-                                <label for="slug" class="col-12 col-form-label">Slug</label> 
-                                <div class="col-12">
-                                  <input id="slug" name="slug" class="form-control here" type="text">
-                                  <small>The “slug” is the URL-friendly version of the name. It is usually all lowercase and contains only letters, numbers, and hyphens.</small>
+			        <div>
+				        <input id="btnAddItem" type="button"
 
-                                </div>
-                              </div>
-                              <div class="form-group row">
-                                <label for="parent-category" class="col-12 col-form-label">Parent Category</label> 
-                                <div class="col-12">
-                                  <select id="parent-category" name="parent-category" class="custom-select">
-                                    <option value="">None</option>
-                                    <option value="uncategorized">Uncategorized</option>
-                                    <option value="new category">New Category</option>
-                                  </select>
-                                </div>
-                              </div>
-                              <div class="form-group row">
-                                <label for="description" class="col-12 col-form-label">Description</label> 
-                                <div class="col-12">
-                                  <textarea id="description" name="description" cols="40" rows="4" class="form-control"></textarea>
-                                </div>
-                              </div> 
-                              <div class="form-group row">
-                                <div class="col-12">
-                                  <button name="submit" type="submit" class="btn btn-primary btn-sm">Add New Category</button>
-                                </div>
-                              </div>
-                            </form>
-        		        </div>*@
-        @*****@  	        <div class="col-md">
-        		            <table class="table table-hover ">
-                                <thead class="bg-light ">
-                                  <tr>
-                                
-                                    <th>Date</th>
-                                    <th>Name</th>      
-                                    <th>View</th>   
-                                    <th>Edit</th>                                    
-                                    <th>Delete</th>                                    
-                                  
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                
-                                @{
-                                //  Model.HealthIssues.Add(new HealthIssueViewModel(){Name = "lol"});
-                                }
-                        
-                               @* @foreach (var i in Model)
-                                {
-                                    @Html.HiddenFor(s=>i.Date);
-                                    @Html.HiddenFor(s=>i.Name);
-                                    @Html.HiddenFor(s=>i.Description);
-                                } *@
-                           
-                                
-                                @foreach (var i in Model.HealthIssues)
-                                {
-                                    <tr>
-                                        
-                                        <input asp-for="@i.Date" class="form-control" />
-                                        <input asp-for="@i.Name" class="form-control" />
-                                        <input asp-for="@i.Description" class="form-control" />
-                                        
-                                        
-                                    </tr>
-                                }
-                                
-                                @*  <tr>
-                                    <td>
-                                        <div class="form-check-inline">
-                                          <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" value="">
-                                           </label>
-                                       </div>
-                                    </td>  
-                                    <td><a href="#"><small>Johnyahua</small></a></td>
-                                    <td><small>Doe</small></td>
-                                    <td><small>john@example.com</small></td>
-                                    <td><a href="#"><small>5</small></a></td>
-                                  </tr>
-                              
-                                 *@
+				               onclick="addRow@(ViewBag.FormName)();" value="Add Item"/>
+			        </div>
+			        
+			           
+			        
+			        <table>
+				        <thead>
+				        <tr>
+					        <td>
+						        Title
+					        </td>
+					        <td>
+						        Published Date
+					        </td>
+				        </tr>
+				        </thead>
+				        <tbody id="table@(ViewBag.FormName)">
+						
+				        
+				        @for (var i = 0; i < Model.Count; i++)
+				        {
+					        
+					        <tr id="trItem@(ViewBag.FormName)@(i)">
+						        <td style='display:none'><input id='@(ViewBag.Source).Index' name='@(ViewBag.Source).Index' type='hidden' value='@(i)' /></td>
+						        <td><input id='@(ViewBag.Source)[@(i)].Date' name='@(ViewBag.Source)[@(i)].Date' type='text' value='@Model[i].Date' /></td>
+						        <td><input id='@(ViewBag.Source)[@(i)].Name'  name='@(ViewBag.Source)[@(i)].Name' type='text' value='@Model[i].Name' /></td>
+						        <td><input  type="hidden" id='@(ViewBag.Source)[@(i)].Description' name='@(ViewBag.Source)[@(i)].Description' type='text' value='@Model[i].Description' /></td>
+						        <td><a href="#" class="btn btn-link text-danger" id='btnAddItem' onclick='removeRow@(ViewBag.FormName)(@(i));' ><i class="fas fa-trash-alt"></i></a></td>
+					        </tr>
+				        }
+      
+				      
+        
+				        </tbody>
+			        </table>
+			        
+			        <script language="javascript" type="text/javascript">
+	                    function addRow@(ViewBag.FormName)() {
 
-                                </tbody>
-                              </table>
-        		        </div>
-        		    </div>
+		                    @{
+			                    //TODO:
+			                    //For validation? Check it
+			                    Model.Add(new HealthIssueViewModel());
+		                    }
+
+		                    var index = $("#table@(ViewBag.FormName)").children("tr").length;
+
+		                    var indexCell = "<td style='display:none'><input id='@(ViewBag.Source).Index' name='@(ViewBag.Source).Index' type='hidden' value='" + index + "' /></td>";
+		                    var value1 = "<td><input id='@(ViewBag.Source)[" + index + "].Date' name='@(ViewBag.Source)[" + index + "].Date' type='text' value='' /></td>";
+		                    var value2 = "<td><input id='@(ViewBag.Source)[" + index + "].Name' name='@(ViewBag.Source)[" + index + "].Name' type='text' value='' /></td>";
+		                    var value3 = "<td><input  type='hidden' id='@(ViewBag.Source)[" + index + "].Description' name='@(ViewBag.Source)[" + index + "].Description' type='text' value='' /></td>";
+		                    var removeCell = "<td><a href='#' class='btn btn-link text-danger' id='btnAddItem' onclick='removeRow@(ViewBag.FormName)(" + index + ");' ><i class='fas fa-trash-alt'></i></a></td>";
+
+		                    var newRow = "<tr id='trItem@(ViewBag.FormName)" + index + "'>" + indexCell + value1 + value2 + value3 + removeCell + "</tr>";
+		                    console.log(newRow);
+		                    $("#table@(ViewBag.FormName)").append(newRow);
+	                    }
+
+	                    function removeRow@(ViewBag.FormName)(id) {
+		                    var controlToBeRemoved = "#trItem@(ViewBag.FormName)" + id;
+		                    $(controlToBeRemoved).remove();
+	                    }
+                    </script>
+
+			      
+			        
+			       
 		        </div>
 		    </div>
 		</div>

@@ -10,12 +10,8 @@ C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netco
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Home\Member.g.cshtml.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
-C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\AddOrEdit\Address.g.cshtml.cs
-C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\AddOrEdit\Doctor.g.cshtml.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\AddOrEdit\Guardian.g.cshtml.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\AddOrEdit\Health.g.cshtml.cs
-C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\AddOrEdit\Kin.g.cshtml.cs
-C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\AddOrEdit\Member.g.cshtml.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
@@ -47,3 +43,9 @@ C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netco
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Wizard\MemberKin.g.cshtml.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Members\Index.g.cshtml.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Test\Index.g.cshtml.cs
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\Done\Member.g.cshtml.cs
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\Done\Address.g.cshtml.cs
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Forms\Index.g.cshtml.cs
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\Done\Doctor.g.cshtml.cs
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\Done\Kin.g.cshtml.cs
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\Done\Health.g.cshtml.cs

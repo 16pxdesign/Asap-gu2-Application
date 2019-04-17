@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Application.Repo;
+using Application.Repo.Contracts;
 using Application.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,6 +10,14 @@ namespace Application.Controllers
 {
     public class TestController : Controller
     {
+        
+        private readonly UnitOfWork _unitOfWork;
+
+        public TestController(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork as UnitOfWork;
+        }
+        
         public IActionResult Index()
         {
             var test = new Test();
@@ -33,11 +43,13 @@ namespace Application.Controllers
                 Postcode = "DD23AD",
                 Street = "High"
             });
+            
+           
             return View(test);
         }
 
         [HttpPost]
-        public string Index(Test model)
+        public IActionResult Index(Test model)
         {
             var sb = new StringBuilder();
             try
@@ -51,14 +63,38 @@ namespace Application.Controllers
                     sb.AppendFormat("Title : {0} | Published Date : {1}", item.Flat, item.Street);
                     sb.AppendLine("<br />");
                 }
+
+                
+                    foreach (var item in model.Health)
+                    {
+                        sb.AppendFormat("Title : {0} | Published Date : {1}", item.Date, item.Name);
+                        sb.AppendLine("<br />");
+                    
+                    
+               
+               
+                    
+                }
+                
+              
+                
             }
             catch (Exception ex)
             {
                 throw new Exception();
             }
 
-            return sb.ToString();
+
+
+
+            return View(model);
+        }
+
+        public string Index2()
+        {
+            var findBySru = _unitOfWork.MemberRepositories.FindBySRU("123Aleksy Ryszard Ruszala");
             
+            return null;
         }
     }
 }

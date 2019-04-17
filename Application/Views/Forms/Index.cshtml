@@ -1,0 +1,36 @@
+@using Application.ViewModels
+@using Castle.Core.Internal
+@model Application.ViewModels.MemberViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<form asp-action="Index" method="post">
+
+@Html.EditorFor(m=>m,"~/Views/Partial/Done/Member.cshtml")
+@*
+@Html.EditorFor(m=>m.Address,"~/Views/Partial/Done/Address.cshtml")
+
+@Html.EditorFor(m=>m.Player.Doctor,"~/Views/Partial/Done/Doctor.cshtml")
+
+@Html.EditorFor(m=>m.Player.Doctor,"~/Views/Partial/Done/Kin.cshtml")
+*@
+
+@{
+                                   
+   
+    if (Model.Player == null)
+    {
+        Model.Player = new PlayerViewModel();
+        Model.Player.HealthIssues = new List<HealthIssueViewModel>();
+    }
+      
+    Html.RenderPartial("~/Views/Partial/AddOrEdit/HealthIssues.cshtml", Model.Player.HealthIssues );
+}
+
+
+<button type="submit">Add</button>
+
+</form>

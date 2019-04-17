@@ -1,29 +1,30 @@
+@using System.Linq.Expressions
 @using Application.ViewModels
 @model Application.ViewModels.Test
 
 @{
     ViewBag.Title = "title";
+    ViewBag.ListName = nameof(Model.Health);
     Layout = "_Layout";
 }
 
-@using (Html.BeginForm())
-{
-    @Html.ValidationSummary(true)
 
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Name)
-    </div>
-    <div class="editor-field">
-        @Html.EditorFor(model => model.Name)
-        @Html.ValidationMessageFor(model => model.Name)
-    </div>
+
+
+
+
+<form method="post">
+   
+    @Html.EditorFor(m=>m)
+ 
 
     <div>
-        <input id="btnAddBook" type="button"
+        <input id="btnAddItem" type="button"
 
-               onclick="addRow();" value="Add Book"/>
+               onclick="addRow();" value="Add Item"/>
     </div>
-
+    @Model.Address[0].GetType().Name
+    
     <table>
         <thead>
         <tr>
@@ -35,27 +36,35 @@
             </td>
         </tr>
         </thead>
-        <tbody id="tbBooks">
+        <tbody id="tbItems">
         
         @for (var i = 0; i < Model.Address.Count; i++)
         {
-            <tr id="trBook@(i)">
-                <td style='display:none'><input name='Address.Index' type='hidden' value='" + @i + "' /></td>
-                <td><input type="hidden" id='Address_" + @i + "__Title' name='Address[" + @i + "].Flat' type='text' value='@Model.Address[i].Flat' />@Model.Address[i].Flat</td>
-                <td><input id='Address_" + @i + "__Title' name='Address[" + @i + "].Street' type='text' value='@Model.Address[i].Street' /></td>
-                <td><input id='btnAddBook' type='button' value='Remove' onclick='removeRow(" + @i + ");' /></td>
+            <tr id="trItem@(i)">
+                <td style='display:none'><input name='Address.Index' type='hidden' value='@(i)' /></td>
+                <td><input  name='Address[@(i)].Flat' type='text' value='@Model.Address[i].Flat' /></td>
+                <td><input  name='Address[@(i)].Street' type='text' value='@Model.Address[i].Street' /></td>
+                <td><a href="#" class="btn btn-link text-danger" id='btnAddItem' onclick='removeRow(@(i));' ><i class="fas fa-trash-alt"></i></a></td>
             </tr>
         }
       
         
         </tbody>
     </table>
+
+  
     
+
+    @{
+        Html.RenderPartial("~/Views/Partial/AddOrEdit/HealthIssues.cshtml", Model.Health, new ViewDataDictionary(ViewData) {{"PropertyName", nameof(Model.Health)}});
+    }
+  
+   
     <p>
         <input type="submit" value="Create" />
     </p>
 
-}
+</form>
 
 
 <script language="javascript" type="text/javascript">
@@ -67,20 +76,19 @@
            Model.Address.Add(new AddressViewModel());
         }
 
-        var index = $("#tbBooks").children("tr").length;
-        console.log(index);
+        var index = $("#tbItems").children("tr").length;
 
         var indexCell = "<td style='display:none'><input name='Address.Index' type='hidden' value='" + index + "' /></td>";
-        var titleCell = "<td><input id='Address_" + index + "__Title' name='Address[" + index + "].Flat' type='text' value='' /></td>";
-        var publishedCell = "<td><input id='Address_" + index + "__Title' name='Address[" + index + "].Street' type='text' value='' /></td>";
-        var removeCell = "<td><input id='btnAddBook' type='button' value='Remove' onclick='removeRow(" + index + ");' /></td>";
+        var titleCell = "<td><input name='Address[" + index + "].Flat' type='text' value='' /></td>";
+        var publishedCell = "<td><input name='Address[" + index + "].Street' type='text' value='' /></td>";
+        var removeCell = "<td><a href='#' class='btn btn-link text-danger' id='btnAddItem' onclick='removeRow(" + index + ");' ><i class='fas fa-trash-alt'></i></a></td>";
 
-        var newRow = "<tr id='trBook" + index + "'>" + indexCell + titleCell + publishedCell + removeCell + "</tr>";
-        $("#tbBooks").append(newRow);
+        var newRow = "<tr id='trItem" + index + "'>" + indexCell + titleCell + publishedCell + removeCell + "</tr>";
+        $("#tbItems").append(newRow);
     }
 
     function removeRow(id) {
-        var controlToBeRemoved = "#trBook" + id;
+        var controlToBeRemoved = "#trItem" + id;
         $(controlToBeRemoved).remove();
     }
 </script>
