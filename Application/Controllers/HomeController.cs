@@ -35,7 +35,7 @@ namespace Application.Controllers
             //this._unitOfWork.AddressRepository.Insert(address);
             //await _unitOfWork.Commit();
             var test = new Test();
-            test.address = addressVm;
+            //test.address = addressVm;
             return View(test);
         }
 

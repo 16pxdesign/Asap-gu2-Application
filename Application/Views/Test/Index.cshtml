@@ -1,0 +1,86 @@
+@using Application.ViewModels
+@model Application.ViewModels.Test
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Name)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+
+    <div>
+        <input id="btnAddBook" type="button"
+
+               onclick="addRow();" value="Add Book"/>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <td>
+                Title
+            </td>
+            <td>
+                Published Date
+            </td>
+        </tr>
+        </thead>
+        <tbody id="tbBooks">
+        
+        @for (var i = 0; i < Model.Address.Count; i++)
+        {
+            <tr id="trBook@(i)">
+                <td style='display:none'><input name='Address.Index' type='hidden' value='" + @i + "' /></td>
+                <td><input type="hidden" id='Address_" + @i + "__Title' name='Address[" + @i + "].Flat' type='text' value='@Model.Address[i].Flat' />@Model.Address[i].Flat</td>
+                <td><input id='Address_" + @i + "__Title' name='Address[" + @i + "].Street' type='text' value='@Model.Address[i].Street' /></td>
+                <td><input id='btnAddBook' type='button' value='Remove' onclick='removeRow(" + @i + ");' /></td>
+            </tr>
+        }
+      
+        
+        </tbody>
+    </table>
+    
+    <p>
+        <input type="submit" value="Create" />
+    </p>
+
+}
+
+
+<script language="javascript" type="text/javascript">
+    function addRow() {
+
+        @{
+            //TODO:
+            //For validation? Check it
+           Model.Address.Add(new AddressViewModel());
+        }
+
+        var index = $("#tbBooks").children("tr").length;
+        console.log(index);
+
+        var indexCell = "<td style='display:none'><input name='Address.Index' type='hidden' value='" + index + "' /></td>";
+        var titleCell = "<td><input id='Address_" + index + "__Title' name='Address[" + index + "].Flat' type='text' value='' /></td>";
+        var publishedCell = "<td><input id='Address_" + index + "__Title' name='Address[" + index + "].Street' type='text' value='' /></td>";
+        var removeCell = "<td><input id='btnAddBook' type='button' value='Remove' onclick='removeRow(" + index + ");' /></td>";
+
+        var newRow = "<tr id='trBook" + index + "'>" + indexCell + titleCell + publishedCell + removeCell + "</tr>";
+        $("#tbBooks").append(newRow);
+    }
+
+    function removeRow(id) {
+        var controlToBeRemoved = "#trBook" + id;
+        $(controlToBeRemoved).remove();
+    }
+</script>

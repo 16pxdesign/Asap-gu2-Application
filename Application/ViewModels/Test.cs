@@ -7,6 +7,7 @@ namespace Application.ViewModels
 {
     public class Test
     {
-        public AddressViewModel address { get; set; }
+        public string Name { get; set; }
+        public List<AddressViewModel> Address { get; set; }
     }
 }

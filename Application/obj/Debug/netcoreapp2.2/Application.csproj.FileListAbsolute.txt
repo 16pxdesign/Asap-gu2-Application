@@ -7,7 +7,6 @@ C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netco
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Application.TagHelpers.input.cache
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Application.TagHelpers.output.cache
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Application.RazorCoreGenerate.cache
-C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Pages\Members\Index.g.cshtml.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Home\Member.g.cshtml.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
@@ -46,3 +45,5 @@ C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netco
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Wizard\Index.g.cshtml.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Wizard\MemberDoctor.g.cshtml.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Wizard\MemberKin.g.cshtml.cs
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Members\Index.g.cshtml.cs
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Test\Index.g.cshtml.cs
