@@ -7,17 +7,15 @@
     <e p="C:\Users\pingu\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Application.-308470388.00" t="ExcludeRecursive" />
     <e p="C:\Users\pingu\Documents\GitHub\Asap-gu2-Application" t="IncludeFlat">
       <e p="Application" t="IncludeRecursive">
+        <e p="_TEMP" t="Include" />
         <e p="Application.csproj" t="IncludeRecursive" />
+        <e p="Application.csproj.DotSettings" t="Include" />
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
-          <e p="FormsController.cs" t="Include" />
-          <e p="Home3Controller.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
-          <e p="MembersController.cs" t="Include" />
-          <e p="TestController.cs" t="Include" />
-          <e p="WizardController.cs" t="Include" />
+          <e p="IndexController.cs" t="Include" />
         </e>
         <e p="Frameworks" t="Include">
           <e p="AutomapperProfile.cs" t="Include" />
@@ -25,6 +23,17 @@
         <e p="Models" t="Include">
           <e p="Contact.cs" t="Include" />
           <e p="ErrorViewModel.cs" t="Include" />
+          <e p="ViewModels" t="Include">
+            <e p="AddressViewModel.cs" t="Include" />
+            <e p="DoctorViewModel.cs" t="Include" />
+            <e p="GuardianViewModel.cs" t="Include" />
+            <e p="HealthIssueViewModel.cs" t="Include" />
+            <e p="JuniorPlayerViewModel.cs" t="Include" />
+            <e p="KinViewModel.cs" t="Include" />
+            <e p="MemberViewModel.cs" t="Include" />
+            <e p="PlayerViewModel.cs" t="Include" />
+            <e p="SeniorPlayerViewModel.cs" t="Include" />
+          </e>
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -33,56 +42,40 @@
             </e>
           </e>
         </e>
-        <e p="Pages" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
-        <e p="ViewModels" t="Include">
-          <e p="AddressViewModel.cs" t="Include" />
-          <e p="DoctorViewModel.cs" t="Include" />
-          <e p="GuardianViewModel.cs" t="Include" />
-          <e p="HealthIssueViewModel.cs" t="Include" />
-          <e p="JuniorPlayerViewModel.cs" t="Include" />
-          <e p="KinViewModel.cs" t="Include" />
-          <e p="MemberViewModel.cs" t="Include" />
-          <e p="PlayerViewModel.cs" t="Include" />
-          <e p="SeniorPlayerViewModel.cs" t="Include" />
-          <e p="Test.cs" t="Include" />
-        </e>
         <e p="Views" t="Include">
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
-          <e p="Forms" t="Include">
-            <e p="Index.cshtml" t="Include" />
-          </e>
           <e p="Home" t="Include">
             <e p="_ContactModalPartial.cshtml" t="Include" />
             <e p="_Table.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
           </e>
-          <e p="Home3" t="Include">
+          <e p="Index" t="Include">
+            <e p="_HealthAddForm.cshtml" t="Include" />
+            <e p="_HealthIssues.cshtml" t="Include" />
+            <e p="_HealthTable.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
             <e p="Member.cshtml" t="Include" />
             <e p="Privacy.cshtml" t="Include" />
           </e>
-          <e p="Members" t="Include">
-            <e p="Index.cshtml" t="Include" />
-          </e>
           <e p="Partial" t="Include">
-            <e p="AddOrEdit" t="Include">
+            <e p="Done" t="Include">
+              <e p="Address.cshtml" t="Include" />
+              <e p="Doctor.cshtml" t="Include" />
+              <e p="Kin.cshtml" t="Include" />
+              <e p="Member.cshtml" t="Include" />
+            </e>
+            <e p="Health.cshtml" t="Include" />
+            <e p="OLD" t="Include">
               <e p="EditMember.cshtml" t="Include" />
               <e p="Guardian.cshtml" t="Include" />
               <e p="Health.cshtml" t="Include" />
               <e p="HealthIssues.cshtml" t="Include" />
-            </e>
-            <e p="Done" t="Include">
-              <e p="Address.cshtml" t="Include" />
-              <e p="Doctor.cshtml" t="Include" />
-              <e p="Health.cshtml" t="Include" />
-              <e p="Kin.cshtml" t="Include" />
-              <e p="Member.cshtml" t="Include" />
             </e>
           </e>
           <e p="Shared" t="Include">
@@ -91,15 +84,6 @@
             <e p="_NotificationsPartial.cshtml" t="Include" />
             <e p="_ValidationScriptsPartial.cshtml" t="Include" />
             <e p="Error.cshtml" t="Include" />
-          </e>
-          <e p="Test" t="Include">
-            <e p="Index.cshtml" t="Include" />
-          </e>
-          <e p="Wizard" t="Include">
-            <e p="Index.cshtml" t="Include" />
-            <e p="Member.cshtml" t="Include" />
-            <e p="MemberDoctor.cshtml" t="Include" />
-            <e p="MemberKin.cshtml" t="Include" />
           </e>
         </e>
         <e p="wwwroot" t="Include">
@@ -135,6 +119,9 @@
                 <e p="datepicker.zh.js" t="Include" />
               </e>
             </e>
+            <e p="modal-member-health.js" t="Include" />
+            <e p="modal.js" t="Include" />
+            <e p="onUserType.js" t="Include" />
             <e p="site.js" t="Include" />
           </e>
           <e p="lib" t="Include">

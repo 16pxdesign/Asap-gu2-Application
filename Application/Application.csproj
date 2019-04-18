@@ -27,7 +27,7 @@
 
 
   <ItemGroup>
-    <Folder Include="Pages\" />
+    <Folder Include="_TEMP" />
   </ItemGroup>
 
 
@@ -35,6 +35,19 @@
     <Content Update="Views\Home2\Index.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Wizard\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Wizard\Member.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Wizard\MemberDoctor.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Wizard\MemberKin.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Test\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Members\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Forms\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Partial\AddEdit\_Address.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Partial\AddEdit\_Member.cshtml" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,19 @@
+@model IEnumerable<HealthIssueViewModel>
+
+<table id="healthissues" class="table mt-5" data-url="@Url.Action("Index")">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contact in Model)
+        {
+            <tr>
+                <td>@contact.Name</td>
+                <td>@contact.Date</td>
+            </tr>
+        }
+    </tbody>
+</table>

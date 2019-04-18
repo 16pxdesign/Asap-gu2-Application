@@ -1,101 +1,69 @@
 ﻿@using Application.Data.Models
-@model Application.ViewModels.MemberViewModel
+@model Application.Models.MemberViewModel
 
 <div class="card">
-    <div class="card-body">
+<div class="card-body">
 
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label asp-for="SRU"  ></label>
-                <input asp-for="SRU" class="form-control" />
-                <span asp-validation-for="SRU" class="text-danger"></span>
-            </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="SRU"></label>
+            <input asp-for="SRU" class="form-control"/>
+            <span asp-validation-for="SRU" class="text-danger"></span>
         </div>
-        <div class="form-row" >
-            <div class="form-group col-md-6" >
-                <label asp-for="Type"  ></label>
-                <select asp-for="Type" id="player-type" asp-items="Html.GetEnumSelectList<MemberType>()" class="form-control"></select>
-                <span asp-validation-for="Type" class="text-danger"></span>
-            </div>
-            <div class="form-group col-md-6" id="player-position">
-                <div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="Type"></label>
+            <select asp-for="Type" id="player-type" asp-items="Html.GetEnumSelectList<MemberType>()" class="form-control"></select>
+            <span asp-validation-for="Type" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-6" id="player-position">
+            <div>
                 <label asp-for="Player.Position"></label>
-                <select asp-for="Player.Position" id="player-position-input" asp-items="Html.GetEnumSelectList<PlayerPosition>()" class="form-control"></select>
+                <select asp-for="Player.Position"  asp-items="Html.GetEnumSelectList<PlayerPosition>()" class="form-control"></select>
                 <span asp-validation-for="Player.Position" class="text-danger"></span>
             </div>
-            </div>
         </div>
-                
-        <div class="form-row">
+    </div>
 
-            <div class="form-group col-md-6">
-                <label asp-for="Name"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
+    <div class="form-row">
 
-            <div class="form-group col-md-6">
-                <label asp-for="Surname" ></label>
-                <input asp-for="Surname" class="form-control" />
-                <span asp-validation-for="Surname" class="text-danger"></span>
-            </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control"/>
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
 
-        <div class="form-group">
-            <label asp-for="Email" ></label>
-            <input asp-for="Email" class="form-control" />
-            <span asp-validation-for="Email" class="text-danger"></span>
+        <div class="form-group col-md-6">
+            <label asp-for="Surname"></label>
+            <input asp-for="Surname" class="form-control"/>
+            <span asp-validation-for="Surname" class="text-danger"></span>
         </div>
-          
-        <div class="form-row">
+    </div>
 
-            <div class="form-group col-md-6">
-                <label asp-for="Phone" ></label>
-                <input asp-for="Phone" class="form-control" />
-                <span asp-validation-for="Phone" class="text-danger"></span>
-            </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control"/>
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
 
-            <div class="form-group col-md-6">
-                <label asp-for="Mobile" ></label>
-                <input asp-for="Mobile" class="form-control" />
-                <span asp-validation-for="Mobile" class="text-danger"></span>
-            </div>
+    <div class="form-row">
+
+        <div class="form-group col-md-6">
+            <label asp-for="Phone"></label>
+            <input asp-for="Phone" class="form-control"/>
+            <span asp-validation-for="Phone" class="text-danger"></span>
         </div>
 
-              
+        <div class="form-group col-md-6">
+            <label asp-for="Mobile"></label>
+            <input asp-for="Mobile" class="form-control"/>
+            <span asp-validation-for="Mobile" class="text-danger"></span>
+        </div>
     </div>
 </div>
+</div>
 
-<script language="javascript" type="text/javascript">
-
-    
-     
-    
-        $(document).ready(function() {
-
-            forPlayerType();
-
-    
-            
-            $('#player-type').change(forPlayerType());
-  
-            
-            function forPlayerType() {
-                           
-                $('#player-type').change(function(e) {
-                   var selected = $('#player-type').find(':selected').text();
-                   
-                   if (selected === "Member") {
-                       $("#player-position").hide();
-                   } else {
-                       $("#player-position").show();
-                   }
-                });
-            }
-
-       
-        
-        });
-        </script>
+<script src="~/js/onUserType.js" ></script>

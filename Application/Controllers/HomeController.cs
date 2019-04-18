@@ -35,12 +35,15 @@ namespace Application.Controllers
             if (ModelState.IsValid)
             {
                 Contacts.Add(model);
+
+                ///NOTIFICATION PART
                 CreateNotification("Contact saved!");
             }
 
             return PartialView("_ContactModalPartial", model);
         }
 
+        ///NOTIFICATION PART
         [NonAction]
         private void CreateNotification(string message)
         {

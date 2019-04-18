@@ -1,0 +1,17 @@
+@model IEnumerable<HealthIssueViewModel>
+
+@{ ViewData["Title"] = "Contact form"; }
+
+
+<!-- Modal placeholder -->
+<div id="modal-placeholder-health"></div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="ajax-modal" data-target="#add-health" data-url="@Url.Action("AddHealth")">
+    Add contact
+</button>
+
+<!-- Contacts table -->
+@await Html.PartialAsync("_HealthTable", Model)
+
+<script src="~/js/modal-member-health.js" asp-append-version="true" defer></script>
