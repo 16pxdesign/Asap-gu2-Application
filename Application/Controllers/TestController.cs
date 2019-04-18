@@ -81,7 +81,7 @@ namespace Application.Controllers
             }
             catch (Exception ex)
             {
-                throw new Exception();
+                throw ex;
             }
 
 

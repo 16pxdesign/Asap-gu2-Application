@@ -1,7 +1,16 @@
-﻿@model Application.ViewModels.Test
+﻿@model IEnumerable<Contact>
+@{ ViewData["Title"] = "Contact form"; }
 
 
+<!-- Modal placeholder -->
+<div id="modal-placeholder"></div>
 
-<a href="#" id="CreateNew">Create</a>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="ajax-modal" data-target="#add-contact" data-url="@Url.Action("Contact")">
+    Add contact
+</button>
 
-<div id="DivCreateView"></div>
+<!-- Contacts table -->
+@await Html.PartialAsync("_Table", Model)
+
+<div id="notification" data-url="@Url.Action("Notifications", "Home")"></div>

@@ -9,7 +9,6 @@ namespace Application.Controllers
 {
     public class MembersController : Controller
     {
-        private string Test;
         public IActionResult Index()
         {
             
@@ -25,7 +24,7 @@ namespace Application.Controllers
             healthIssueViewModels.Add(new HealthIssueViewModel(){Name = "xaxa"});
             memberViewModel.Player = new PlayerViewModel();
             memberViewModel.Player.HealthIssues = healthIssueViewModels;
-            Test = "new";
+ 
 
             return View("~/Views/Partial/AddOrEdit/EditMember.cshtml",memberViewModel);
         }

@@ -11,6 +11,7 @@
 				               onclick="addRow@(ViewData["PropertyName"])();" value="Add Item"/>
 			        </div>
 			        
+			 
 			        <table class="table">
 				        <thead>
 				        <tr>
@@ -31,7 +32,7 @@
 						        <th style='display:none'><input id='@(ViewData["PropertyName"]).Index' name='@(ViewData["PropertyName"]).Index' type='hidden' value='@(i)' /></th>
 						        <th scope="row"><input id='@(ViewData["PropertyName"])[@(i)].Flat' name='@(ViewData["PropertyName"])[@(i)].Flat' type='text' value='@Model[i].Date' /></th>
 						        <th><input id='@(ViewData["PropertyName"])[@(i)].Street'  name='@(ViewData["PropertyName"])[@(i)].Street' type='text' value='@Model[i].Name' /></th>
-						        <th><input  type="hidden" id='@(ViewData["PropertyName"])[@(i)].Description' name='@(ViewData["PropertyName"])[@(i)].Description' type='text' value='@Model[i].Description' /></th>
+						        <th><input  type="hidden" id='@(ViewData["PropertyName"])[@(i)].Description' name='@(ViewData["PropertyName"])[@(i)].Description'  value='@Model[i].Description' /></th>
 						        <th><a href="#" class="btn btn-link text-danger" id='btnAddItem' onclick='removeRow@(ViewData["PropertyName"])(@(i));' ><i class="fas fa-trash-alt"></i></a></th>
 					        </tr>
 				        }

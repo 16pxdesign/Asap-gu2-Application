@@ -9,7 +9,7 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="8.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.2.4" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
   </ItemGroup>
@@ -23,6 +23,18 @@
 
   <ItemGroup>
     <None Include="wwwroot\css\Forms.css" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Pages\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Content Update="Views\Home2\Index.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

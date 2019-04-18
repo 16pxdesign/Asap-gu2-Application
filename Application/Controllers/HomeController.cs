@@ -1,78 +1,61 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Application.Models;
-using Application.Repo.Contracts;
-using System.Dynamic;
-using Application.Data.Models;
-using Application.Repo;
-using Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Application.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly UnitOfWork _unitOfWork;
-
-        public HomeController(IUnitOfWork unitOfWork)
-        {
-            _unitOfWork = unitOfWork as UnitOfWork;
-        }
+        private readonly static List<Contact> Contacts = new List<Contact>();
 
         public IActionResult Index()
         {
-            dynamic model = new ExpandoObject();
-            var address = new Address { City = "szczecin" };
-            var addressVm = new AddressViewModel();
-            AutoMapper.Mapper.Map(address, addressVm);
+            var isAjax = Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+            if (isAjax)
+            {
+                return PartialView("_Table", Contacts);
+            }
 
-
-            ViewBag.Address = addressVm;
-
-            //this._unitOfWork.AddressRepository.Insert(address);
-            //await _unitOfWork.Commit();
-            var test = new Test();
-            //test.address = addressVm;
-            return View(test);
+            return View(Contacts);
         }
 
-        public IActionResult Member()
+        public IActionResult Contact()
         {
-            /*var member = new Member();
-            var memberViewModel = new MemberViewModel();
-            memberViewModel.SRU = "4002";
-            memberViewModel.Name = "Frank";
-            memberViewModel.Address = new AddressViewModel();
-            memberViewModel.Player = new PlayerViewModel();
-            memberViewModel.JuniorPlayer = new JuniorPlayerViewModel();
-            memberViewModel.Player.Position = PlayerPosition.TightheadProp;
-            memberViewModel.Player.Doctor = new DoctorViewModel();
-            memberViewModel.Player.Doctor.Address = new AddressViewModel();
-            memberViewModel.JuniorPlayer.Guardians = new List<GuardianViewModel>();
-            memberViewModel.JuniorPlayer.Guardians.Add(new GuardianViewModel(){ Address = new AddressViewModel() });
-            memberViewModel.JuniorPlayer.Guardians.Add(new GuardianViewModel(){Address = new AddressViewModel()});
-            memberViewModel.Player.HealthIssues = new List<HealthIssueViewModel>();
-            memberViewModel.Player.HealthIssues.Add(new HealthIssueViewModel());
-            memberViewModel.Player.HealthIssues.Add(new HealthIssueViewModel());
-            
-            AutoMapper.Mapper.Map(memberViewModel, member );
-            _unitOfWork.MemberRepositories.Add(member);*/
-            return View();
+            var model = new Contact { };
+
+            return PartialView("_ContactModalPartial", model);
         }
 
-
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult Contact(Contact model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                Contacts.Add(model);
+                CreateNotification("Contact saved!");
+            }
+
+            return PartialView("_ContactModalPartial", model);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        [NonAction]
+        private void CreateNotification(string message)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            TempData.TryGetValue("Notifications", out object value);
+            var notifications = value as List<string> ?? new List<string>();
+            notifications.Add(message);
+            TempData["Notifications"] = notifications;
+        }
+
+        public IActionResult Notifications()
+        {
+            TempData.TryGetValue("Notifications", out object value);
+            var notifications = value as IEnumerable<string> ?? Enumerable.Empty<string>();
+            return PartialView("_NotificationsPartial", notifications);
         }
     }
+    
 }

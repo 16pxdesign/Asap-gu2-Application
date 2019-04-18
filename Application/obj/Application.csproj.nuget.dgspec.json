@@ -194,11 +194,9 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
-            "Microsoft.AspNetCore.App": {
-              "suppressParent": "All",
+            "Microsoft.AspNetCore.All": {
               "target": "Package",
-              "version": "[2.2.0, )",
-              "autoReferenced": true
+              "version": "[2.2.4, )"
             },
             "Microsoft.AspNetCore.Razor.Design": {
               "suppressParent": "All",
