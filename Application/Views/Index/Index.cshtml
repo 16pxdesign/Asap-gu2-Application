@@ -1,12 +1,30 @@
 ﻿@model MemberViewModel
 
-@Html.EditorFor(m=>m,"~/Views/Partial/Done/Member.cshtml")
-
-@Html.EditorFor(m=>m.Address,"~/Views/Partial/Done/Address.cshtml")
-@Html.EditorFor(m=>m.Player.Doctor,"~/Views/Partial/Done/Doctor.cshtml")
-@Html.EditorFor(m=>m.Player.SeniorPlayer.Kin,"~/Views/Partial/Done/Kin.cshtml")
+<form method="post">
 
 
+    @Html.EditorFor(m=>m,"~/Views/Partial/Done/Member.cshtml")
+
+    @Html.EditorFor(m=>m.Address,"~/Views/Partial/Done/Address.cshtml")
+    @Html.EditorFor(m=>m.Player.Doctor,"~/Views/Partial/Done/Doctor.cshtml")
+    @Html.EditorFor(m=>m.Player.SeniorPlayer.Kin,"~/Views/Partial/Done/Kin.cshtml")
 
 
-@await Html.PartialAsync("_HealthIssues",Model.Player.HealthIssues)
+
+
+    @await Html.PartialAsync("_HealthIssues",Model.Player.HealthIssues)
+
+    <div class="form-row">
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-primary " id="memberSave"/>
+            </div>
+        </div>
+    </div>
+    
+</form>
+
+
+
+<!-- Modal placeholder -->
+<div id="modal-placeholder"></div>
