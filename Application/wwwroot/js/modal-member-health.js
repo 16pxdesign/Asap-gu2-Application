@@ -35,7 +35,8 @@ $(function () {
                 });
 
 
-                for(var pair in dataToSend.entries()) {
+                for (var pair of formData.entries())
+                {
                     console.log(pair[0]+ ', '+ pair[1]);
                 }
                 

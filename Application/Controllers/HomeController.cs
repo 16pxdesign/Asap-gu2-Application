@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace Application.Controllers
 {
@@ -13,12 +15,21 @@ namespace Application.Controllers
 
         public IActionResult Index()
         {
+          /*  TempData.TryGetValue("data", out object value);
+            var data = value as string ?? "";
+            List<Contact> list = JsonConvert.DeserializeObject<List<Contact>>(data) ?? new List<Contact>();
+            string json = JsonConvert.SerializeObject(list);         
+            TempData["data"] = json;
+*/
+           
             var isAjax = Request.Headers["X-Requested-With"] == "XMLHttpRequest";
             if (isAjax)
             {
+
                 return PartialView("_Table", Contacts);
             }
-
+      
+            
             return View(Contacts);
         }
 
@@ -34,7 +45,16 @@ namespace Application.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 Contacts.Add(model);
+
+                TempData.TryGetValue("data", out object value);
+                var data = value as string ?? "";
+                List<Contact> list = JsonConvert.DeserializeObject<List<Contact>>(data) ?? new List<Contact>();
+                list.Add(model);
+                string json = JsonConvert.SerializeObject(list);         
+                TempData["data"] = json;
+                    
 
                 ///NOTIFICATION PART
                 CreateNotification("Contact saved!");

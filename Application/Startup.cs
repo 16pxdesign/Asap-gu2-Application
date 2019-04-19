@@ -27,6 +27,17 @@ namespace Application
         public void ConfigureServices(IServiceCollection services)
         {
             
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                // Set a short timeout for easy testing.
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+                // Make the session cookie essential
+                options.Cookie.IsEssential = true;
+            });
+            
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -53,8 +64,13 @@ namespace Application
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            
+         
+
+            app.UseSession();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
 
             app.UseMvc(routes =>
             {
