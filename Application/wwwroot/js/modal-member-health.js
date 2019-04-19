@@ -22,11 +22,6 @@ $(function () {
 
             var isValid = newBody.find('[name="IsValid"]').val() === 'True';
             if (isValid) {
-                var notificationsPlaceholder = $('#notification');
-                var notificationsUrl = notificationsPlaceholder.data('url');
-                $.get(notificationsUrl).done(function (notifications) {
-                    notificationsPlaceholder.html(notifications);
-                });
 
                 var tableElement = $('#healthissues');
                 var tableUrl = tableElement.data('url');
@@ -35,12 +30,6 @@ $(function () {
                 });
 
 
-                for (var pair of formData.entries())
-                {
-                    console.log(pair[0]+ ', '+ pair[1]);
-                }
-                
-                //console.log(data);
 
                 placeholderElement.find('.modal').modal('hide');
             }

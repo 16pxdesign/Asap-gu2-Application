@@ -9,48 +9,47 @@ using Application.Repo.Contracts;
 using System.Dynamic;
 using Application.Data.Models;
 using Application.Repo;
+using Newtonsoft.Json;
 
 namespace Application.Controllers
 {
     public class IndexController : Controller
     {
         private readonly UnitOfWork _unitOfWork;
-        private readonly static List<HealthIssueViewModel> list = new List<HealthIssueViewModel>();
-
-
 
         public IndexController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork as UnitOfWork;
         }
 
-        public IActionResult Index(object modelx)
+        public IActionResult Index()
         {
-            if (modelx == null)
+            List<HealthIssueViewModel> list = new List<HealthIssueViewModel>();
+            
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
             {
+                TempData.TryGetValue("HealthIssues", out object value);
+                var data = value as string ?? "";
+                list = JsonConvert.DeserializeObject<List<HealthIssueViewModel>>(data) ?? new List<HealthIssueViewModel>();
+                TempData["HealthIssues"] = JsonConvert.SerializeObject(list);         
                 
+                return PartialView("_HealthTable", list);
             }
+      
+            TempData["HealthIssues"] = JsonConvert.SerializeObject(list);         
+            
             var model = new MemberViewModel
             {
                 Player = new PlayerViewModel
                 {
-                    HealthIssues = new List<HealthIssueViewModel>()
+                    HealthIssues = list
                 }
             };
+            
+            return View(model);            
 
-           
-            
-            
-            var isAjax = Request.Headers["X-Requested-With"] == "XMLHttpRequest";
-            if (isAjax)
-            {
-                return PartialView("_HealthTable", list);
-            }
-            
-            return View(model);
         }
 
-        
         public IActionResult AddHealth()
         {
             var model = new HealthIssueViewModel();
@@ -63,46 +62,16 @@ namespace Application.Controllers
         {
             if (ModelState.IsValid)
             {
-                //TODO:Save to db here
-                
+                TempData.TryGetValue("HealthIssues", out object value);
+                var data = value as string ?? "";
+                List<HealthIssueViewModel> list = JsonConvert.DeserializeObject<List<HealthIssueViewModel>>(data) ?? new List<HealthIssueViewModel>();
                 list.Add(model);
-
-                
+                string json = JsonConvert.SerializeObject(list);         
+                TempData["HealthIssues"] = json;
             }
 
             return PartialView("_HealthAddForm", model);
         }
-        
-        
-    
-       
-        public IActionResult Member()
-        {
-            /*var member = new Member();
-            var memberViewModel = new MemberViewModel();
-            memberViewModel.SRU = "4002";
-            memberViewModel.Name = "Frank";
-            memberViewModel.Address = new AddressViewModel();
-            memberViewModel.Player = new PlayerViewModel();
-            memberViewModel.JuniorPlayer = new JuniorPlayerViewModel();
-            memberViewModel.Player.Position = PlayerPosition.TightheadProp;
-            memberViewModel.Player.Doctor = new DoctorViewModel();
-            memberViewModel.Player.Doctor.Address = new AddressViewModel();
-            memberViewModel.JuniorPlayer.Guardians = new List<GuardianViewModel>();
-            memberViewModel.JuniorPlayer.Guardians.Add(new GuardianViewModel(){ Address = new AddressViewModel() });
-            memberViewModel.JuniorPlayer.Guardians.Add(new GuardianViewModel(){Address = new AddressViewModel()});
-            memberViewModel.Player.HealthIssues = new List<HealthIssueViewModel>();
-            memberViewModel.Player.HealthIssues.Add(new HealthIssueViewModel());
-            memberViewModel.Player.HealthIssues.Add(new HealthIssueViewModel());
-            
-            AutoMapper.Mapper.Map(memberViewModel, member );
-            _unitOfWork.MemberRepositories.Add(member);*/
-            return View();
-        }
-        
-        
-        
-
         
 
         public IActionResult Privacy()

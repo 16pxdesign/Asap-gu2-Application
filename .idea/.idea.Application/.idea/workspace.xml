@@ -2,11 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="999a844f-46e6-4f1b-8635-eac70f0a4d69" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Application/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Application/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Application/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Application/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Application/DesignTimeBuild/.dtbcache" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Application/DesignTimeBuild/.dtbcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Application/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Application/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Application/v16/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Application/v16/Server/sqlite3/storage.ide" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application.Data/obj/Application.Data.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application.Data/obj/Application.Data.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application.Data/obj/Application.Data.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Application.Data/obj/Application.Data.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application.Data/obj/Debug/netcoreapp2.2/Application.Data.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application.Data/obj/Debug/netcoreapp2.2/Application.Data.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application.Data/obj/Debug/netcoreapp2.2/Application.Data.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application.Data/obj/Debug/netcoreapp2.2/Application.Data.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application.Data/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application.Data/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application.Repo/obj/Application.Repo.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application.Repo/obj/Application.Repo.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application.Repo/obj/Application.Repo.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Application.Repo/obj/Application.Repo.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application.Repo/obj/Debug/netcoreapp2.2/Application.Repo.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application.Repo/obj/Debug/netcoreapp2.2/Application.Repo.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application.Repo/obj/Debug/netcoreapp2.2/Application.Repo.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application.Repo/obj/Debug/netcoreapp2.2/Application.Repo.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Controllers/IndexController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Controllers/IndexController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Views/Home/_Table.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Views/Home/_Table.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Views/Index/_HealthIssues.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Views/Index/_HealthIssues.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Views/Index/_HealthTable.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Views/Index/_HealthTable.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Razor/Views/Home/Index.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Razor/Views/Home/Index.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Razor/Views/Home/_Table.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Razor/Views/Home/_Table.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Razor/Views/Index/_HealthIssues.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Razor/Views/Index/_HealthIssues.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Razor/Views/Index/_HealthTable.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Razor/Views/Index/_HealthTable.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/wwwroot/js/modal-member-health.js" beforeDir="false" afterPath="$PROJECT_DIR$/Application/wwwroot/js/modal-member-health.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,47 +55,37 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Controllers/HomeController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="46" column="13" lean-forward="true" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+            <state relative-caret-position="136">
+              <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="43" />
               <folding>
-                <marker date="1555668532621" expanded="false" signature="6:205" ph="..." />
-                <marker date="1555668532621" expanded="true" signature="240:2619" ph="{...}" />
-                <marker date="1555668532621" expanded="true" signature="287:2612" ph="{...}" />
-                <marker date="1555668532621" expanded="true" signature="409:1013" ph="{...}" />
-                <marker date="1555668532621" expanded="true" signature="430:745" ph="/* TempData.TryGetValue(&quot;data&quot;, out object value); ... */" />
-                <marker date="1555668532621" expanded="true" signature="863:948" ph="{...}" />
-                <marker date="1555668532621" expanded="true" signature="1053:1178" ph="{...}" />
-                <marker date="1555668532621" expanded="true" signature="1250:1940" ph="{...}" />
-                <marker date="1555668532621" expanded="true" signature="1296:1866" ph="{...}" />
-                <marker date="1555668532621" expanded="true" signature="2046:2307" ph="{...}" />
-                <marker date="1555668532621" expanded="true" signature="2353:2606" ph="{...}" />
+                <marker date="1555678998509" expanded="false" signature="6:205" ph="..." />
+                <marker date="1555678998509" expanded="true" signature="240:2442" ph="{...}" />
+                <marker date="1555678998509" expanded="true" signature="287:2435" ph="{...}" />
+                <marker date="1555678998509" expanded="true" signature="331:1032" ph="{...}" />
+                <marker date="1555678998509" expanded="true" signature="482:871" ph="{...}" />
+                <marker date="1555678998509" expanded="true" signature="1072:1197" ph="{...}" />
+                <marker date="1555678998509" expanded="true" signature="1269:1791" ph="{...}" />
+                <marker date="1555678998509" expanded="true" signature="1315:1717" ph="{...}" />
+                <marker date="1555678998509" expanded="true" signature="1868:2130" ph="{...}" />
+                <marker date="1555678998509" expanded="true" signature="2176:2429" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Controllers/IndexController.cs">
+        <entry file="file://$PROJECT_DIR$/Application/Views/Home/_Table.cshtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+            <state relative-caret-position="306">
+              <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
               <folding>
-                <marker date="1555593251004" expanded="false" signature="6:291" ph="..." />
-                <marker date="1555593251004" expanded="true" signature="326:3651" ph="{...}" />
-                <marker date="1555593251004" expanded="true" signature="374:3649" ph="{...}" />
-                <marker date="1555593251004" expanded="true" signature="587:659" ph="{...}" />
-                <marker date="1555593251004" expanded="true" signature="710:1305" ph="{...}" />
-                <marker date="1555593251004" expanded="true" signature="752:797" ph="{...}" />
-                <marker date="1555593251004" expanded="true" signature="854:1018" ph="{...}" />
-                <marker date="1555593251004" expanded="true" signature="917:1004" ph="{...}" />
-                <marker date="1555593251004" expanded="true" signature="1164:1250" ph="{...}" />
-                <marker date="1555593251004" expanded="true" signature="1356:1486" ph="{...}" />
-                <marker date="1555593251004" expanded="true" signature="1581:1830" ph="{...}" />
-                <marker date="1555593251004" expanded="true" signature="1627:1762" ph="{...}" />
-                <marker date="1555593251004" expanded="true" signature="1899:3237" ph="{...}" />
-                <marker date="1555593251004" expanded="true" signature="1922:3200" ph="/* var member = new Member(); ... */" />
-                <marker date="1555593251004" expanded="true" signature="3314:3361" ph="{...}" />
-                <marker date="1555593251004" expanded="true" signature="3492:3625" ph="{...}" />
+                <marker date="1555671467636" expanded="true" signature="29:393" ph="&lt;table.../&gt;" />
+                <marker date="1555671467636" expanded="true" signature="106:190" ph="&lt;thead.../&gt;" />
+                <marker date="1555671467636" expanded="true" signature="118:177" ph="&lt;tr.../&gt;" />
+                <marker date="1555671467636" expanded="true" signature="195:384" ph="&lt;tbody.../&gt;" />
+                <marker date="1555671467636" expanded="true" signature="207:371" ph="@..." />
+                <marker date="1555671467636" expanded="true" signature="238:371" ph="{...}" />
+                <marker date="1555671467636" expanded="true" signature="253:365" ph="&lt;tr.../&gt;" />
               </folding>
             </state>
           </provider>
@@ -72,9 +95,9 @@
         <entry file="file://$PROJECT_DIR$/Application/Views/Home/Index.cshtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
               <folding>
-                <marker date="1555582509536" expanded="true" signature="164:322" ph="&lt;button.../&gt;" />
+                <marker date="1555671493107" expanded="true" signature="162:320" ph="&lt;button.../&gt;" />
               </folding>
             </state>
           </provider>
@@ -82,20 +105,60 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/wwwroot/js/modal.js">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="34" column="19" lean-forward="true" selection-end-line="40" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Controllers/IndexController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="579">
+              <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+              <folding>
+                <marker date="1555680422356" expanded="false" signature="6:314" ph="..." />
+                <marker date="1555680422356" expanded="true" signature="349:2819" ph="{...}" />
+                <marker date="1555680422356" expanded="true" signature="397:2817" ph="{...}" />
+                <marker date="1555680422356" expanded="true" signature="508:580" ph="{...}" />
+                <marker date="1555680422356" expanded="true" signature="618:1595" ph="{...}" />
+                <marker date="1555680422356" expanded="true" signature="794:1230" ph="{...}" />
+                <marker date="1555680422356" expanded="true" signature="1390:1526" ph="{...}" />
+                <marker date="1555680422356" expanded="true" signature="1453:1512" ph="{...}" />
+                <marker date="1555680422356" expanded="true" signature="1637:1767" ph="{...}" />
+                <marker date="1555680422356" expanded="true" signature="1862:2433" ph="{...}" />
+                <marker date="1555680422356" expanded="true" signature="1908:2365" ph="{...}" />
+                <marker date="1555680422356" expanded="true" signature="2482:2529" ph="{...}" />
+                <marker date="1555680422356" expanded="true" signature="2660:2793" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Program.cs">
+        <entry file="file://$PROJECT_DIR$/Application/Views/Index/_HealthTable.cshtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+            <state relative-caret-position="238">
+              <caret line="14" column="29" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="29" />
               <folding>
-                <marker date="1555307568997" expanded="false" signature="6:285" ph="..." />
-                <marker date="1555307568997" expanded="true" signature="308:685" ph="{...}" />
-                <marker date="1555307568997" expanded="true" signature="335:683" ph="{...}" />
-                <marker date="1555307568997" expanded="true" signature="388:512" ph="{...}" />
+                <marker date="1555680167513" expanded="true" signature="35:379" ph="&lt;table.../&gt;" />
+                <marker date="1555680167513" expanded="true" signature="116:200" ph="&lt;thead.../&gt;" />
+                <marker date="1555680167513" expanded="true" signature="128:187" ph="&lt;tr.../&gt;" />
+                <marker date="1555680167513" expanded="true" signature="205:370" ph="&lt;tbody.../&gt;" />
+                <marker date="1555680167513" expanded="true" signature="217:357" ph="@..." />
+                <marker date="1555680167513" expanded="true" signature="248:357" ph="{...}" />
+                <marker date="1555680167513" expanded="true" signature="263:351" ph="&lt;tr.../&gt;" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/wwwroot/js/modal-member-health.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -112,19 +175,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Views/Index/_HealthIssues.cshtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="204">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
               <folding>
-                <marker date="1555591938198" expanded="true" signature="185:344" ph="&lt;button.../&gt;" />
+                <marker date="1555680348393" expanded="true" signature="178:337" ph="&lt;button.../&gt;" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/wwwroot/js/onUserType.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -133,29 +188,19 @@
         <entry file="file://$PROJECT_DIR$/Application/Startup.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="718">
-              <caret line="78" column="48" selection-start-line="78" selection-start-column="48" selection-end-line="78" selection-end-column="48" />
+              <caret line="77" column="48" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
               <folding>
-                <marker date="1555668602025" expanded="false" signature="6:412" ph="..." />
-                <marker date="1555668602025" expanded="true" signature="435:2668" ph="{...}" />
-                <marker date="1555668602025" expanded="true" signature="462:2666" ph="{...}" />
-                <marker date="1555668602025" expanded="true" signature="521:584" ph="{...}" />
-                <marker date="1555668602025" expanded="true" signature="807:1904" ph="{...}" />
-                <marker date="1555668602025" expanded="true" signature="924:1225" ph="{...}" />
-                <marker date="1555668602025" expanded="true" signature="1303:1580" ph="{...}" />
-                <marker date="1555668602025" expanded="true" signature="2092:2660" ph="{...}" />
-                <marker date="1555668602025" expanded="true" signature="2139:2216" ph="{...}" />
-                <marker date="1555668602025" expanded="true" signature="2233:2317" ph="{...}" />
-                <marker date="1555668602025" expanded="true" signature="2476:2648" ph="{...}" />
+                <marker date="1555679761039" expanded="false" signature="6:412" ph="..." />
+                <marker date="1555679761039" expanded="true" signature="435:2642" ph="{...}" />
+                <marker date="1555679761039" expanded="true" signature="462:2640" ph="{...}" />
+                <marker date="1555679761039" expanded="true" signature="521:584" ph="{...}" />
+                <marker date="1555679761039" expanded="true" signature="807:1908" ph="{...}" />
+                <marker date="1555679761039" expanded="true" signature="890:1599" ph="/* services.AddSession(options =&gt; ... */" />
+                <marker date="1555679761039" expanded="true" signature="2096:2634" ph="{...}" />
+                <marker date="1555679761039" expanded="true" signature="2143:2220" ph="{...}" />
+                <marker date="1555679761039" expanded="true" signature="2237:2321" ph="{...}" />
+                <marker date="1555679761039" expanded="true" signature="2450:2622" ph="{...}" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/wwwroot/js/modal-member-health.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="653">
-              <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -223,10 +268,14 @@
     <setting file="file://$PROJECT_DIR$/Application/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application.Repo/GenericRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Application.Data/Models/TrainingManagement/Attendance.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Application.Data/Models/TrainingManagement/Training.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Application.Data/Models/TrainingManagement/Activities.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application.Data/Models/MemberManagement/Senior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application.Data/Models/MemberManagement/PlayerPosition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application.Data/Models/MemberManagement/Junior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application.Data/Models/MemberManagement/HealthIssue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Application.Data/Models/PlayerProfile/Profile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Views/Shared/_NotificationsPartial.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Views/Home/_ContactModalPartial.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Views/Home/_Table.cshtml" root0="FORCE_HIGHLIGHTING" />
@@ -271,8 +320,6 @@
         <option value="$PROJECT_DIR$/Application/Views/Shared/_NotificationsPartial.cshtml" />
         <option value="$PROJECT_DIR$/Application/Views/Home2/_ContactModalPartial.cshtml" />
         <option value="$PROJECT_DIR$/Application/Controllers/Home3Controller.cs" />
-        <option value="$PROJECT_DIR$/Application/Views/Home/_ContactModalPartial.cshtml" />
-        <option value="$PROJECT_DIR$/Application/Views/Home/_Table.cshtml" />
         <option value="$PROJECT_DIR$/Application/Controllers/FormsController.cs" />
         <option value="$PROJECT_DIR$/Application/Models/ViewModels/AddressViewModel.cs" />
         <option value="$PROJECT_DIR$/Application/Models/ViewModels/DoctorViewModel.cs" />
@@ -293,28 +340,30 @@
         <option value="$PROJECT_DIR$/Application/Views/Index/_Address.cshtml" />
         <option value="$PROJECT_DIR$/Application/Views/Partial/Done/Address.cshtml" />
         <option value="$PROJECT_DIR$/Application/Views/Partial/AddEdit/_Address.cshtml" />
-        <option value="$PROJECT_DIR$/Application/wwwroot/js/modal.js" />
         <option value="$PROJECT_DIR$/Application/Views/Shared/_Layout.cshtml" />
         <option value="$PROJECT_DIR$/Application/wwwroot/js/onUserType.js" />
         <option value="$PROJECT_DIR$/Application/Views/Partial/Done/Member.cshtml" />
         <option value="$PROJECT_DIR$/Application/Models/ViewModels/MemberViewModel.cs" />
         <option value="$PROJECT_DIR$/Application/Views/Index/TEST.cshtml" />
         <option value="$PROJECT_DIR$/Application/Views/Partial/Done/HealthIssues.cshtml" />
-        <option value="$PROJECT_DIR$/Application/Views/Home/Index.cshtml" />
         <option value="$PROJECT_DIR$/Application/Models/ViewModels/PlayerViewModel.cs" />
         <option value="$PROJECT_DIR$/Application/Views/Index/Temp.cshtml" />
         <option value="$PROJECT_DIR$/Application/Views/Index/_ContactModalPartial.cshtml" />
         <option value="$PROJECT_DIR$/Application/Views/Index/_Table.cshtml" />
         <option value="$PROJECT_DIR$/Application/Views/Index/HealthIssues.cshtml" />
         <option value="$PROJECT_DIR$/Application/Views/Index/_HealthAddForm.cshtml" />
+        <option value="$PROJECT_DIR$/Application/Views/Index/Page1.cshtml" />
+        <option value="$PROJECT_DIR$/Application/Views/Index/Index.cshtml" />
+        <option value="$PROJECT_DIR$/Application/Views/Home/_ContactModalPartial.cshtml" />
+        <option value="$PROJECT_DIR$/Application/Views/Home/_Table.cshtml" />
+        <option value="$PROJECT_DIR$/Application/Views/Home/Index.cshtml" />
+        <option value="$PROJECT_DIR$/Application/wwwroot/js/modal.js" />
+        <option value="$PROJECT_DIR$/Application/Controllers/HomeController.cs" />
+        <option value="$PROJECT_DIR$/Application/wwwroot/js/modal-member-health.js" />
+        <option value="$PROJECT_DIR$/Application/Startup.cs" />
         <option value="$PROJECT_DIR$/Application/Views/Index/_HealthTable.cshtml" />
         <option value="$PROJECT_DIR$/Application/Views/Index/_HealthIssues.cshtml" />
         <option value="$PROJECT_DIR$/Application/Controllers/IndexController.cs" />
-        <option value="$PROJECT_DIR$/Application/wwwroot/js/modal-member-health.js" />
-        <option value="$PROJECT_DIR$/Application/Views/Index/Page1.cshtml" />
-        <option value="$PROJECT_DIR$/Application/Controllers/HomeController.cs" />
-        <option value="$PROJECT_DIR$/Application/Views/Index/Index.cshtml" />
-        <option value="$PROJECT_DIR$/Application/Startup.cs" />
       </list>
     </option>
   </component>
@@ -393,19 +442,6 @@
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="Application" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Application" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Models" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Application" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Application" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Models" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="ViewModels" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Application" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Application" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
             </path>
             <path>
@@ -421,28 +457,6 @@
               <item name="Application" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Index" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Application" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Application" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Partial" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Application" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Application" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Partial" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Done" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Application" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Application" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Shared" type="24d0babc:SolutionExplorerModelNode" />
             </path>
             <path>
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
@@ -513,6 +527,7 @@
       <workItem from="1555414265871" duration="66144000" />
       <workItem from="1555577263022" duration="855000" />
       <workItem from="1555582971807" duration="19662000" />
+      <workItem from="1555670880451" duration="5068000" />
     </task>
     <task id="LOCAL-00001" summary="some views">
       <created>1555427123727</created>
@@ -553,7 +568,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105896000" />
+    <option name="totallyTimeSpent" value="110964000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -566,15 +581,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49938348" visible="true" weight="0.16471216" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49938348" visible="true" weight="0.1663113" />
       <window_info id="Structure" order="1" sideWeight="0.50061655" side_tool="true" weight="0.16471216" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" sideWeight="0.50061655" side_tool="true" weight="0.16471216" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.37100214" weight="0.13076098" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.37100214" visible="true" weight="0.13076098" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.9248401" weight="0.40085745" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -598,7 +614,7 @@
       <window_info anchor="right" id="Unit Tests Coverage" order="6" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49938348" visible="true" weight="0.16471216" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49938348" visible="true" weight="0.1663113" />
       <window_info id="Structure" order="1" sideWeight="0.50061655" side_tool="true" weight="0.16471216" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -606,7 +622,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.37100214" weight="0.13076098" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.9248401" visible="true" weight="0.40085745" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.9248401" visible="true" weight="0.40085745" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -657,90 +673,11 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Application/Controllers/IndexController.cs</url>
-          <line>32</line>
-          <properties documentPath="$PROJECT_DIR$/Application/Controllers/IndexController.cs" initialLine="31">
-            <startOffsets>
-              <option value="810" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1019" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Application/Controllers/HomeController.cs</url>
-          <line>28</line>
-          <properties documentPath="$PROJECT_DIR$/Application/Controllers/HomeController.cs" initialLine="28">
-            <startOffsets>
-              <option value="895" />
-            </startOffsets>
-            <endOffsets>
-              <option value="934" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/Views/Shared/_ValidationScriptsPartial.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1555159845729" expanded="true" signature="0:221" ph="&lt;environment.../&gt;" />
-            <marker date="1555159845729" expanded="true" signature="222:1128" ph="&lt;environment.../&gt;" />
-            <marker date="1555159845729" expanded="true" signature="262:643" ph="&lt;script.../&gt;" />
-            <marker date="1555159845729" expanded="true" signature="648:1113" ph="&lt;script.../&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/Partial/OLD/Health.cshtml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/Shared/_NotificationsPartial.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Models/Contact.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#77#0" expanded="true" />
-            <marker date="1555577650235" expanded="true" signature="134:409" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/MembersController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/Forms/Index.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/FormsController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/FormsController.cs" />
     <entry file="file://$PROJECT_DIR$/Application/Models/ViewModels/AddressViewModel.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -813,13 +750,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Models/ViewModels/Test.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Models/ViewModels/Test.cs" />
     <entry file="file://$PROJECT_DIR$/Application/Views/Partial/Done/Doctor.cshtml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -913,13 +844,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/Partial/AddEdit/_Member.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="19" column="94" selection-start-line="19" selection-start-column="94" selection-end-line="19" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/Partial/AddEdit/_Member.cshtml" />
     <entry file="file://$PROJECT_DIR$/Application/Frameworks/AutomapperProfile.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-67">
@@ -934,13 +859,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/Partial/AddEdit/_Address.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/Partial/AddEdit/_Address.cshtml" />
     <entry file="file://$PROJECT_DIR$/Application/wwwroot/js/site.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -961,13 +880,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/Index/TEST.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/Index/TEST.cshtml" />
     <entry file="file://$PROJECT_DIR$/Application/Models/ViewModels/MemberViewModel.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1033,27 +946,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/Index/_ContactModalPartial.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="70" lean-forward="true" selection-start-line="26" selection-start-column="70" selection-end-line="26" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/Index/_Table.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/Index/Temp.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/Index/_ContactModalPartial.cshtml" />
+    <entry file="file://$PROJECT_DIR$/Application/Views/Index/_Table.cshtml" />
+    <entry file="file://$PROJECT_DIR$/Application/Views/Index/Temp.cshtml" />
     <entry file="file://$PROJECT_DIR$/Application/Views/Partial/Health.cshtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-136">
@@ -1149,27 +1044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/Home/_ContactModalPartial.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="21" selection-end-line="42" selection-end-column="6" />
-          <folding>
-            <marker date="1555581467771" expanded="true" signature="30:2259" ph="&lt;div.../&gt;" />
-            <marker date="1555581467771" expanded="true" signature="157:2252" ph="&lt;div.../&gt;" />
-            <marker date="1555581467771" expanded="true" signature="208:2241" ph="&lt;div.../&gt;" />
-            <marker date="1555581467771" expanded="true" signature="248:550" ph="&lt;div.../&gt;" />
-            <marker date="1555581467771" expanded="true" signature="369:531" ph="&lt;button.../&gt;" />
-            <marker date="1555581467771" expanded="true" signature="563:1974" ph="&lt;div.../&gt;" />
-            <marker date="1555581467771" expanded="true" signature="604:1955" ph="&lt;form.../&gt;" />
-            <marker date="1555581467771" expanded="true" signature="789:1064" ph="&lt;div.../&gt;" />
-            <marker date="1555581467771" expanded="true" signature="1085:1357" ph="&lt;div.../&gt;" />
-            <marker date="1555581467771" expanded="true" signature="1378:1641" ph="&lt;div.../&gt;" />
-            <marker date="1555581467771" expanded="true" signature="1662:1931" ph="&lt;div.../&gt;" />
-            <marker date="1555581467771" expanded="true" signature="1987:2226" ph="&lt;div.../&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Views/Index/_HealthAddForm.cshtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -1190,122 +1064,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/Index/_HealthTable.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="23" />
-          <folding>
-            <marker date="1555591448953" expanded="true" signature="42:430" ph="&lt;table.../&gt;" />
-            <marker date="1555591448953" expanded="true" signature="123:223" ph="&lt;thead.../&gt;" />
-            <marker date="1555591448953" expanded="true" signature="139:210" ph="&lt;tr.../&gt;" />
-            <marker date="1555591448953" expanded="true" signature="228:421" ph="&lt;tbody.../&gt;" />
-            <marker date="1555591448953" expanded="true" signature="244:408" ph="@..." />
-            <marker date="1555591448953" expanded="true" signature="275:408" ph="{...}" />
-            <marker date="1555591448953" expanded="true" signature="298:398" ph="&lt;tr.../&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/Home/_Table.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1555581467801" expanded="true" signature="29:437" ph="&lt;table.../&gt;" />
-            <marker date="1555581467801" expanded="true" signature="106:206" ph="&lt;thead.../&gt;" />
-            <marker date="1555581467801" expanded="true" signature="122:193" ph="&lt;tr.../&gt;" />
-            <marker date="1555581467801" expanded="true" signature="211:428" ph="&lt;tbody.../&gt;" />
-            <marker date="1555581467801" expanded="true" signature="227:415" ph="@..." />
-            <marker date="1555581467801" expanded="true" signature="258:415" ph="{...}" />
-            <marker date="1555581467801" expanded="true" signature="281:405" ph="&lt;tr.../&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/wwwroot/js/modal.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/Index/_HealthIssues.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1555591938198" expanded="true" signature="185:344" ph="&lt;button.../&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/Index/Page1.cshtml" />
     <entry file="file://$PROJECT_DIR$/Application/wwwroot/js/onUserType.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/Home/Index.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding>
-            <marker date="1555582509536" expanded="true" signature="164:322" ph="&lt;button.../&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/Index/Page1.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/IndexController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
-          <folding>
-            <marker date="1555593251004" expanded="false" signature="6:291" ph="..." />
-            <marker date="1555593251004" expanded="true" signature="326:3651" ph="{...}" />
-            <marker date="1555593251004" expanded="true" signature="374:3649" ph="{...}" />
-            <marker date="1555593251004" expanded="true" signature="587:659" ph="{...}" />
-            <marker date="1555593251004" expanded="true" signature="710:1305" ph="{...}" />
-            <marker date="1555593251004" expanded="true" signature="752:797" ph="{...}" />
-            <marker date="1555593251004" expanded="true" signature="854:1018" ph="{...}" />
-            <marker date="1555593251004" expanded="true" signature="917:1004" ph="{...}" />
-            <marker date="1555593251004" expanded="true" signature="1164:1250" ph="{...}" />
-            <marker date="1555593251004" expanded="true" signature="1356:1486" ph="{...}" />
-            <marker date="1555593251004" expanded="true" signature="1581:1830" ph="{...}" />
-            <marker date="1555593251004" expanded="true" signature="1627:1762" ph="{...}" />
-            <marker date="1555593251004" expanded="true" signature="1899:3237" ph="{...}" />
-            <marker date="1555593251004" expanded="true" signature="1922:3200" ph="/* var member = new Member(); ... */" />
-            <marker date="1555593251004" expanded="true" signature="3314:3361" ph="{...}" />
-            <marker date="1555593251004" expanded="true" signature="3492:3625" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/HomeController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="46" column="13" lean-forward="true" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-          <folding>
-            <marker date="1555668532621" expanded="false" signature="6:205" ph="..." />
-            <marker date="1555668532621" expanded="true" signature="240:2619" ph="{...}" />
-            <marker date="1555668532621" expanded="true" signature="287:2612" ph="{...}" />
-            <marker date="1555668532621" expanded="true" signature="409:1013" ph="{...}" />
-            <marker date="1555668532621" expanded="true" signature="430:745" ph="/* TempData.TryGetValue(&quot;data&quot;, out object value); ... */" />
-            <marker date="1555668532621" expanded="true" signature="863:948" ph="{...}" />
-            <marker date="1555668532621" expanded="true" signature="1053:1178" ph="{...}" />
-            <marker date="1555668532621" expanded="true" signature="1250:1940" ph="{...}" />
-            <marker date="1555668532621" expanded="true" signature="1296:1866" ph="{...}" />
-            <marker date="1555668532621" expanded="true" signature="2046:2307" ph="{...}" />
-            <marker date="1555668532621" expanded="true" signature="2353:2606" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Views/Index/Index.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -1322,30 +1085,233 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/Shared/_NotificationsPartial.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1555581467792" expanded="true" signature="27:306" ph="@..." />
+            <marker date="1555581467792" expanded="true" signature="63:306" ph="{...}" />
+            <marker date="1555581467792" expanded="true" signature="70:304" ph="&lt;div.../&gt;" />
+            <marker date="1555581467792" expanded="true" signature="147:293" ph="&lt;button.../&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/Home/_ContactModalPartial.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+          <folding>
+            <marker date="1555581467771" expanded="true" signature="30:2259" ph="&lt;div.../&gt;" />
+            <marker date="1555581467771" expanded="true" signature="157:2252" ph="&lt;div.../&gt;" />
+            <marker date="1555581467771" expanded="true" signature="208:2241" ph="&lt;div.../&gt;" />
+            <marker date="1555581467771" expanded="true" signature="248:550" ph="&lt;div.../&gt;" />
+            <marker date="1555581467771" expanded="true" signature="369:531" ph="&lt;button.../&gt;" />
+            <marker date="1555581467771" expanded="true" signature="563:1974" ph="&lt;div.../&gt;" />
+            <marker date="1555581467771" expanded="true" signature="604:1955" ph="&lt;form.../&gt;" />
+            <marker date="1555581467771" expanded="true" signature="789:1064" ph="&lt;div.../&gt;" />
+            <marker date="1555581467771" expanded="true" signature="1085:1357" ph="&lt;div.../&gt;" />
+            <marker date="1555581467771" expanded="true" signature="1378:1641" ph="&lt;div.../&gt;" />
+            <marker date="1555581467771" expanded="true" signature="1662:1931" ph="&lt;div.../&gt;" />
+            <marker date="1555581467771" expanded="true" signature="1987:2226" ph="&lt;div.../&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application.Data/Models/TrainingManagement/Activities.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding>
+            <marker date="1555307495009" expanded="true" signature="33:270" ph="{...}" />
+            <marker date="1555307495009" expanded="true" signature="63:268" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application.Data/Models/TrainingManagement/Training.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <marker date="1555307495011" expanded="false" signature="6:92" ph="..." />
+            <marker date="1555307495011" expanded="true" signature="127:496" ph="{...}" />
+            <marker date="1555307495011" expanded="true" signature="155:494" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application.Data/Models/TrainingManagement/Attendance.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding>
+            <marker date="1555307495011" expanded="true" signature="33:333" ph="{...}" />
+            <marker date="1555307495011" expanded="true" signature="63:331" ph="{...}" />
+            <marker date="1555307495011" expanded="true" signature="186:219" ph="/* Properties ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application.Data/Models/PlayerProfile/Profile.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding>
+            <marker date="1555307495007" expanded="true" signature="33:417" ph="{...}" />
+            <marker date="1555307495007" expanded="true" signature="61:415" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application.Data/Models/DatabaseModel.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="156" column="19" selection-start-line="156" selection-start-column="19" selection-end-line="156" selection-end-column="19" />
+          <folding>
+            <marker date="1555386135930" expanded="false" signature="6:164" ph="..." />
+            <marker date="1555386135930" expanded="true" signature="198:6473" ph="{...}" />
+            <marker date="1555386135930" expanded="true" signature="205:223" ph="/* ... */" />
+            <marker date="1555386135930" expanded="true" signature="266:6471" ph="{...}" />
+            <marker date="1555386135930" expanded="true" signature="829:849" ph="{...}" />
+            <marker date="1555386135930" expanded="true" signature="948:969" ph="{...}" />
+            <marker date="1555386135930" expanded="true" signature="1063:1359" ph="{...}" />
+            <marker date="1555386135930" expanded="true" signature="1119:1348" ph="{...}" />
+            <marker date="1555386135930" expanded="true" signature="1435:6460" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/Index/Index.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Startup.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="718">
-          <caret line="78" column="48" selection-start-line="78" selection-start-column="48" selection-end-line="78" selection-end-column="48" />
+          <caret line="77" column="48" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
           <folding>
-            <marker date="1555668602025" expanded="false" signature="6:412" ph="..." />
-            <marker date="1555668602025" expanded="true" signature="435:2668" ph="{...}" />
-            <marker date="1555668602025" expanded="true" signature="462:2666" ph="{...}" />
-            <marker date="1555668602025" expanded="true" signature="521:584" ph="{...}" />
-            <marker date="1555668602025" expanded="true" signature="807:1904" ph="{...}" />
-            <marker date="1555668602025" expanded="true" signature="924:1225" ph="{...}" />
-            <marker date="1555668602025" expanded="true" signature="1303:1580" ph="{...}" />
-            <marker date="1555668602025" expanded="true" signature="2092:2660" ph="{...}" />
-            <marker date="1555668602025" expanded="true" signature="2139:2216" ph="{...}" />
-            <marker date="1555668602025" expanded="true" signature="2233:2317" ph="{...}" />
-            <marker date="1555668602025" expanded="true" signature="2476:2648" ph="{...}" />
+            <marker date="1555679761039" expanded="false" signature="6:412" ph="..." />
+            <marker date="1555679761039" expanded="true" signature="435:2642" ph="{...}" />
+            <marker date="1555679761039" expanded="true" signature="462:2640" ph="{...}" />
+            <marker date="1555679761039" expanded="true" signature="521:584" ph="{...}" />
+            <marker date="1555679761039" expanded="true" signature="807:1908" ph="{...}" />
+            <marker date="1555679761039" expanded="true" signature="890:1599" ph="/* services.AddSession(options =&gt; ... */" />
+            <marker date="1555679761039" expanded="true" signature="2096:2634" ph="{...}" />
+            <marker date="1555679761039" expanded="true" signature="2143:2220" ph="{...}" />
+            <marker date="1555679761039" expanded="true" signature="2237:2321" ph="{...}" />
+            <marker date="1555679761039" expanded="true" signature="2450:2622" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/wwwroot/js/modal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="19" lean-forward="true" selection-end-line="40" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/wwwroot/js/modal-member-health.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+        <state relative-caret-position="408">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/Home/_Table.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+          <folding>
+            <marker date="1555671467636" expanded="true" signature="29:393" ph="&lt;table.../&gt;" />
+            <marker date="1555671467636" expanded="true" signature="106:190" ph="&lt;thead.../&gt;" />
+            <marker date="1555671467636" expanded="true" signature="118:177" ph="&lt;tr.../&gt;" />
+            <marker date="1555671467636" expanded="true" signature="195:384" ph="&lt;tbody.../&gt;" />
+            <marker date="1555671467636" expanded="true" signature="207:371" ph="@..." />
+            <marker date="1555671467636" expanded="true" signature="238:371" ph="{...}" />
+            <marker date="1555671467636" expanded="true" signature="253:365" ph="&lt;tr.../&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/Index/_HealthIssues.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <marker date="1555680348393" expanded="true" signature="178:337" ph="&lt;button.../&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/Index/_HealthTable.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="29" />
+          <folding>
+            <marker date="1555680167513" expanded="true" signature="35:379" ph="&lt;table.../&gt;" />
+            <marker date="1555680167513" expanded="true" signature="116:200" ph="&lt;thead.../&gt;" />
+            <marker date="1555680167513" expanded="true" signature="128:187" ph="&lt;tr.../&gt;" />
+            <marker date="1555680167513" expanded="true" signature="205:370" ph="&lt;tbody.../&gt;" />
+            <marker date="1555680167513" expanded="true" signature="217:357" ph="@..." />
+            <marker date="1555680167513" expanded="true" signature="248:357" ph="{...}" />
+            <marker date="1555680167513" expanded="true" signature="263:351" ph="&lt;tr.../&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Views/Home/Index.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <marker date="1555671493107" expanded="true" signature="162:320" ph="&lt;button.../&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/HomeController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="43" />
+          <folding>
+            <marker date="1555678998509" expanded="false" signature="6:205" ph="..." />
+            <marker date="1555678998509" expanded="true" signature="240:2442" ph="{...}" />
+            <marker date="1555678998509" expanded="true" signature="287:2435" ph="{...}" />
+            <marker date="1555678998509" expanded="true" signature="331:1032" ph="{...}" />
+            <marker date="1555678998509" expanded="true" signature="482:871" ph="{...}" />
+            <marker date="1555678998509" expanded="true" signature="1072:1197" ph="{...}" />
+            <marker date="1555678998509" expanded="true" signature="1269:1791" ph="{...}" />
+            <marker date="1555678998509" expanded="true" signature="1315:1717" ph="{...}" />
+            <marker date="1555678998509" expanded="true" signature="1868:2130" ph="{...}" />
+            <marker date="1555678998509" expanded="true" signature="2176:2429" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/IndexController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+          <folding>
+            <marker date="1555680422356" expanded="false" signature="6:314" ph="..." />
+            <marker date="1555680422356" expanded="true" signature="349:2819" ph="{...}" />
+            <marker date="1555680422356" expanded="true" signature="397:2817" ph="{...}" />
+            <marker date="1555680422356" expanded="true" signature="508:580" ph="{...}" />
+            <marker date="1555680422356" expanded="true" signature="618:1595" ph="{...}" />
+            <marker date="1555680422356" expanded="true" signature="794:1230" ph="{...}" />
+            <marker date="1555680422356" expanded="true" signature="1390:1526" ph="{...}" />
+            <marker date="1555680422356" expanded="true" signature="1453:1512" ph="{...}" />
+            <marker date="1555680422356" expanded="true" signature="1637:1767" ph="{...}" />
+            <marker date="1555680422356" expanded="true" signature="1862:2433" ph="{...}" />
+            <marker date="1555680422356" expanded="true" signature="1908:2365" ph="{...}" />
+            <marker date="1555680422356" expanded="true" signature="2482:2529" ph="{...}" />
+            <marker date="1555680422356" expanded="true" signature="2660:2793" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

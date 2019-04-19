@@ -28,11 +28,6 @@
 
 
   <ItemGroup>
-    <Folder Include="_TEMP" />
-  </ItemGroup>
-
-
-  <ItemGroup>
     <Content Update="Views\Home2\Index.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>

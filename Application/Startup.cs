@@ -29,7 +29,7 @@ namespace Application
             
             services.AddDistributedMemoryCache();
 
-            services.AddSession(options =>
+        /*    services.AddSession(options =>
             {
                 // Set a short timeout for easy testing.
                 options.IdleTimeout = TimeSpan.FromSeconds(10);
@@ -44,7 +44,7 @@ namespace Application
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            
+            */
 
             services.AddDbContext<DatabaseModel>();
             services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
@@ -67,7 +67,6 @@ namespace Application
             
          
 
-            app.UseSession();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 

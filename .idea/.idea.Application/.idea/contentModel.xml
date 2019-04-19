@@ -7,7 +7,6 @@
     <e p="C:\Users\pingu\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Application.-308470388.00" t="ExcludeRecursive" />
     <e p="C:\Users\pingu\Documents\GitHub\Asap-gu2-Application" t="IncludeFlat">
       <e p="Application" t="IncludeRecursive">
-        <e p="_TEMP" t="Include" />
         <e p="Application.csproj" t="IncludeRecursive" />
         <e p="Application.csproj.DotSettings" t="Include" />
         <e p="appsettings.Development.json" t="Include" />
