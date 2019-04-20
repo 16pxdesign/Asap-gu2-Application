@@ -22,27 +22,37 @@ namespace Application.Controllers
             _unitOfWork = unitOfWork as UnitOfWork;
         }
 
-        public async Task<IActionResult> CreateUpdate(int? id)
+        public async Task<IActionResult> CreateUpdate(int? id, string table = null)
         {
-            List<HealthIssueViewModel> list = new List<HealthIssueViewModel>();
+            List<HealthIssueViewModel> listHealthIssues = new List<HealthIssueViewModel>();
+            listHealthIssues.Add(new HealthIssueViewModel(){Name = "2"});
+            List<GuardianViewModel> listGuardians = new List<GuardianViewModel>();
 
-            list.Add(new HealthIssueViewModel() {Name = "1"});
-            list.Add(new HealthIssueViewModel() {Name = "1"});
-            list.Add(new HealthIssueViewModel() {Name = "1"});
 
-            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest" && table == "Health")
             {
-                var table = await OnAjaxHealthTablePartialViewResult();
-                return PartialView("_HealthTable", table);
+                var healthIssuePartialList = await OnAjaxHealthTablePartialViewResult();
+                return PartialView("_HealthTable", healthIssuePartialList);
             }
 
-            TempData["HealthIssues"] = JsonConvert.SerializeObject(list);
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest" && table == "Guardian")
+            {
+                var guardianPartialList = await OnAjaxGuardianPartialViewResult();
+                return PartialView("_GuardianTable", guardianPartialList);
+            }
+
+            TempData["HealthIssues"] = JsonConvert.SerializeObject(listHealthIssues);
+           TempData["Guardians"] = JsonConvert.SerializeObject(listGuardians);
 
             var model = new MemberViewModel
             {
                 Player = new PlayerViewModel
                 {
-                    HealthIssues = list
+                    HealthIssues = listHealthIssues,
+                    JuniorPlayer = new JuniorPlayerViewModel()
+                    {
+                        Guardians = listGuardians
+                    }
                 }
             };
 
@@ -52,7 +62,6 @@ namespace Application.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateUpdate(MemberViewModel model)
         {
-
             return View(model);
         }
 
@@ -80,37 +89,20 @@ namespace Application.Controllers
                                                   new List<HealthIssueViewModel>();
                 model = list.ElementAt((int) id);
                 TempData["HealthIssuesID"] = id;
-                //list.RemoveAt((int) id);
                 string json = JsonConvert.SerializeObject(list);
                 TempData["HealthIssues"] = json;
+            } else
+            {
+                TempData["HealthIssuesID"] = null;
             }
 
-            ViewBag.SUKA = "etam";
+
             return PartialView("_HealthAddForm", model);
         }
 
 
         [HttpPost]
-        public async Task<bool> Delete(int id)
-        {
-            await DeleteFromList(id);
-            return true;
-        }
-
-        private async Task<bool> DeleteFromList(int id)
-        {
-            TempData.TryGetValue("HealthIssues", out object value);
-            var data = value as string ?? "";
-            List<HealthIssueViewModel> list = JsonConvert.DeserializeObject<List<HealthIssueViewModel>>(data) ??
-                                              new List<HealthIssueViewModel>();
-            list.RemoveAt(id);
-            string json = JsonConvert.SerializeObject(list);
-            TempData["HealthIssues"] = json;
-            return true;
-        }
-
-        [HttpPost]
-        public IActionResult AddHealth(HealthIssueViewModel model)
+        public async Task<IActionResult> AddHealth(HealthIssueViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -138,15 +130,106 @@ namespace Application.Controllers
         }
 
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public async Task<bool> DeleteHealth(int id)
         {
-            return View();
+            await DeleteHealthFromList(id);
+            return true;
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        private async Task<bool> DeleteHealthFromList(int id)
         {
-            return View(new ErrorViewModel {RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier});
+            TempData.TryGetValue("HealthIssues", out object value);
+            var data = value as string ?? "";
+            List<HealthIssueViewModel> list = JsonConvert.DeserializeObject<List<HealthIssueViewModel>>(data) ??
+                                              new List<HealthIssueViewModel>();
+            list.RemoveAt(id);
+            string json = JsonConvert.SerializeObject(list);
+            TempData["HealthIssues"] = json;
+            return true;
         }
+
+        public async Task<IActionResult> AddGuardian(int? id)
+        {
+            var model = new GuardianViewModel();
+
+            if (id != null)
+            {
+                TempData.TryGetValue("Guardians", out object value);
+                var data = value as string ?? "";
+                List<GuardianViewModel> list = JsonConvert.DeserializeObject<List<GuardianViewModel>>(data) ??
+                                               new List<GuardianViewModel>();
+                model = list.ElementAt((int) id);
+                TempData["GuardiansID"] = id;
+                string json = JsonConvert.SerializeObject(list);
+                TempData["Guardians"] = json;
+            }
+            else
+            {
+                TempData["GuardiansID"] = null;
+            }
+
+
+            return PartialView("_GuardianAddForm", model);
+        }
+
+        [HttpPost]
+        public IActionResult AddGuardian(GuardianViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                TempData.TryGetValue("Guardians", out object value);
+                var data = value as string ?? "";
+                List<GuardianViewModel> list = JsonConvert.DeserializeObject<List<GuardianViewModel>>(data) ??
+                                               new List<GuardianViewModel>();
+                TempData.TryGetValue("GuardiansID", out object listIndex);
+                listIndex = listIndex as int? ?? null;
+                if (listIndex != null)
+                {
+                    list[(int) listIndex] = model;
+                }
+                else
+                {
+                    list.Add(model);
+                }
+
+
+                string json = JsonConvert.SerializeObject(list);
+                TempData["Guardians"] = json;
+            }
+
+            return PartialView("_GuardianAddForm", model);
+        }
+
+        [HttpPost]
+        public async Task<bool> DeleteGuardian(int id)
+        {
+            await DeleteGuardianFromList(id);
+            return true;
+        }
+
+        private async Task<bool> DeleteGuardianFromList(int id)
+        {
+            TempData.TryGetValue("Guardians", out object value);
+            var data = value as string ?? "";
+            List<GuardianViewModel> list = JsonConvert.DeserializeObject<List<GuardianViewModel>>(data) ??
+                                              new List<GuardianViewModel>();
+            list.RemoveAt(id);
+            string json = JsonConvert.SerializeObject(list);
+            TempData["Guardians"] = json;
+            return true;
+        }
+
+        [NonAction]
+        private async Task<List<GuardianViewModel>> OnAjaxGuardianPartialViewResult()
+        {
+            TempData.TryGetValue("Guardians", out object value);
+            var data = value as string ?? "";
+            List<GuardianViewModel> table = JsonConvert.DeserializeObject<List<GuardianViewModel>>(data) ??
+                                            new List<GuardianViewModel>();
+            TempData["Guardians"] = JsonConvert.SerializeObject(table);
+            return table;
+        }
+        
     }
 }

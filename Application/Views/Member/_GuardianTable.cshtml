@@ -1,0 +1,28 @@
+@model List<GuardianViewModel>
+
+<table id="GuardianTable" class="table mt-1" data-url="@Url.Action("CreateUpdate")">
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    @for (var i = 0; i < Model.Count; i++)
+    {
+        <tr>
+            <td><input name='Player.JuniorPlayer.Guardians[@(i)].Name' type='hidden' value='@Model[i].Name'/>@Model[i].Name</td>
+
+        @*    <td><input name='Player.GuardianIssues[@(i)].Date' type='hidden' value='@Model[i].Date'/>@Model[i].Date.ToString("dd/MM/yyyy")</td>
+            <td style='display: none'><textarea hidden  name='Player.GuardianIssues[@(i)].Description' >@Model[i].Description</textarea></td>
+*@
+            <!-- Buttons -->
+
+            <td><button type="button" id="GuardianIssues[@(i)]_editBtn" class="btn btn-link" data-toggle="ajax-modal" data-url="@Url.Action("AddGuardian", new {id = i})"><i class="fas fa-edit"></i></button></td>
+            <td><button data-deleteid="@(i)" class='btn btn-link text-danger' data-toggle="GuardianDelete" data-url="@Url.Action("DeleteGuardian", "Member")"><i class='fas fa-trash-alt'></i></button></td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -61,7 +61,7 @@ namespace Application
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Index/Error");
             }
 
             

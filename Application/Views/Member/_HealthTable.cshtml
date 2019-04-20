@@ -1,6 +1,6 @@
 @model List<HealthIssueViewModel>
 
-<table id="healthissues" class="table mt-1" data-url="@Url.Action("CreateUpdate")">
+<table id="HealthTable" class="table mt-1" data-url="@Url.Action("CreateUpdate")">
     <thead>
     <tr>
         <th>Date</th>
@@ -21,7 +21,7 @@
             <!-- Buttons -->
 
             <td><button type="button" id="HealthIssues[@(i)]_editBtn" class="btn btn-link" data-toggle="ajax-modal" data-url="@Url.Action("AddHealth", new {id = i})"><i class="fas fa-edit"></i></button></td>
-            <td><button data-deleteid="@(i)" class='btn btn-link text-danger' data-toggle="HealthDelete" data-url="@Url.Action("Delete", "Member")"><i class='fas fa-trash-alt'></i></button></td>
+            <td><button data-deleteid="@(i)" class='btn btn-link text-danger' data-toggle="HealthDelete" data-url="@Url.Action("DeleteHealth", "Member")"><i class='fas fa-trash-alt'></i></button></td>
         </tr>
     }
     </tbody>

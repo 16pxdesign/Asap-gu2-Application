@@ -14,6 +14,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="HomeController.cs" t="Include" />
+          <e p="IndexController.cs" t="Include" />
           <e p="MemberController.cs" t="Include" />
         </e>
         <e p="Frameworks" t="Include">
@@ -54,13 +55,18 @@
             <e p="_Table.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
           </e>
+          <e p="Index" t="Include">
+            <e p="Index.cshtml" t="Include" />
+            <e p="Privacy.cshtml" t="Include" />
+          </e>
           <e p="Member" t="Include">
+            <e p="_GuardianAddForm.cshtml" t="Include" />
+            <e p="_Guardians.cshtml" t="Include" />
+            <e p="_GuardianTable.cshtml" t="Include" />
             <e p="_HealthAddForm.cshtml" t="Include" />
             <e p="_HealthIssues.cshtml" t="Include" />
             <e p="_HealthTable.cshtml" t="Include" />
             <e p="CreateUpdate.cshtml" t="Include" />
-            <e p="Member.cshtml" t="Include" />
-            <e p="Privacy.cshtml" t="Include" />
           </e>
           <e p="Partial" t="Include">
             <e p="Done" t="Include">
@@ -118,6 +124,7 @@
                 <e p="datepicker.zh.js" t="Include" />
               </e>
             </e>
+            <e p="modal-member-guardian.js" t="Include" />
             <e p="modal-member-health.js" t="Include" />
             <e p="modal.js" t="Include" />
             <e p="onUserType.js" t="Include" />

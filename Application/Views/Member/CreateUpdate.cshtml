@@ -4,15 +4,16 @@
 
 
     @Html.EditorFor(m=>m,"~/Views/Partial/Done/Member.cshtml")
-
+@*
     @Html.EditorFor(m=>m.Address,"~/Views/Partial/Done/Address.cshtml")
     @Html.EditorFor(m=>m.Player.Doctor,"~/Views/Partial/Done/Doctor.cshtml")
     @Html.EditorFor(m=>m.Player.SeniorPlayer.Kin,"~/Views/Partial/Done/Kin.cshtml")
-
+*@
 
 
 
     @await Html.PartialAsync("_HealthIssues",Model.Player.HealthIssues)
+    @await Html.PartialAsync("_Guardians",Model.Player.JuniorPlayer.Guardians)
 
     <div class="form-row">
         <div class="form-group">
@@ -28,3 +29,4 @@
 
 <!-- Modal placeholder -->
 <div id="modal-placeholder"></div>
+<script src="~/js/modal.js" asp-append-version="true" defer></script>

@@ -9,6 +9,7 @@ namespace Application.Data.Models
 
         //Properties
         public string Name { get; set; }
+        public string Surname { get; set; }
         public string Phone { get; set; }
         public string Relationship { get; set; }
         public DateTime? Signature { get; set; }
