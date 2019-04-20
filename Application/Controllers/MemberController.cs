@@ -13,16 +13,16 @@ using Newtonsoft.Json;
 
 namespace Application.Controllers
 {
-    public class IndexController : Controller
+    public class MemberController : Controller
     {
         private readonly UnitOfWork _unitOfWork;
 
-        public IndexController(IUnitOfWork unitOfWork)
+        public MemberController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork as UnitOfWork;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> CreateUpdate(int? id)
         {
             List<HealthIssueViewModel> list = new List<HealthIssueViewModel>();
 
@@ -50,7 +50,7 @@ namespace Application.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(MemberViewModel model)
+        public async Task<IActionResult> CreateUpdate(MemberViewModel model)
         {
 
             return View(model);

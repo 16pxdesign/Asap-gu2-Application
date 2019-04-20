@@ -75,7 +75,7 @@ namespace Application
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Index}/{action=Index}/{id?}");
+                    template: "{controller=Member}/{action=CreateUpdate}/{id?}");
             });
         }
     }
