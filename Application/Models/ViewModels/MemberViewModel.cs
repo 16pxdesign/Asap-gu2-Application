@@ -22,7 +22,6 @@ namespace Application.Models
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Mobile { get; set; }
-        public List<string> list { get; set; }
         public AddressViewModel Address { get; set; }
         public PlayerViewModel Player { get; set; }
 

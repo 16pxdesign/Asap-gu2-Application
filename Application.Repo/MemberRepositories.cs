@@ -33,13 +33,22 @@ namespace Application.Repo
 
         public void DeleteBySRU(string sru)
         {
-            var entityEntry = _context.Remove(_context.Members.Single(a => a.SRU == sru));
+            var member = _context.Members.Find(sru);
+            
+            _context.Remove(member);
             _context.SaveChanges();
         }
 
         public void AddNewMember(Member member)
         {
+            //TODO: if exist update
             _context.Members.Add(member);
+            _context.SaveChanges();
+        }
+
+        public void EditMember(Member member)
+        {
+            _context.Members.Update(member);
             _context.SaveChanges();
         }
     }

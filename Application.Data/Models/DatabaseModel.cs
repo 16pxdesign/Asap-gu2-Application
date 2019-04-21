@@ -72,7 +72,8 @@ namespace Application.Data.Models
            modelBuilder.Entity<Player>()
                .HasOne(s => s.Member)
                .WithOne(m => m.Player)
-               .HasForeignKey<Player>(m => m.SRU);
+               .HasForeignKey<Player>(m => m.SRU)
+               .OnDelete(DeleteBehavior.Cascade);
            
            modelBuilder.Entity<Player>()
                .Property(m => m.Position)
@@ -81,12 +82,13 @@ namespace Application.Data.Models
            modelBuilder.Entity<Player>()
                .HasOne(m => m.Doctor)
                .WithOne(m=>m.Player)
-               .HasForeignKey<Doctor>();
+               .HasForeignKey<Doctor>()
+               .OnDelete(DeleteBehavior.Cascade);
            
            modelBuilder.Entity<Player>()
                .HasMany(m => m.HealthIssues)
                .WithOne(m => m.Player)
-               .OnDelete(DeleteBehavior.Restrict);
+               .OnDelete(DeleteBehavior.Cascade);
            
             //Senior
             modelBuilder.Entity<Senior>()
@@ -95,12 +97,14 @@ namespace Application.Data.Models
             modelBuilder.Entity<Senior>()
                 .HasOne(s => s.Player)
                 .WithOne(m => m.Senior)
-                .HasForeignKey<Senior>(m => m.SRU);
+                .HasForeignKey<Senior>(m => m.SRU)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Senior>()
                 .HasOne(s => s.Kin)
                 .WithOne(m => m.Senior)
-                .HasForeignKey<Kin>();
+                .HasForeignKey<Kin>()
+                .OnDelete(DeleteBehavior.Cascade);
             
             //Junior
             modelBuilder.Entity<Junior>()
@@ -109,12 +113,13 @@ namespace Application.Data.Models
             modelBuilder.Entity<Junior>()
                 .HasOne(s => s.Player)
                 .WithOne(m => m.Junior)
-                .HasForeignKey<Junior>(m => m.SRU);
+                .HasForeignKey<Junior>(m => m.SRU)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Junior>()
                 .HasMany(m => m.Guardians)
                 .WithOne(m => m.Junior)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
             
             //Doctor
             modelBuilder.Entity<Doctor>()
@@ -126,13 +131,15 @@ namespace Application.Data.Models
             modelBuilder.Entity<Kin>()
                 .HasOne<Address>(m => m.Address)
                 .WithOne()
-                .HasForeignKey<Kin>("AddressId");
+                .HasForeignKey<Kin>("AddressId")
+                .OnDelete(DeleteBehavior.Cascade);
 
             //Guradian
             modelBuilder.Entity<Guardian>()
                 .HasOne<Address>(m => m.Address)
                 .WithOne()
-                .HasForeignKey<Guardian>("AddressId");
+                .HasForeignKey<Guardian>("AddressId")
+                .OnDelete(DeleteBehavior.Cascade);
             //Training
             modelBuilder.Entity<Training>()
                 .HasMany(m => m.Activitieses)

@@ -43,6 +43,7 @@ namespace Application.Controllers
 
             if (id != null)
             {
+                TempData["EditMember"] = true;
                 var member = _unitOfWork.MemberRepositories.FindBySRU(id);
                 model = AutoMapper.Mapper.Map<Member,MemberViewModel>(member);
             }
@@ -62,9 +63,23 @@ namespace Application.Controllers
         [HttpPost]
         public IActionResult CreateUpdate(MemberViewModel model)
         {
-            var member = AutoMapper.Mapper.Map<MemberViewModel, Member>(model);
+            if (ModelState.IsValid)
+            {
+                bool isEdit = (bool) (TempData["EditMember"] ?? false);
+                var member = AutoMapper.Mapper.Map<MemberViewModel, Member>(model);
 
-            _unitOfWork.MemberRepositories.AddNewMember(member);
+                if (isEdit)
+                {
+                    _unitOfWork.MemberRepositories.EditMember(member);
+                }
+                else
+                {
+                    _unitOfWork.MemberRepositories.AddNewMember(member);
+                }
+                
+            }
+            
+
             return View(model);
         }
 

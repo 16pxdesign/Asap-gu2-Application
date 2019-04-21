@@ -186,8 +186,8 @@
           <e p="Database.db" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="20190421005635_init.cs" t="Include" />
-          <e p="20190421005635_init.Designer.cs" t="Include" />
+          <e p="20190421120029_init.cs" t="Include" />
+          <e p="20190421120029_init.Designer.cs" t="Include" />
           <e p="DatabaseModelModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
