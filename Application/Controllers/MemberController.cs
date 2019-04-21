@@ -40,7 +40,7 @@ namespace Application.Controllers
 
             MemberViewModel model = null;
 
-
+            TempData["EditMember"] = false;
             if (id != null)
             {
                 TempData["EditMember"] = true;
@@ -63,6 +63,25 @@ namespace Application.Controllers
         [HttpPost]
         public IActionResult CreateUpdate(MemberViewModel model)
         {
+            
+            if (model.Type != MemberType.Junior)
+            {
+                foreach (var modelError in ModelState)
+                {
+                    string propertyName = modelError.Key;
+
+                    if (propertyName.Contains("Player.Doctor"))
+                    {
+                        
+                        ModelState[propertyName].Errors.Clear();
+                        //Remove to make State valid
+                        ModelState.Remove(propertyName);
+                    }
+                }
+                
+            }
+           
+            
             if (ModelState.IsValid)
             {
                 bool isEdit = (bool) (TempData["EditMember"] ?? false);
@@ -71,13 +90,16 @@ namespace Application.Controllers
                 if (isEdit)
                 {
                     _unitOfWork.MemberRepositories.EditMember(member);
+                    return RedirectToAction(nameof(Index));
                 }
                 else
                 {
                     _unitOfWork.MemberRepositories.AddNewMember(member);
+                    return RedirectToAction(nameof(Index));
                 }
                 
             }
+         
             
 
             return View(model);

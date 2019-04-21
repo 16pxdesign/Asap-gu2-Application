@@ -8,7 +8,7 @@ namespace Application.Models
 {
     public class AddressViewModel
     {
-        [Required]
+        
         public string Flat { get; set; }
         public string Street { get; set; }
         public string Postcode { get; set; }
