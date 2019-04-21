@@ -7,10 +7,16 @@ using Microsoft.AspNetCore.Mvc;
 using Application.Models;
 using Application.Repo.Contracts;
 using System.Dynamic;
+using System.Linq.Expressions;
+using System.Text;
+using System.Web.Mvc;
 using Application.Data.Models;
 using Application.Repo;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using Controller = Microsoft.AspNetCore.Mvc.Controller;
+using ModelStateDictionary = Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary;
 
 namespace Application.Controllers
 {
@@ -60,27 +66,22 @@ namespace Application.Controllers
 
        
 
-        [HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpPost]
         public IActionResult CreateUpdate(MemberViewModel model)
         {
-            
-            if (model.Type != MemberType.Junior)
-            {
-                foreach (var modelError in ModelState)
-                {
-                    string propertyName = modelError.Key;
-
-                    if (propertyName.Contains("Player.Doctor"))
-                    {
-                        
-                        ModelState[propertyName].Errors.Clear();
-                        //Remove to make State valid
-                        ModelState.Remove(propertyName);
-                    }
-                }
-                
-            }
            
+            if (model.Type == MemberType.Member)
+            {
+                IgnoreModelStateProperty(ModelState, "Player");
+            }
+            if (model.Type == MemberType.Junior)
+            {
+                IgnoreModelStateProperty(ModelState, "Player.Senior");
+            }
+            if (model.Type == MemberType.Senior)
+            {
+                IgnoreModelStateProperty(ModelState, "Player.Junior");
+            }
             
             if (ModelState.IsValid)
             {
@@ -89,12 +90,24 @@ namespace Application.Controllers
 
                 if (isEdit)
                 {
-                    _unitOfWork.MemberRepositories.EditMember(member);
+                    _unitOfWork.MemberRepositories.InsertEditMember(member);
+                    
                     return RedirectToAction(nameof(Index));
                 }
                 else
                 {
-                    _unitOfWork.MemberRepositories.AddNewMember(member);
+                    if (!_unitOfWork.MemberRepositories.IsMemberExist(member.SRU))
+                    {
+                        _unitOfWork.MemberRepositories.InsertEditMember(member);
+
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("Exist","User with this id exist");
+                        return View(model);
+                    }
+                     
+                    
                     return RedirectToAction(nameof(Index));
                 }
                 
@@ -105,8 +118,23 @@ namespace Application.Controllers
             return View(model);
         }
 
+        private void IgnoreModelStateProperty(ModelStateDictionary modelState, string key)
+        {
+            foreach (var modelError in modelState)
+            {
+                string propertyName = modelError.Key;
 
-        [NonAction]
+                if (propertyName.Contains(key))
+                {
+                    ModelState[propertyName].Errors.Clear();
+                    //Remove to make State valid
+                    ModelState.Remove(propertyName);
+                }
+            }
+        }
+
+
+        [Microsoft.AspNetCore.Mvc.NonAction]
         private PlayerViewModel OnAjaxHealthTablePartialViewResult()
         {
             TempData.TryGetValue("HealthIssues", out object value);
@@ -144,7 +172,7 @@ namespace Application.Controllers
         }
 
 
-        [HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpPost]
         public IActionResult AddHealth(HealthIssueViewModel model)
         {
             if (ModelState.IsValid)
@@ -175,7 +203,7 @@ namespace Application.Controllers
         }
 
 
-        [HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpPost]
         public async Task<bool> DeleteHealth(int id)
         {
             DeleteHealthFromList(id);
@@ -218,7 +246,7 @@ namespace Application.Controllers
             return PartialView("_GuardianAddForm", model);
         }
 
-        [HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpPost]
         public IActionResult AddGuardian(GuardianViewModel model)
         {
             if (ModelState.IsValid)
@@ -249,7 +277,7 @@ namespace Application.Controllers
             return PartialView("_GuardianAddForm", model);
         }
 
-        [HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpPost]
         public async Task<bool> DeleteGuardian(int id)
         {
             await DeleteGuardianFromList(id);
@@ -271,7 +299,7 @@ namespace Application.Controllers
             return true;
         }
 
-        [NonAction]
+        [Microsoft.AspNetCore.Mvc.NonAction]
         private JuniorViewModel OnAjaxGuardianPartialViewResult()
         {
             TempData.TryGetValue("Guardians", out object value);
@@ -292,14 +320,12 @@ namespace Application.Controllers
 
    
 
-        public IActionResult Edit(string sru)
-        {
-            throw new NotImplementedException();
-        }
 
         public IActionResult Details(string sru)
         {
-            throw new NotImplementedException();
+            var member = _unitOfWork.MemberRepositories.FindBySRU(sru);
+            var model = AutoMapper.Mapper.Map<Member, MemberViewModel>(member);
+            return View(model);
         }
 
         public IActionResult Delete(string sru)
@@ -307,5 +333,8 @@ namespace Application.Controllers
             _unitOfWork.MemberRepositories.DeleteBySRU(sru);
             return RedirectToAction(nameof(Index));
         }
+        
+        
+       
     }
 }

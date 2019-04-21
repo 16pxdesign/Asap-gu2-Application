@@ -18,6 +18,8 @@ namespace Application.Data.Models
         public DbSet<Address> Address { get; set; }
         public DbSet<HealthIssue> HealthIssue { get; set; }
         public DbSet<Player> Player { get; set; }
+        public DbSet<Junior> Junior { get; set; }
+        public DbSet<Senior> Senior { get; set; }
 
 
         public DbSet<Guardian> Guardian { get; set; }
@@ -125,7 +127,8 @@ namespace Application.Data.Models
             modelBuilder.Entity<Doctor>()
                 .HasOne(m => m.Address)
                 .WithOne()
-                .HasForeignKey<Doctor>("AddressId");
+                .HasForeignKey<Doctor>("AddressId")
+                .OnDelete(DeleteBehavior.Cascade);
           
             //Kin
             modelBuilder.Entity<Kin>()

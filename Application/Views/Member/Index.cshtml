@@ -30,7 +30,7 @@
            
             <td class="text-right">
                 <a asp-action="CreateUpdate" asp-route-id="@item.SRU">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.SRU">Details</a> |
+                <a href="@Url.Action("Details", new{sru = item.SRU})">Details</a> |
                 <a href="@Url.Action("Delete", new{sru = item.SRU})">Delete</a> |
             </td>
         </tr>

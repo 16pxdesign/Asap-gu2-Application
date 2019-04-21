@@ -18,25 +18,54 @@ $(document).ready(function() {
             //Hide possiton field
             $("#player-position").hide();
             
-            //Hide Doctor tab
+            //Hide Player tabs
+            $("#nav-Doctor-tab").hide();
+            $("#nav-Kin-tab").hide();
+            $("#nav-HealthIssues-tab").hide();
+            $("#nav-Guardians-tab").hide();
+            hideTab('#nav-Doctor');
+            hideTab('#nav-Kin');
+            hideTab('#nav-HealthIssues');
+            hideTab('#nav-Guardians');
             
-        } else {
+        } else if(selected === "Senior") {
             $("#player-position").show();
+            $("#nav-Doctor-tab").show();
+            $("#nav-Kin-tab").show();
+            $("#nav-HealthIssues-tab").show();
+            $("#nav-Guardians-tab").hide();
+            showTab('#nav-Doctor');
+            showTab('#nav-Kin');
+            showTab('#nav-HealthIssues');
+            hideTab('#nav-Guardians');
+        }else if(selected === "Junior"){
+            $("#player-position").show();
+            $("#nav-Doctor-tab").show();
+            $("#nav-Kin-tab").hide();
+            $("#nav-HealthIssues-tab").show();
+            $("#nav-Guardians-tab").show();
+            showTab('#nav-Doctor');
+            hideTab('#nav-Kin');
+            showTab('#nav-HealthIssues');
+            showTab('#nav-Guardians');
         }
 
        
+    }
+    
+    function hideTab(panel){
+        $(panel).find('*').addClass('ignore');
+        $(panel).find('*').addClass('d-none');
+    }
+
+    function showTab(panel){
+        $(panel).find('*').removeClass('ignore');
+        $(panel).find('*').removeClass('d-none');
     }
 
     $("#memberForm").data("validator").settings.ignore = ".ignore";
     
 
-    $("#memberSave").click(function () {
-
-        var validator = $("form").validate();
-        var isValid = $("form").valid();
-        console.log("isvalid" + isValid);
-       
-    });
 
 
     });

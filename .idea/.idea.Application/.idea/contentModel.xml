@@ -16,6 +16,7 @@
           <e p="HomeController.cs" t="Include" />
           <e p="IndexController.cs" t="Include" />
           <e p="MemberController.cs" t="Include" />
+          <e p="TrainingController.cs" t="Include" />
         </e>
         <e p="Frameworks" t="Include">
           <e p="AutomapperProfile.cs" t="Include" />
@@ -24,15 +25,20 @@
           <e p="Contact.cs" t="Include" />
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="ViewModels" t="Include">
-            <e p="AddressViewModel.cs" t="Include" />
-            <e p="DoctorViewModel.cs" t="Include" />
-            <e p="GuardianViewModel.cs" t="Include" />
-            <e p="HealthIssueViewModel.cs" t="Include" />
-            <e p="JuniorPlayerViewModel.cs" t="Include" />
-            <e p="KinViewModel.cs" t="Include" />
-            <e p="MemberViewModel.cs" t="Include" />
-            <e p="PlayerViewModel.cs" t="Include" />
-            <e p="SeniorPlayerViewModel.cs" t="Include" />
+            <e p="ActivitiesViewModel.cs" t="Include" />
+            <e p="AttendanceViewModel.cs" t="Include" />
+            <e p="MemberManagement" t="Include">
+              <e p="AddressViewModel.cs" t="Include" />
+              <e p="DoctorViewModel.cs" t="Include" />
+              <e p="GuardianViewModel.cs" t="Include" />
+              <e p="HealthIssueViewModel.cs" t="Include" />
+              <e p="JuniorPlayerViewModel.cs" t="Include" />
+              <e p="KinViewModel.cs" t="Include" />
+              <e p="MemberViewModel.cs" t="Include" />
+              <e p="PlayerViewModel.cs" t="Include" />
+              <e p="SeniorPlayerViewModel.cs" t="Include" />
+            </e>
+            <e p="TrainingViewModel.cs" t="Include" />
           </e>
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -42,6 +48,7 @@
             </e>
           </e>
         </e>
+        <e p="Pages" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
@@ -67,14 +74,25 @@
             <e p="_HealthIssues.cshtml" t="Include" />
             <e p="_HealthTable.cshtml" t="Include" />
             <e p="CreateUpdate.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
           </e>
           <e p="Partial" t="Include">
-            <e p="Done" t="Include">
+            <e p="Display" t="Include">
+              <e p="Address.cshtml" t="Include" />
+              <e p="Doctor.cshtml" t="Include" />
+              <e p="Guardians.cshtml" t="Include" />
+              <e p="HealthIssues.cshtml" t="Include" />
+              <e p="Kin.cshtml" t="Include" />
+              <e p="Member.cshtml" t="Include" />
+              <e p="Player.cshtml" t="Include" />
+            </e>
+            <e p="Forms" t="Include">
               <e p="Address.cshtml" t="Include" />
               <e p="Doctor.cshtml" t="Include" />
               <e p="Kin.cshtml" t="Include" />
               <e p="Member.cshtml" t="Include" />
+              <e p="Training.cshtml" t="Include" />
             </e>
           </e>
           <e p="Shared" t="Include">
@@ -83,6 +101,10 @@
             <e p="_NotificationsPartial.cshtml" t="Include" />
             <e p="_ValidationScriptsPartial.cshtml" t="Include" />
             <e p="Error.cshtml" t="Include" />
+          </e>
+          <e p="Training" t="Include">
+            <e p="CreateUpdate.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
           </e>
         </e>
         <e p="wwwroot" t="Include">
@@ -186,8 +208,8 @@
           <e p="Database.db" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="20190421120029_init.cs" t="Include" />
-          <e p="20190421120029_init.Designer.cs" t="Include" />
+          <e p="20190421202718_init.cs" t="Include" />
+          <e p="20190421202718_init.Designer.cs" t="Include" />
           <e p="DatabaseModelModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
@@ -242,6 +264,7 @@
           <e p="IAddressRepository.cs" t="Include" />
           <e p="IMemberRepositories.cs" t="Include" />
           <e p="IRepository.cs" t="Include" />
+          <e p="ITrainingRepository.cs" t="Include" />
           <e p="IUnitOfWork.cs" t="Include" />
         </e>
         <e p="GenericRepository.cs" t="Include" />
@@ -253,6 +276,8 @@
             </e>
           </e>
         </e>
+        <e p="TrainingRepositories.cs" t="Include" />
+        <e p="TrainingRepositories.cs___jb_tmp___" t="Include" />
         <e p="UnitOfWork.cs" t="Include" />
       </e>
       <e p="Application.sln" t="IncludeFlat" />
