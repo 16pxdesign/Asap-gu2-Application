@@ -25,16 +25,15 @@ namespace Application.Frameworks
             CreateMap<Address, AddressViewModel>();
             CreateMap<AddressViewModel, Address>();
 
-            CreateMap<MemberViewModel, Member>();                
-            CreateMap<Member, MemberViewModel>();
-            
-            CreateMap<PlayerViewModel, Player>();        
-            CreateMap<Player, PlayerViewModel>();
+            CreateMap<MemberViewModel, Member>().ForMember(d=>d.Player, o=>o.Condition(s=>s.Type != MemberType.Member));
+            CreateMap<Member, MemberViewModel>().ForMember(d => d.Player, o => o.NullSubstitute(new Player()));
 
-            CreateMap<JuniorPlayerViewModel, Junior>();
-            CreateMap<Junior, JuniorPlayerViewModel>();
-            CreateMap<SeniorPlayerViewModel, Senior>();
-            CreateMap<Senior, SeniorPlayerViewModel>();
+            CreateMap<PlayerViewModel, Player>();
+            CreateMap<Player, PlayerViewModel>().ForMember(d => d.Junior, o => o.NullSubstitute(new Junior()));
+            CreateMap<JuniorViewModel, Junior>();
+            CreateMap<Junior, JuniorViewModel>();
+            CreateMap<SeniorViewModel, Senior>();
+            CreateMap<Senior, SeniorViewModel>();
                 
 
 

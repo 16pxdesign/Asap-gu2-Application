@@ -8,7 +8,7 @@ namespace Application.Data.Models
         public string SRU { get; set; }
 
         //Properties
-        public PlayerPosition Position { get; set; }
+        public PlayerPosition? Position { get; set; }
 
         //Relations
         public virtual Member Member { get; set; }

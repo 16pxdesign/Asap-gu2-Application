@@ -128,7 +128,9 @@ namespace Application.Data.Migrations
 
                     b.Property<string>("Relationship");
 
-                    b.Property<DateTime?>("Signature");
+                    b.Property<DateTime>("Signature");
+
+                    b.Property<string>("Surname");
 
                     b.HasKey("Id");
 

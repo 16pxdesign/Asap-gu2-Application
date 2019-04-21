@@ -6,7 +6,7 @@ using Application.Data.Models;
 
 namespace Application.Models
 {
-    public class SeniorPlayerViewModel
+    public class SeniorViewModel
     {
         public KinViewModel Kin { get; set; }
     }

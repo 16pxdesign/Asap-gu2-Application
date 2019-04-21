@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using Application.Data.Models;
@@ -23,6 +24,23 @@ namespace Application.Repo
             var member = _context.Members.Find(sru);
 
             return member;
+        }
+
+        public List<Member> GetMemberList()
+        {
+            return _context.Members.ToList();
+        }
+
+        public void DeleteBySRU(string sru)
+        {
+            var entityEntry = _context.Remove(_context.Members.Single(a => a.SRU == sru));
+            _context.SaveChanges();
+        }
+
+        public void AddNewMember(Member member)
+        {
+            _context.Members.Add(member);
+            _context.SaveChanges();
         }
     }
 }

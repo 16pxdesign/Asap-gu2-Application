@@ -9,6 +9,11 @@ namespace Application.Models
 {
     public class MemberViewModel
     {
+        public MemberViewModel()
+        {
+            Player = new PlayerViewModel();
+        }
+
         [Required]
         public string SRU { get; set; }
         public MemberType Type { get; set; }

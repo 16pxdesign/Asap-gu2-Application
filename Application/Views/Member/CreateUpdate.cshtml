@@ -1,27 +1,55 @@
 ﻿@model MemberViewModel
 
+<link rel="stylesheet" href="~/css/Tabs.css" />
+
 <form method="post">
 
-
-    @Html.EditorFor(m=>m,"~/Views/Partial/Done/Member.cshtml")
-@*
-    @Html.EditorFor(m=>m.Address,"~/Views/Partial/Done/Address.cshtml")
-    @Html.EditorFor(m=>m.Player.Doctor,"~/Views/Partial/Done/Doctor.cshtml")
-    @Html.EditorFor(m=>m.Player.SeniorPlayer.Kin,"~/Views/Partial/Done/Kin.cshtml")
-*@
-
-
-
-    @await Html.PartialAsync("_HealthIssues",Model.Player.HealthIssues)
-    @await Html.PartialAsync("_Guardians",Model.Player.JuniorPlayer.Guardians)
-
-    <div class="form-row">
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" class="btn btn-primary " id="memberSave"/>
+    <section id="tabs" class="project-tab">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav>
+                        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-Member-tab" data-toggle="tab" href="#nav-Member" role="tab" aria-controls="nav-Member" aria-selected="true">Personal Data</a>
+                            <a class="nav-item nav-link" id="nav-Address-tab" data-toggle="tab" href="#nav-Address" role="tab" aria-controls="nav-Address" aria-selected="false"><label asp-for="Address"></label></a>
+                            <a class="nav-item nav-link" id="nav-Doctor-tab" data-toggle="tab" href="#nav-Doctor" role="tab" aria-controls="nav-Doctor" aria-selected="false"><label asp-for="Player.Doctor"></label></a>
+                            <a class="nav-item nav-link" id="nav-Kin-tab" data-toggle="tab" href="#nav-Kin" role="tab" aria-controls="nav-Kin" aria-selected="false"><label asp-for="Player.Senior.Kin"></label></a>
+                            <a class="nav-item nav-link" id="nav-HealthIssues-tab" data-toggle="tab" href="#nav-HealthIssues" role="tab" aria-controls="nav-HealthIssues" aria-selected="false"><label asp-for="Player.HealthIssues"></label></a>
+                            <a class="nav-item nav-link" id="nav-Guardians-tab" data-toggle="tab" href="#nav-Guardians" role="tab" aria-controls="nav-Guardians" aria-selected="false"><label asp-for="Player.Junior.Guardians"></label></a>
+                        </div>
+                    </nav>
+                    <div class="tab-content p-2" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-Member-tab">
+                            @Html.EditorFor(m=>m,"~/Views/Partial/Done/Member.cshtml")
+                        </div>
+                        <div class="tab-pane p-2 fade" id="nav-Address" role="tabpanel" aria-labelledby="nav-Address-tab">
+                            @Html.EditorFor(m=>m.Address,"~/Views/Partial/Done/Address.cshtml")
+                        </div>
+                        <div class="tab-pane p-2 fade" id="nav-Doctor" role="tabpanel" aria-labelledby="nav-Doctor-tab">
+                            @Html.EditorFor(m=>m.Player.Doctor,"~/Views/Partial/Done/Doctor.cshtml")
+                        </div>
+                        <div class="tab-pane p-2 fade" id="nav-Kin" role="tabpanel" aria-labelledby="nav-Kin-tab">
+                            @Html.EditorFor(m=>m.Player.Senior.Kin,"~/Views/Partial/Done/Kin.cshtml")
+                        </div>
+                        <div class="tab-pane p-2 fade" id="nav-HealthIssues" role="tabpanel" aria-labelledby="nav-HealthIssues-tab">
+                            @await Html.PartialAsync("_HealthIssues",Model.Player)
+                        </div>
+                        <div class="tab-pane p-2 fade" id="nav-Guardians" role="tabpanel" aria-labelledby="nav-Guardians-tab">
+                            @await Html.PartialAsync("_Guardians",Model.Player.Junior)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row mt-4">
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" class="btn btn-primary " id="memberSave"/>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+  
     
 </form>
 

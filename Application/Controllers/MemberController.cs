@@ -9,6 +9,7 @@ using Application.Repo.Contracts;
 using System.Dynamic;
 using Application.Data.Models;
 using Application.Repo;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
 namespace Application.Controllers
@@ -22,62 +23,66 @@ namespace Application.Controllers
             _unitOfWork = unitOfWork as UnitOfWork;
         }
 
-        public async Task<IActionResult> CreateUpdate(int? id, string table = null)
+        public IActionResult CreateUpdate( string id = null, string table = null )
         {
-            List<HealthIssueViewModel> listHealthIssues = new List<HealthIssueViewModel>();
-            listHealthIssues.Add(new HealthIssueViewModel(){Name = "2"});
-            List<GuardianViewModel> listGuardians = new List<GuardianViewModel>();
-
-
+            
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest" && table == "Health")
             {
-                var healthIssuePartialList = await OnAjaxHealthTablePartialViewResult();
+                var healthIssuePartialList = OnAjaxHealthTablePartialViewResult();
                 return PartialView("_HealthTable", healthIssuePartialList);
             }
 
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest" && table == "Guardian")
             {
-                var guardianPartialList = await OnAjaxGuardianPartialViewResult();
+                var guardianPartialList = OnAjaxGuardianPartialViewResult();
                 return PartialView("_GuardianTable", guardianPartialList);
             }
 
-            TempData["HealthIssues"] = JsonConvert.SerializeObject(listHealthIssues);
-           TempData["Guardians"] = JsonConvert.SerializeObject(listGuardians);
+            MemberViewModel model = null;
 
-            var model = new MemberViewModel
+
+            if (id != null)
             {
-                Player = new PlayerViewModel
-                {
-                    HealthIssues = listHealthIssues,
-                    JuniorPlayer = new JuniorPlayerViewModel()
-                    {
-                        Guardians = listGuardians
-                    }
-                }
-            };
+                var member = _unitOfWork.MemberRepositories.FindBySRU(id);
+                model = AutoMapper.Mapper.Map<Member,MemberViewModel>(member);
+            }
 
+
+            if(model == null )
+                model = new MemberViewModel();
+            
+            TempData["HealthIssues"] = JsonConvert.SerializeObject(model.Player );
+            TempData["Guardians"] = JsonConvert.SerializeObject(model.Player.Junior);
+            
             return View(model);
         }
 
+       
+
         [HttpPost]
-        public async Task<IActionResult> CreateUpdate(MemberViewModel model)
+        public IActionResult CreateUpdate(MemberViewModel model)
         {
+            var member = AutoMapper.Mapper.Map<MemberViewModel, Member>(model);
+
+            _unitOfWork.MemberRepositories.AddNewMember(member);
             return View(model);
         }
 
 
         [NonAction]
-        private async Task<List<HealthIssueViewModel>> OnAjaxHealthTablePartialViewResult()
+        private PlayerViewModel OnAjaxHealthTablePartialViewResult()
         {
             TempData.TryGetValue("HealthIssues", out object value);
             var data = value as string ?? "";
-            List<HealthIssueViewModel> table = JsonConvert.DeserializeObject<List<HealthIssueViewModel>>(data) ??
-                                               new List<HealthIssueViewModel>();
+            var table = JsonConvert.DeserializeObject<PlayerViewModel>(data) ??
+                        new PlayerViewModel();
+            if (table.HealthIssues == null)
+                table.HealthIssues = new List<HealthIssueViewModel>();
             TempData["HealthIssues"] = JsonConvert.SerializeObject(table);
             return table;
         }
 
-        public async Task<IActionResult> AddHealth(int? id)
+        public IActionResult AddHealth(int? id)
         {
             var model = new HealthIssueViewModel();
 
@@ -85,13 +90,14 @@ namespace Application.Controllers
             {
                 TempData.TryGetValue("HealthIssues", out object value);
                 var data = value as string ?? "";
-                List<HealthIssueViewModel> list = JsonConvert.DeserializeObject<List<HealthIssueViewModel>>(data) ??
-                                                  new List<HealthIssueViewModel>();
-                model = list.ElementAt((int) id);
+                var list = JsonConvert.DeserializeObject<PlayerViewModel>(data) ??
+                           new PlayerViewModel();
+                model = list.HealthIssues.ElementAt((int)id);
                 TempData["HealthIssuesID"] = id;
                 string json = JsonConvert.SerializeObject(list);
                 TempData["HealthIssues"] = json;
-            } else
+            }
+            else
             {
                 TempData["HealthIssuesID"] = null;
             }
@@ -102,23 +108,25 @@ namespace Application.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> AddHealth(HealthIssueViewModel model)
+        public IActionResult AddHealth(HealthIssueViewModel model)
         {
             if (ModelState.IsValid)
             {
                 TempData.TryGetValue("HealthIssues", out object value);
                 var data = value as string ?? "";
-                List<HealthIssueViewModel> list = JsonConvert.DeserializeObject<List<HealthIssueViewModel>>(data) ??
-                                                  new List<HealthIssueViewModel>();
+                var list = JsonConvert.DeserializeObject<PlayerViewModel>(data) ??
+                           new PlayerViewModel();
+                if (list.HealthIssues == null)
+                    list.HealthIssues = new List<HealthIssueViewModel>();
                 TempData.TryGetValue("HealthIssuesID", out object listIndex);
                 listIndex = listIndex as int? ?? null;
                 if (listIndex != null)
                 {
-                    list[(int) listIndex] = model;
+                    list.HealthIssues[(int)listIndex] = model;
                 }
                 else
                 {
-                    list.Add(model);
+                    list.HealthIssues.Add(model);
                 }
 
 
@@ -133,23 +141,23 @@ namespace Application.Controllers
         [HttpPost]
         public async Task<bool> DeleteHealth(int id)
         {
-            await DeleteHealthFromList(id);
+            DeleteHealthFromList(id);
             return true;
         }
 
-        private async Task<bool> DeleteHealthFromList(int id)
+        private bool DeleteHealthFromList(int id)
         {
             TempData.TryGetValue("HealthIssues", out object value);
             var data = value as string ?? "";
-            List<HealthIssueViewModel> list = JsonConvert.DeserializeObject<List<HealthIssueViewModel>>(data) ??
-                                              new List<HealthIssueViewModel>();
-            list.RemoveAt(id);
+            var list = JsonConvert.DeserializeObject<PlayerViewModel>(data) ??
+                       new PlayerViewModel();
+            list.HealthIssues.RemoveAt(id);
             string json = JsonConvert.SerializeObject(list);
             TempData["HealthIssues"] = json;
             return true;
         }
 
-        public async Task<IActionResult> AddGuardian(int? id)
+        public IActionResult AddGuardian(int? id)
         {
             var model = new GuardianViewModel();
 
@@ -157,9 +165,9 @@ namespace Application.Controllers
             {
                 TempData.TryGetValue("Guardians", out object value);
                 var data = value as string ?? "";
-                List<GuardianViewModel> list = JsonConvert.DeserializeObject<List<GuardianViewModel>>(data) ??
-                                               new List<GuardianViewModel>();
-                model = list.ElementAt((int) id);
+                var list = JsonConvert.DeserializeObject<JuniorViewModel>(data) ??
+                           new JuniorViewModel();
+                model = list.Guardians.ElementAt((int)id);
                 TempData["GuardiansID"] = id;
                 string json = JsonConvert.SerializeObject(list);
                 TempData["Guardians"] = json;
@@ -180,17 +188,20 @@ namespace Application.Controllers
             {
                 TempData.TryGetValue("Guardians", out object value);
                 var data = value as string ?? "";
-                List<GuardianViewModel> list = JsonConvert.DeserializeObject<List<GuardianViewModel>>(data) ??
-                                               new List<GuardianViewModel>();
+                var list = JsonConvert.DeserializeObject<JuniorViewModel>(data) ??
+                           new JuniorViewModel();
+                if (list.Guardians == null)
+                    list.Guardians = new List<GuardianViewModel>();
+
                 TempData.TryGetValue("GuardiansID", out object listIndex);
                 listIndex = listIndex as int? ?? null;
                 if (listIndex != null)
                 {
-                    list[(int) listIndex] = model;
+                    list.Guardians[(int) listIndex] = model;
                 }
                 else
                 {
-                    list.Add(model);
+                    list.Guardians.Add(model);
                 }
 
 
@@ -212,24 +223,52 @@ namespace Application.Controllers
         {
             TempData.TryGetValue("Guardians", out object value);
             var data = value as string ?? "";
-            List<GuardianViewModel> list = JsonConvert.DeserializeObject<List<GuardianViewModel>>(data) ??
-                                              new List<GuardianViewModel>();
-            list.RemoveAt(id);
+            JuniorViewModel list = JsonConvert.DeserializeObject<JuniorViewModel>(data) ??
+                                         new JuniorViewModel();
+            if (list.Guardians == null)
+                list.Guardians = new List<GuardianViewModel>();
+
+            list.Guardians.RemoveAt(id);
             string json = JsonConvert.SerializeObject(list);
             TempData["Guardians"] = json;
             return true;
         }
 
         [NonAction]
-        private async Task<List<GuardianViewModel>> OnAjaxGuardianPartialViewResult()
+        private JuniorViewModel OnAjaxGuardianPartialViewResult()
         {
             TempData.TryGetValue("Guardians", out object value);
             var data = value as string ?? "";
-            List<GuardianViewModel> table = JsonConvert.DeserializeObject<List<GuardianViewModel>>(data) ??
-                                            new List<GuardianViewModel>();
+            JuniorViewModel table = JsonConvert.DeserializeObject<JuniorViewModel>(data) ??
+                                          new JuniorViewModel();
             TempData["Guardians"] = JsonConvert.SerializeObject(table);
+
             return table;
         }
-        
+
+        public IActionResult Index()
+        {
+            var memberList = _unitOfWork.MemberRepositories.GetMemberList();
+            var list = AutoMapper.Mapper.Map<List<Member>, List<MemberViewModel>>(memberList);
+            return View(list);
+        }
+
+   
+
+        public IActionResult Edit(string sru)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IActionResult Details(string sru)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IActionResult Delete(string sru)
+        {
+            _unitOfWork.MemberRepositories.DeleteBySRU(sru);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

@@ -44,6 +44,10 @@
     <_ContentIncludedByDefault Remove="Views\Forms\Index.cshtml" />
     <_ContentIncludedByDefault Remove="Views\Partial\AddEdit\_Address.cshtml" />
     <_ContentIncludedByDefault Remove="Views\Partial\AddEdit\_Member.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Partial\OLD\EditMember.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Partial\OLD\Guardian.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Partial\OLD\Health.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Partial\OLD\HealthIssues.cshtml" />
   </ItemGroup>
 
 </Project>

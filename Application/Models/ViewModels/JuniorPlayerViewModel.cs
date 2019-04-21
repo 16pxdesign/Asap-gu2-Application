@@ -6,8 +6,13 @@ using Application.Data.Models;
 
 namespace Application.Models
 {
-    public class JuniorPlayerViewModel
+    [Serializable]
+    public class JuniorViewModel
     {
+        public JuniorViewModel()
+        {
+            Guardians = new List<GuardianViewModel>();
+        }
 
         public List<GuardianViewModel> Guardians { get; set; }
 

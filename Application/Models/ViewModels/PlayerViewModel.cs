@@ -8,13 +8,18 @@ namespace Application.Models
 {
     public class PlayerViewModel
     {
+        public PlayerViewModel()
+        {
+            Position = null;
+            HealthIssues = new List<HealthIssueViewModel>();
+            Junior = new JuniorViewModel();
+        }
 
-        public PlayerPosition Position { get; set; }
+        public PlayerPosition? Position { get; set; }
         public DoctorViewModel Doctor { get; set; }
         public List<HealthIssueViewModel> HealthIssues { get; set; }
-        public List<Contact> Contacts { get; set; }
-        public JuniorPlayerViewModel JuniorPlayer { get; set; }
-        public SeniorPlayerViewModel SeniorPlayer { get; set; }
+        public JuniorViewModel Junior { get; set; }
+        public SeniorViewModel Senior { get; set; }
 
     }
 }

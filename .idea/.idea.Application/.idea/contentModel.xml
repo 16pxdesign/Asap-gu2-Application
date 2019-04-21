@@ -67,6 +67,7 @@
             <e p="_HealthIssues.cshtml" t="Include" />
             <e p="_HealthTable.cshtml" t="Include" />
             <e p="CreateUpdate.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
           </e>
           <e p="Partial" t="Include">
             <e p="Done" t="Include">
@@ -74,13 +75,6 @@
               <e p="Doctor.cshtml" t="Include" />
               <e p="Kin.cshtml" t="Include" />
               <e p="Member.cshtml" t="Include" />
-            </e>
-            <e p="Health.cshtml" t="Include" />
-            <e p="OLD" t="Include">
-              <e p="EditMember.cshtml" t="Include" />
-              <e p="Guardian.cshtml" t="Include" />
-              <e p="Health.cshtml" t="Include" />
-              <e p="HealthIssues.cshtml" t="Include" />
             </e>
           </e>
           <e p="Shared" t="Include">
@@ -192,8 +186,8 @@
           <e p="Database.db" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="20190415093701_init.cs" t="Include" />
-          <e p="20190415093701_init.Designer.cs" t="Include" />
+          <e p="20190421005635_init.cs" t="Include" />
+          <e p="20190421005635_init.Designer.cs" t="Include" />
           <e p="DatabaseModelModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">

@@ -12,7 +12,7 @@ namespace Application.Data.Models
         public string Surname { get; set; }
         public string Phone { get; set; }
         public string Relationship { get; set; }
-        public DateTime? Signature { get; set; }
+        public DateTime Signature { get; set; }
 
         //Relations
         public virtual Junior Junior { get; set; }
