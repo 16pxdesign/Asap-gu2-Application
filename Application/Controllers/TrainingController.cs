@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.Data.Models;
+using Application.Frameworks;
 using Application.Models;
 using Application.Models.ViewModels;
 using Application.Repo;
@@ -36,7 +37,9 @@ namespace Application.Controllers
             };
             TempData["Activities"] = JsonConvert.SerializeObject(model);
 
+            ViewBag.PlayerList  = AutoMapper.Mapper.Map<List<Member>, List<MemberViewModel>>(_unitOfWork.MemberRepositories.GetMemberList());
 
+    
             ViewBag.CoachList = _unitOfWork.TraingRepositorieses.GetListOfCoaches();
             return View(model);
         }

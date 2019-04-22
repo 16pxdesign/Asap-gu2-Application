@@ -26,6 +26,7 @@ namespace Application.Repo
 
             return member;
         }
+        
 
         public List<Member> GetMemberList()
         {
