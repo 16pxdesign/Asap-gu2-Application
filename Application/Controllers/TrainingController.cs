@@ -16,6 +16,7 @@ namespace Application.Controllers
         {
             _unitOfWork = unitOfWork as UnitOfWork;
         }
+
         public IActionResult Index()
         {
             var listOfTrainings = _unitOfWork.TraingRepositorieses.GetListOfTrainings();
@@ -26,26 +27,42 @@ namespace Application.Controllers
         public IActionResult CreateUpdate()
         {
             ViewBag.CoachList = _unitOfWork.TraingRepositorieses.GetListOfCoaches();
-            var m = new TrainingViewModel() {Id = 1, Location = "lol"};
-            return View(m);
+            return View();
         }
-[HttpPost]
+
+        [HttpPost]
         public IActionResult CreateUpdate(TrainingViewModel model)
         {
-   
             if (ModelState.IsValid)
             {
-   
                 var save = AutoMapper.Mapper.Map<TrainingViewModel, Training>(model);
                 _unitOfWork.TraingRepositorieses.AddUpdateTraining(save);
             }
-            else
-            {
-                ModelState.AddModelError("Error","Try Again");
-            }
+
 
             return View(model);
         }
+
+        public IActionResult Edit(int id)
+        {
+            var training = _unitOfWork.TraingRepositorieses.GetTraining(id);
+            var model = AutoMapper.Mapper.Map<Training, TrainingViewModel>(training);    
+            return View("CreateUpdate",model);
+        }
+        
+        [HttpPost]
+        public IActionResult Edit(TrainingViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var save = AutoMapper.Mapper.Map<TrainingViewModel, Training>(model);
+                _unitOfWork.TraingRepositorieses.AddUpdateTraining(save);
+            }
+
+
+            return View("CreateUpdate",model);
+        }
+        
 
         public IActionResult Details(string Id)
         {

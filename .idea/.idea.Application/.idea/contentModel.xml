@@ -104,6 +104,7 @@
           </e>
           <e p="Training" t="Include">
             <e p="CreateUpdate.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
           </e>
         </e>
