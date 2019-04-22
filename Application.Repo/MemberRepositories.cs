@@ -26,16 +26,16 @@ namespace Application.Repo
 
             return member;
         }
-        
+
 
         public List<Member> GetMemberList()
         {
             return _context.Members.ToList();
         }
-        
+
         public List<Member> GetPlayerList()
         {
-            return _context.Members.Where(x=>x.Type != MemberType.Member).ToList();
+            return _context.Members.Where(x => x.Type != MemberType.Member).ToList();
         }
 
         public void DeleteBySRU(string sru)
@@ -49,7 +49,7 @@ namespace Application.Repo
         public Exception InsertEditMember(Member member)
         {
             var isMemberExist = IsMemberExist(member.SRU);
-            
+
             switch (member.Type)
             {
                 case MemberType.Senior:
@@ -59,9 +59,8 @@ namespace Application.Repo
                     member.Player.Senior = null;
                     break;
                 case MemberType.Member:
-                   member.Player = null;
+                    member.Player = null;
                     break;
-                
             }
 
             if (!isMemberExist)
@@ -73,7 +72,7 @@ namespace Application.Repo
                 _context.Members.Add(member);
                 _context.SaveChanges();
             }
-            
+
             _context.SaveChanges();
 
             return null;

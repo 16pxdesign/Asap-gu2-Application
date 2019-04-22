@@ -146,11 +146,11 @@ namespace Application.Data.Models
                 .WithMany()
                 .HasForeignKey(m => m.CoachSRU)
                 .OnDelete(DeleteBehavior.Restrict);
-        
+
 
             //Attendance
-              modelBuilder.Entity<Attendance>()
-                  .HasKey(c => new { c.PlayerSRU, c. TrainingId });
+            modelBuilder.Entity<Attendance>()
+                .HasKey(c => new {c.PlayerSRU, c.TrainingId});
             modelBuilder.Entity<Attendance>()
                 .HasKey(k => k.Id);
             modelBuilder.Entity<Attendance>()

@@ -79,7 +79,9 @@
           </e>
           <e p="Partial" t="Include">
             <e p="Display" t="Include">
+              <e p="Activities.cshtml" t="Include" />
               <e p="Address.cshtml" t="Include" />
+              <e p="Attendance.cshtml" t="Include" />
               <e p="Doctor.cshtml" t="Include" />
               <e p="Guardians.cshtml" t="Include" />
               <e p="HealthIssues.cshtml" t="Include" />

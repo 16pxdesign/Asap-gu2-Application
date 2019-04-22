@@ -64,3 +64,5 @@ C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netco
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Training\_ActivitiesTable.g.cshtml.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Training\_ActivityAddForm.g.cshtml.cs
 C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\Forms\Attendance.g.cshtml.cs
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\Display\Activities.g.cshtml.cs
+C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\Display\Attendance.g.cshtml.cs

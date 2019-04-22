@@ -41,9 +41,6 @@ namespace Application.Controllers
                 AutoMapper.Mapper.Map<List<Member>, List<MemberViewModel>>(
                     _unitOfWork.MemberRepositories.GetPlayerList());
 
-            
-            
-
 
             ViewBag.CoachList = _unitOfWork.TraingRepositories.GetListOfCoaches();
             return View(model);
@@ -55,14 +52,12 @@ namespace Application.Controllers
             if (ModelState.IsValid)
             {
                 var save = AutoMapper.Mapper.Map<TrainingViewModel, Training>(model);
-                _unitOfWork.TraingRepositories.AddUpdateTraining(save,save.Activities);
-                _unitOfWork.TraingRepositories.InsertUpdateAttendance(save,model.Attended);
+                _unitOfWork.TraingRepositories.AddUpdateTraining(save, save.Activities);
+                _unitOfWork.TraingRepositories.InsertUpdateAttendance(save, model.Attended);
                 return RedirectToAction(nameof(Index));
             }
 
-           
 
-            
             return View(model);
         }
 
@@ -87,7 +82,7 @@ namespace Application.Controllers
             {
                 var save = AutoMapper.Mapper.Map<TrainingViewModel, Training>(model);
                 _unitOfWork.TraingRepositories.AddUpdateTraining(save, save.Activities);
-                _unitOfWork.TraingRepositories.InsertUpdateAttendance(save,model.Attended);
+                _unitOfWork.TraingRepositories.InsertUpdateAttendance(save, model.Attended);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -101,6 +96,9 @@ namespace Application.Controllers
         {
             var result = _unitOfWork.TraingRepositories.GetTraining(Id);
             var model = AutoMapper.Mapper.Map<Training, TrainingViewModel>(result);
+
+            List<Member> attendenceList = _unitOfWork.TraingRepositories.GetAttendenceList(result.Id);
+            model.Attendance = AutoMapper.Mapper.Map<List<Member>, List<MemberViewModel>>(attendenceList);
             return View(model);
         }
 
