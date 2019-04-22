@@ -32,6 +32,11 @@ namespace Application.Repo
         {
             return _context.Members.ToList();
         }
+        
+        public List<Member> GetPlayerList()
+        {
+            return _context.Members.Where(x=>x.Type != MemberType.Member).ToList();
+        }
 
         public void DeleteBySRU(string sru)
         {

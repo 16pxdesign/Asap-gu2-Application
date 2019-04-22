@@ -24,7 +24,7 @@ namespace Application.Controllers
 
         public IActionResult Index()
         {
-            var listOfTrainings = _unitOfWork.TraingRepositorieses.GetListOfTrainings();
+            var listOfTrainings = _unitOfWork.TraingRepositories.GetListOfTrainings();
             var model = AutoMapper.Mapper.Map<List<Training>, List<TrainingViewModel>>(listOfTrainings);
             return View(model);
         }
@@ -33,14 +33,19 @@ namespace Application.Controllers
         {
             var model = new TrainingViewModel()
             {
-                Activitieses = new List<ActivitiesViewModel>()
+                Activities = new List<ActivitiesViewModel>()
             };
             TempData["Activities"] = JsonConvert.SerializeObject(model);
 
-            ViewBag.PlayerList  = AutoMapper.Mapper.Map<List<Member>, List<MemberViewModel>>(_unitOfWork.MemberRepositories.GetMemberList());
+            ViewBag.PlayerList =
+                AutoMapper.Mapper.Map<List<Member>, List<MemberViewModel>>(
+                    _unitOfWork.MemberRepositories.GetPlayerList());
 
-    
-            ViewBag.CoachList = _unitOfWork.TraingRepositorieses.GetListOfCoaches();
+            
+            
+
+
+            ViewBag.CoachList = _unitOfWork.TraingRepositories.GetListOfCoaches();
             return View(model);
         }
 
@@ -50,19 +55,27 @@ namespace Application.Controllers
             if (ModelState.IsValid)
             {
                 var save = AutoMapper.Mapper.Map<TrainingViewModel, Training>(model);
-                _unitOfWork.TraingRepositorieses.AddUpdateTraining(save);
+                _unitOfWork.TraingRepositories.AddUpdateTraining(save,save.Activities);
+                _unitOfWork.TraingRepositories.InsertUpdateAttendance(save,model.Attended);
                 return RedirectToAction(nameof(Index));
             }
 
+           
 
+            
             return View(model);
         }
 
         public IActionResult Edit(int id)
         {
-            ViewBag.CoachList = _unitOfWork.TraingRepositorieses.GetListOfCoaches();
-            var training = _unitOfWork.TraingRepositorieses.GetTraining(id);
+            ViewBag.PlayerList =
+                AutoMapper.Mapper.Map<List<Member>, List<MemberViewModel>>(
+                    _unitOfWork.MemberRepositories.GetPlayerList());
+
+            ViewBag.CoachList = _unitOfWork.TraingRepositories.GetListOfCoaches();
+            var training = _unitOfWork.TraingRepositories.GetTraining(id);
             var model = AutoMapper.Mapper.Map<Training, TrainingViewModel>(training);
+            model.Attended = _unitOfWork.TraingRepositories.GetSelectedAttendance(training);
             TempData["Activities"] = JsonConvert.SerializeObject(model);
             return View("CreateUpdate", model);
         }
@@ -73,8 +86,9 @@ namespace Application.Controllers
             if (ModelState.IsValid)
             {
                 var save = AutoMapper.Mapper.Map<TrainingViewModel, Training>(model);
-                
-                _unitOfWork.TraingRepositorieses.AddUpdateTraining(save, save.Activitieses);
+                _unitOfWork.TraingRepositories.AddUpdateTraining(save, save.Activities);
+                _unitOfWork.TraingRepositories.InsertUpdateAttendance(save,model.Attended);
+
                 return RedirectToAction(nameof(Index));
             }
 
@@ -85,7 +99,7 @@ namespace Application.Controllers
 
         public IActionResult Details(int Id)
         {
-            var result = _unitOfWork.TraingRepositorieses.GetTraining(Id);
+            var result = _unitOfWork.TraingRepositories.GetTraining(Id);
             var model = AutoMapper.Mapper.Map<Training, TrainingViewModel>(result);
             return View(model);
         }
@@ -93,7 +107,7 @@ namespace Application.Controllers
 
         public IActionResult Delete(int Id)
         {
-            _unitOfWork.TraingRepositorieses.DeleteTrainingById(Id);
+            _unitOfWork.TraingRepositories.DeleteTrainingById(Id);
             return RedirectToAction(nameof(Index));
         }
 
@@ -107,7 +121,7 @@ namespace Application.Controllers
                 var data = value as string ?? "";
                 var list = JsonConvert.DeserializeObject<TrainingViewModel>(data) ??
                            new TrainingViewModel();
-                model = list.Activitieses.ElementAt((int) id);
+                model = list.Activities.ElementAt((int) id);
                 TempData["ActivitiesID"] = id;
                 string json = JsonConvert.SerializeObject(list);
                 TempData["Activities"] = json;
@@ -120,7 +134,8 @@ namespace Application.Controllers
 
             return PartialView("_ActivityAddForm", model);
         }
-[HttpPost]
+
+        [HttpPost]
         public IActionResult AddActivity(ActivitiesViewModel model)
         {
             if (ModelState.IsValid)
@@ -129,17 +144,17 @@ namespace Application.Controllers
                 var data = value as string ?? "";
                 var list = JsonConvert.DeserializeObject<TrainingViewModel>(data) ??
                            new TrainingViewModel();
-                if (list.Activitieses == null)
-                    list.Activitieses = new List<ActivitiesViewModel>();
+                if (list.Activities == null)
+                    list.Activities = new List<ActivitiesViewModel>();
                 TempData.TryGetValue("ActivitiesID", out object listIndex);
                 listIndex = listIndex as int? ?? null;
                 if (listIndex != null)
                 {
-                    list.Activitieses[(int) listIndex] = model;
+                    list.Activities[(int) listIndex] = model;
                 }
                 else
                 {
-                    list.Activitieses.Add(model);
+                    list.Activities.Add(model);
                 }
 
 
@@ -148,7 +163,6 @@ namespace Application.Controllers
             }
 
             return PartialView("_ActivityAddForm", model);
-            
         }
 
         public IActionResult ModalFillTable(string table = null)
@@ -168,13 +182,13 @@ namespace Application.Controllers
             var data = value as string ?? "";
             var table = JsonConvert.DeserializeObject<TrainingViewModel>(data) ??
                         new TrainingViewModel();
-            if (table.Activitieses == null)
-                table.Activitieses = new List<ActivitiesViewModel>();
+            if (table.Activities == null)
+                table.Activities = new List<ActivitiesViewModel>();
             TempData["Activities"] = JsonConvert.SerializeObject(table);
             return table;
         }
-        
-        
+
+
         [HttpPost]
         public async Task<bool> DeleteActivity(int id)
         {
@@ -188,11 +202,10 @@ namespace Application.Controllers
             var data = value as string ?? "";
             var list = JsonConvert.DeserializeObject<TrainingViewModel>(data) ??
                        new TrainingViewModel();
-            list.Activitieses.RemoveAt(id);
+            list.Activities.RemoveAt(id);
             string json = JsonConvert.SerializeObject(list);
             TempData["Activities"] = json;
             return true;
         }
-        
     }
 }
