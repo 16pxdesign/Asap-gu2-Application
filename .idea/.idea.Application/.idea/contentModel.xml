@@ -89,6 +89,7 @@
             </e>
             <e p="Forms" t="Include">
               <e p="Address.cshtml" t="Include" />
+              <e p="Attendence.cshtml" t="Include" />
               <e p="Doctor.cshtml" t="Include" />
               <e p="Kin.cshtml" t="Include" />
               <e p="Member.cshtml" t="Include" />
@@ -103,7 +104,11 @@
             <e p="Error.cshtml" t="Include" />
           </e>
           <e p="Training" t="Include">
+            <e p="_Activities.cshtml" t="Include" />
+            <e p="_ActivitiesTable.cshtml" t="Include" />
+            <e p="_ActivityAddForm.cshtml" t="Include" />
             <e p="CreateUpdate.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
             <e p="Edit.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
           </e>
@@ -141,6 +146,7 @@
                 <e p="datepicker.zh.js" t="Include" />
               </e>
             </e>
+            <e p="modal-activity.js" t="Include" />
             <e p="modal-member-guardian.js" t="Include" />
             <e p="modal-member-health.js" t="Include" />
             <e p="modal.js" t="Include" />
@@ -209,8 +215,8 @@
           <e p="Database.db" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="20190421202718_init.cs" t="Include" />
-          <e p="20190421202718_init.Designer.cs" t="Include" />
+          <e p="20190422142911_init.cs" t="Include" />
+          <e p="20190422142911_init.Designer.cs" t="Include" />
           <e p="DatabaseModelModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">

@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Application.Models;
 using Application.Repo.Contracts;
-using System.Dynamic;
-using System.Linq.Expressions;
-using System.Text;
-using System.Web.Mvc;
 using Application.Data.Models;
 using Application.Repo;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Controller = Microsoft.AspNetCore.Mvc.Controller;
 using ModelStateDictionary = Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary;
@@ -29,9 +21,81 @@ namespace Application.Controllers
             _unitOfWork = unitOfWork as UnitOfWork;
         }
 
-        public IActionResult CreateUpdate( string id = null, string table = null )
+        public IActionResult CreateUpdate(string id = null, string table = null)
         {
-            
+
+            MemberViewModel model = null;
+
+            TempData["EditMember"] = false;
+            if (id != null)
+            {
+                TempData["EditMember"] = true;
+                var member = _unitOfWork.MemberRepositories.FindBySRU(id);
+                model = AutoMapper.Mapper.Map<Member, MemberViewModel>(member);
+            }
+
+
+            if (model == null)
+                model = new MemberViewModel();
+
+            TempData["HealthIssues"] = JsonConvert.SerializeObject(model.Player);
+            TempData["Guardians"] = JsonConvert.SerializeObject(model.Player.Junior);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult CreateUpdate(MemberViewModel model)
+        {
+            if (model.Type == MemberType.Member)
+            {
+                IgnoreModelStateProperty(ModelState, "Player");
+            }
+
+            if (model.Type == MemberType.Junior)
+            {
+                IgnoreModelStateProperty(ModelState, "Player.Senior");
+            }
+
+            if (model.Type == MemberType.Senior)
+            {
+                IgnoreModelStateProperty(ModelState, "Player.Junior");
+            }
+
+            if (ModelState.IsValid)
+            {
+                bool isEdit = (bool) (TempData["EditMember"] ?? false);
+                var member = AutoMapper.Mapper.Map<MemberViewModel, Member>(model);
+
+                if (isEdit)
+                {
+                    _unitOfWork.MemberRepositories.InsertEditMember(member);
+
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    if (!_unitOfWork.MemberRepositories.IsMemberExist(member.SRU))
+                    {
+                        _unitOfWork.MemberRepositories.InsertEditMember(member);
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("Exist", "User with this id exist");
+                        return View(model);
+                    }
+
+
+                    return RedirectToAction(nameof(Index));
+                }
+            }
+
+
+            return View(model);
+        }
+        
+        public IActionResult ModalFillTable(string table = null)
+        {
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest" && table == "Health")
             {
                 var healthIssuePartialList = OnAjaxHealthTablePartialViewResult();
@@ -44,78 +108,7 @@ namespace Application.Controllers
                 return PartialView("_GuardianTable", guardianPartialList);
             }
 
-            MemberViewModel model = null;
-
-            TempData["EditMember"] = false;
-            if (id != null)
-            {
-                TempData["EditMember"] = true;
-                var member = _unitOfWork.MemberRepositories.FindBySRU(id);
-                model = AutoMapper.Mapper.Map<Member,MemberViewModel>(member);
-            }
-
-
-            if(model == null )
-                model = new MemberViewModel();
-            
-            TempData["HealthIssues"] = JsonConvert.SerializeObject(model.Player );
-            TempData["Guardians"] = JsonConvert.SerializeObject(model.Player.Junior);
-            
-            return View(model);
-        }
-
-       
-
-        [Microsoft.AspNetCore.Mvc.HttpPost]
-        public IActionResult CreateUpdate(MemberViewModel model)
-        {
-           
-            if (model.Type == MemberType.Member)
-            {
-                IgnoreModelStateProperty(ModelState, "Player");
-            }
-            if (model.Type == MemberType.Junior)
-            {
-                IgnoreModelStateProperty(ModelState, "Player.Senior");
-            }
-            if (model.Type == MemberType.Senior)
-            {
-                IgnoreModelStateProperty(ModelState, "Player.Junior");
-            }
-            
-            if (ModelState.IsValid)
-            {
-                bool isEdit = (bool) (TempData["EditMember"] ?? false);
-                var member = AutoMapper.Mapper.Map<MemberViewModel, Member>(model);
-
-                if (isEdit)
-                {
-                    _unitOfWork.MemberRepositories.InsertEditMember(member);
-                    
-                    return RedirectToAction(nameof(Index));
-                }
-                else
-                {
-                    if (!_unitOfWork.MemberRepositories.IsMemberExist(member.SRU))
-                    {
-                        _unitOfWork.MemberRepositories.InsertEditMember(member);
-
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("Exist","User with this id exist");
-                        return View(model);
-                    }
-                     
-                    
-                    return RedirectToAction(nameof(Index));
-                }
-                
-            }
-         
-            
-
-            return View(model);
+            return null;
         }
 
         private void IgnoreModelStateProperty(ModelStateDictionary modelState, string key)
@@ -134,7 +127,7 @@ namespace Application.Controllers
         }
 
 
-        [Microsoft.AspNetCore.Mvc.NonAction]
+        [NonAction]
         private PlayerViewModel OnAjaxHealthTablePartialViewResult()
         {
             TempData.TryGetValue("HealthIssues", out object value);
@@ -157,7 +150,7 @@ namespace Application.Controllers
                 var data = value as string ?? "";
                 var list = JsonConvert.DeserializeObject<PlayerViewModel>(data) ??
                            new PlayerViewModel();
-                model = list.HealthIssues.ElementAt((int)id);
+                model = list.HealthIssues.ElementAt((int) id);
                 TempData["HealthIssuesID"] = id;
                 string json = JsonConvert.SerializeObject(list);
                 TempData["HealthIssues"] = json;
@@ -172,7 +165,7 @@ namespace Application.Controllers
         }
 
 
-        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [HttpPost]
         public IActionResult AddHealth(HealthIssueViewModel model)
         {
             if (ModelState.IsValid)
@@ -187,7 +180,7 @@ namespace Application.Controllers
                 listIndex = listIndex as int? ?? null;
                 if (listIndex != null)
                 {
-                    list.HealthIssues[(int)listIndex] = model;
+                    list.HealthIssues[(int) listIndex] = model;
                 }
                 else
                 {
@@ -203,7 +196,7 @@ namespace Application.Controllers
         }
 
 
-        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [HttpPost]
         public async Task<bool> DeleteHealth(int id)
         {
             DeleteHealthFromList(id);
@@ -232,7 +225,7 @@ namespace Application.Controllers
                 var data = value as string ?? "";
                 var list = JsonConvert.DeserializeObject<JuniorViewModel>(data) ??
                            new JuniorViewModel();
-                model = list.Guardians.ElementAt((int)id);
+                model = list.Guardians.ElementAt((int) id);
                 TempData["GuardiansID"] = id;
                 string json = JsonConvert.SerializeObject(list);
                 TempData["Guardians"] = json;
@@ -246,7 +239,7 @@ namespace Application.Controllers
             return PartialView("_GuardianAddForm", model);
         }
 
-        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [HttpPost]
         public IActionResult AddGuardian(GuardianViewModel model)
         {
             if (ModelState.IsValid)
@@ -277,7 +270,7 @@ namespace Application.Controllers
             return PartialView("_GuardianAddForm", model);
         }
 
-        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [HttpPost]
         public async Task<bool> DeleteGuardian(int id)
         {
             await DeleteGuardianFromList(id);
@@ -289,7 +282,7 @@ namespace Application.Controllers
             TempData.TryGetValue("Guardians", out object value);
             var data = value as string ?? "";
             JuniorViewModel list = JsonConvert.DeserializeObject<JuniorViewModel>(data) ??
-                                         new JuniorViewModel();
+                                   new JuniorViewModel();
             if (list.Guardians == null)
                 list.Guardians = new List<GuardianViewModel>();
 
@@ -299,13 +292,13 @@ namespace Application.Controllers
             return true;
         }
 
-        [Microsoft.AspNetCore.Mvc.NonAction]
+        [NonAction]
         private JuniorViewModel OnAjaxGuardianPartialViewResult()
         {
             TempData.TryGetValue("Guardians", out object value);
             var data = value as string ?? "";
             JuniorViewModel table = JsonConvert.DeserializeObject<JuniorViewModel>(data) ??
-                                          new JuniorViewModel();
+                                    new JuniorViewModel();
             TempData["Guardians"] = JsonConvert.SerializeObject(table);
 
             return table;
@@ -317,8 +310,6 @@ namespace Application.Controllers
             var list = AutoMapper.Mapper.Map<List<Member>, List<MemberViewModel>>(memberList);
             return View(list);
         }
-
-   
 
 
         public IActionResult Details(string sru)
@@ -333,8 +324,5 @@ namespace Application.Controllers
             _unitOfWork.MemberRepositories.DeleteBySRU(sru);
             return RedirectToAction(nameof(Index));
         }
-        
-        
-       
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -13,19 +14,7 @@ namespace Application.Data.Models
     {
         public DbSet<Member> Members { get; set; }
         public DbSet<Training> Training { get; set; }
-        public DbSet<Profile> Profile { get; set; }
-        public DbSet<Game> Game { get; set; }
-        public DbSet<Address> Address { get; set; }
-        public DbSet<HealthIssue> HealthIssue { get; set; }
-        public DbSet<Player> Player { get; set; }
-        public DbSet<Junior> Junior { get; set; }
-        public DbSet<Senior> Senior { get; set; }
-
-
-        public DbSet<Guardian> Guardian { get; set; }
-        public DbSet<Doctor> Doctor { get; set; }
-        public DbSet<Kin> Kin { get; set; }
-
+        public DbSet<Activities> Activities { get; set; }
 
         public DatabaseModel() : base()
         {
@@ -147,6 +136,13 @@ namespace Application.Data.Models
             modelBuilder.Entity<Training>()
                 .HasMany(m => m.Activitieses)
                 .WithOne(m => m.Training)
+                .HasForeignKey(x=>x.TrainingId)
+                .OnDelete(DeleteBehavior.Cascade);
+            
+            modelBuilder.Entity<Training>()
+                .HasOne(m => m.Coach)
+                .WithMany()
+                .HasForeignKey(m=>m.CoachSRU)
                 .OnDelete(DeleteBehavior.Restrict);
          
             //Attendance
