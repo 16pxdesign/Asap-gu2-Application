@@ -1,16 +1,28 @@
-﻿@model IEnumerable<Contact>
-@{ ViewData["Title"] = "Contact form"; }
-<!-- Modal placeholder -->
-<div id="modal-placeholder"></div>
+﻿@model Application.Models.ViewModels.MemberForm
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="ajax-modal" data-target="#add-contact" data-url="@Url.Action("Contact")">
-    Add contact
-</button>
+@{
+    ViewData["Title"] = "Home Page";
+}
 
-<!-- Contacts table -->
-@await Html.PartialAsync("_Table", Model)
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
 
-<div id="notification" data-url="@Url.Action("Notifications", "Home")"></div>
 
-<script src="~/js/modal.js" asp-append-version="true" defer></script>
+<form asp-action="Index">
+    <div class="row">
+      
+            <div class="col-md-6">
+                <partial name="../Partial/MemberManagement/Form/Member.cshtml" for="Member"/>
+            </div>
+            <div class="col-md-6">
+                <partial name="../Partial/MemberManagement/Form/Address.cshtml" for="Address"/>
+            </div>
+            </div>
+    <div class="row">
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary"/>
+        </div>
+    </div>
+</form>

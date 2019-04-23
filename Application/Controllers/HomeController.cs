@@ -1,78 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Application.Models;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
+using Application.Models;
+using Application.Models.ViewModels;
 
 namespace Application.Controllers
 {
     public class HomeController : Controller
     {
-
         public IActionResult Index()
         {
-
-            List<Contact> list = new List<Contact>();
-            
-            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
-            {
-                TempData.TryGetValue("data", out object value);
-                var data = value as string ?? "";
-                list = JsonConvert.DeserializeObject<List<Contact>>(data) ?? new List<Contact>();
-                TempData["data"] = JsonConvert.SerializeObject(list);         
-                
-
-                return PartialView("_Table", list);
-            }
-      
-           
-            TempData["data"] = JsonConvert.SerializeObject(list);         
-            
-            
-            return View(list);
-        }
-
-        public IActionResult Contact()
-        {
-            var model = new Contact { };
-
-            return PartialView("_ContactModalPartial", model);
+            return View();
         }
 
         [HttpPost]
-        public IActionResult Contact(Contact model)
+        [ValidateAntiForgeryToken]
+        public IActionResult Index(MemberForm model)
         {
             if (ModelState.IsValid)
             {
-                TempData.TryGetValue("data", out object value);
-                var data = value as string ?? "";
-                List<Contact> list = JsonConvert.DeserializeObject<List<Contact>>(data) ?? new List<Contact>();
-                list.Add(model);
-                string json = JsonConvert.SerializeObject(list);         
-                TempData["data"] = json;
+                var memberForm = model;
             }
 
-            return PartialView("_ContactModalPartial", model);
+            return View(model);
         }
 
-        [NonAction]
-        private void CreateNotification(string message)
+
+  
+
+        public IActionResult Privacy()
         {
-            TempData.TryGetValue("Notifications", out object value);
-            var notifications = value as List<string> ?? new List<string>();
-            notifications.Add(message);
-            TempData["Notifications"] = notifications; 
+            return View();
         }
 
-        public IActionResult Notifications()
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
         {
-            TempData.TryGetValue("Notifications", out object value);
-            var notifications = value as IEnumerable<string> ?? Enumerable.Empty<string>();
-            return PartialView("_NotificationsPartial", notifications);
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
-    
 }
