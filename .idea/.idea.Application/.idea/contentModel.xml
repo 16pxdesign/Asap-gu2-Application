@@ -4,8 +4,8 @@
     <e p="C:\Users\pingu\.Rider2018.3\config\consoles\db" t="IncludeRecursive" />
     <e p="C:\Users\pingu\.Rider2018.3\config\extensions" t="IncludeRecursive" />
     <e p="C:\Users\pingu\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\pingu\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Application.-308470388.00" t="ExcludeRecursive" />
-    <e p="C:\Users\pingu\Documents\GitHub\Asap-gu2-Application" t="IncludeFlat">
+    <e p="C:\Users\pingu\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Application.-755308751.00" t="ExcludeRecursive" />
+    <e p="D:\GitHub" t="IncludeFlat">
       <e p="Application" t="IncludeRecursive">
         <e p="Application.csproj" t="IncludeRecursive" />
         <e p="Application.csproj.DotSettings" t="Include" />
@@ -55,7 +55,6 @@
             </e>
           </e>
         </e>
-        <e p="Pages" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
@@ -97,7 +96,11 @@
               <e p="Player.cshtml" t="Include" />
             </e>
             <e p="Forms" t="Include">
+              <e p="Address.cshtml" t="Include" />
               <e p="Attendance.cshtml" t="Include" />
+              <e p="Doctor.cshtml" t="Include" />
+              <e p="Kin.cshtml" t="Include" />
+              <e p="Member.cshtml" t="Include" />
               <e p="Training.cshtml" t="Include" />
             </e>
           </e>
@@ -219,8 +222,8 @@
           <e p="Database.db" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="20190423022019_init.cs" t="Include" />
-          <e p="20190423022019_init.Designer.cs" t="Include" />
+          <e p="20190423031429_init.cs" t="Include" />
+          <e p="20190423031429_init.Designer.cs" t="Include" />
           <e p="DatabaseModelModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
@@ -288,7 +291,6 @@
         </e>
         <e p="ProfileRepository.cs" t="Include" />
         <e p="TrainingRepositories.cs" t="Include" />
-        <e p="TrainingRepositories.cs___jb_tmp___" t="Include" />
         <e p="UnitOfWork.cs" t="Include" />
       </e>
       <e p="Application.sln" t="IncludeFlat" />

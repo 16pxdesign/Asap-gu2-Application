@@ -70,6 +70,7 @@ function tableUpdateGuardian() {
         success: function (table) {
             var tableElement = $('#GuardianTable');
             tableElement.replaceWith(table);
+            console.log(table);
         },
         error: function () {
             alert("Problem with page refresh");

@@ -1,6 +1,12 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Xml.Linq;
 using Application.Data.Models;
+using Application.Repo.Contracts;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.Repo.Contracts
 {

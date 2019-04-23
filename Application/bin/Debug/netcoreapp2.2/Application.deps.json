@@ -566,7 +566,10 @@
       },
       "Application.Repo/1.0.0": {
         "dependencies": {
-          "Application.Data": "1.0.0"
+          "Application.Data": "1.0.0",
+          "Microsoft.AspNet.Mvc": "5.2.7",
+          "Microsoft.AspNetCore.Mvc.Core": "2.2.2",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0"
         },
         "runtime": {
           "Application.Repo.dll": {}

@@ -5857,7 +5857,10 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
-          "Application.Data": "1.0.0"
+          "Application.Data": "1.0.0",
+          "Microsoft.AspNet.Mvc": "5.2.7",
+          "Microsoft.AspNetCore.Mvc.Core": "2.2.2",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0"
         },
         "compile": {
           "bin/placeholder/Application.Repo.dll": {}
@@ -15689,11 +15692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application\\Application.csproj",
+      "projectUniqueName": "D:\\github\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application\\Application.csproj",
+      "projectPath": "D:\\github\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\pingu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application\\obj\\",
+      "outputPath": "D:\\github\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -15712,11 +15715,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application.Data\\Application.Data.csproj": {
-              "projectPath": "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application.Data\\Application.Data.csproj"
+            "D:\\github\\Application.Data\\Application.Data.csproj": {
+              "projectPath": "D:\\github\\Application.Data\\Application.Data.csproj"
             },
-            "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application.Repo\\Application.Repo.csproj": {
-              "projectPath": "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application.Repo\\Application.Repo.csproj"
+            "D:\\github\\Application.Repo\\Application.Repo.csproj": {
+              "projectPath": "D:\\github\\Application.Repo\\Application.Repo.csproj"
             }
           }
         }

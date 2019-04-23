@@ -51,9 +51,4 @@
     <_ContentIncludedByDefault Remove="Views\Partial\OLD\HealthIssues.cshtml" />
   </ItemGroup>
 
-
-  <ItemGroup>
-    <Folder Include="Pages" />
-  </ItemGroup>
-
 </Project>

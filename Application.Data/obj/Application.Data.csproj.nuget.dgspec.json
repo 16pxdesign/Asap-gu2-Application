@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application.Data\\Application.Data.csproj": {}
+    "D:\\github\\Application.Data\\Application.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application.Data\\Application.Data.csproj": {
+    "D:\\github\\Application.Data\\Application.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application.Data\\Application.Data.csproj",
+        "projectUniqueName": "D:\\github\\Application.Data\\Application.Data.csproj",
         "projectName": "Application.Data",
-        "projectPath": "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application.Data\\Application.Data.csproj",
+        "projectPath": "D:\\github\\Application.Data\\Application.Data.csproj",
         "packagesPath": "C:\\Users\\pingu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pingu\\Documents\\GitHub\\Asap-gu2-Application\\Application.Data\\obj\\",
+        "outputPath": "D:\\github\\Application.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
