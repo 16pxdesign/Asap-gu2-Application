@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Xml.Linq;
 using Application.Data.Models;
 using Application.Repo.Contracts;
 using AutoMapper;
@@ -53,12 +54,22 @@ namespace Application.Repo
             switch (member.Type)
             {
                 case MemberType.Senior:
+                    if ( _context.Junior.Any(o => o.SRU == member.SRU))
+                        _context.Junior.Remove(_context.Junior.Single(x=>x.SRU==member.SRU));
+                    _context.SaveChanges();
                     member.Player.Junior = null;
                     break;
                 case MemberType.Junior:
+                    if ( _context.Senior.Any(o => o.SRU == member.SRU))
+                    _context.Senior.Remove(_context.Senior.Single(x=>x.SRU==member.SRU));
+
+                    _context.SaveChanges();
                     member.Player.Senior = null;
                     break;
                 case MemberType.Member:
+                    if ( _context.Player.Any(o => o.SRU == member.SRU))
+                    _context.Player.Remove(_context.Player.Single(x=>x.SRU==member.SRU));
+                    _context.SaveChanges();
                     member.Player = null;
                     break;
             }
@@ -67,10 +78,8 @@ namespace Application.Repo
                 _context.Members.Add(member);
             else
             {
-                _context.Members.Remove(_context.Members.Find(member.SRU));
-
-                _context.Members.Add(member);
-                _context.SaveChanges();
+                
+                _context.Members.Update(member);
             }
 
             _context.SaveChanges();

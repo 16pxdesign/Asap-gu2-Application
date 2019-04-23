@@ -18,8 +18,8 @@ namespace Application.Models
         public PlayerPosition? Position { get; set; }
         public DoctorViewModel Doctor { get; set; }
         public List<HealthIssueViewModel> HealthIssues { get; set; }
-        public JuniorViewModel Junior { get; set; }
-        public SeniorViewModel Senior { get; set; }
+        public virtual JuniorViewModel Junior { get; set; }
+        public virtual SeniorViewModel Senior { get; set; }
 
     }
 }

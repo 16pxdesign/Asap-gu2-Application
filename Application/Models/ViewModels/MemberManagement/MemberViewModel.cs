@@ -23,8 +23,8 @@ namespace Application.Models
         public string Phone { get; set; }
         public string Mobile { get; set; }
         public AddressViewModel Address { get; set; }
-        public PlayerViewModel Player { get; set; }
+        public virtual PlayerViewModel Player { get; set; }
 
-
+        public string Fullname => string.Concat(Name, " ", Surname);
     }
 }

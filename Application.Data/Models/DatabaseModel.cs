@@ -18,6 +18,8 @@ namespace Application.Data.Models
         public DbSet<Activities> Activities { get; set; }
         public DbSet<Attendance> Attendance { get; set; }
         public DbSet<Player> Player { get; set; }
+        public DbSet<Junior> Junior { get; set; }
+        public DbSet<Senior> Senior { get; set; }
         public DbSet<Profile> Profile { get; set; }
         public DbSet<Skill> Skill { get; set; }
 
@@ -61,9 +63,15 @@ namespace Application.Data.Models
                 .HasForeignKey<Member>();
 
             //Player
+     
+            
+            
             modelBuilder.Entity<Player>()
-                .HasKey(k => k.SRU);
-
+                .HasKey(x=> x.Elo);
+            modelBuilder.Entity<Player>()
+                .HasAlternateKey(x => x.SRU);
+        
+            
             modelBuilder.Entity<Player>()
                 .HasOne(s => s.Member)
                 .WithOne(m => m.Player)
@@ -85,14 +93,14 @@ namespace Application.Data.Models
                 .WithOne(m => m.Player)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            //Senior
+           //Senior
             modelBuilder.Entity<Senior>()
                 .HasKey(k => k.SRU);
 
             modelBuilder.Entity<Senior>()
                 .HasOne(s => s.Player)
                 .WithOne(m => m.Senior)
-                .HasForeignKey<Senior>(m => m.SRU)
+                .HasPrincipalKey<Player>(m => m.SRU)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Senior>()
@@ -108,7 +116,7 @@ namespace Application.Data.Models
             modelBuilder.Entity<Junior>()
                 .HasOne(s => s.Player)
                 .WithOne(m => m.Junior)
-                .HasForeignKey<Junior>(m => m.SRU)
+                .HasPrincipalKey<Player>(m => m.SRU)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Junior>()
@@ -158,7 +166,7 @@ namespace Application.Data.Models
             modelBuilder.Entity<Attendance>()
                 .HasOne(m => m.Player)
                 .WithMany()
-                .HasForeignKey(m => m.PlayerSRU)
+                .HasPrincipalKey(m => m.SRU)
                 .OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<Attendance>()
                 .HasOne(m => m.Training)
@@ -173,7 +181,7 @@ namespace Application.Data.Models
             modelBuilder.Entity<Profile>()
                 .HasOne(m => m.Player)
                 .WithOne()
-                .HasForeignKey<Profile>(m => m.PlayerSRU)
+                .HasPrincipalKey<Player>(m => m.SRU)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Profile>()

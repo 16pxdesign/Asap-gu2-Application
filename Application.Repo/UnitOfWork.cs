@@ -10,14 +10,16 @@ namespace Application.Repo
     public class UnitOfWork : IUnitOfWork
     {
         private readonly DatabaseModel _context;
-        public AddressRepository AddressRepository { get; private set; }
         public MemberRepositories MemberRepositories { get; private set; }
+        public TrainingRepositories TrainingRepositories { get; private set; }
+        public ProfileRepository ProfileRepository { get; private set; }
 
         public UnitOfWork(DatabaseModel context)
         {
             _context = context;
-            this.AddressRepository = new AddressRepository(context);
             this.MemberRepositories = new MemberRepositories(context);
+            this.TrainingRepositories = new TrainingRepositories(context);
+            this.ProfileRepository = new ProfileRepository(context);
         }
 
         

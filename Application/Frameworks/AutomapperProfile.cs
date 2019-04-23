@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Application.Data.Models;
 using Application.Models;
 using AutoMapper;
+using Profile = AutoMapper.Profile;
 
 namespace Application.Frameworks
 {
@@ -34,6 +35,20 @@ namespace Application.Frameworks
             CreateMap<Junior, JuniorViewModel>();
             CreateMap<SeniorViewModel, Senior>();
             CreateMap<Senior, SeniorViewModel>();
+            
+            
+            
+            CreateMap<TrainingViewModel, Training>();
+            CreateMap<Training, TrainingViewModel>();
+            CreateMap<ActivitiesViewModel, Activities>();
+            CreateMap<Activities, ActivitiesViewModel>();
+            CreateMap<AttendanceViewModel, Attendance>();
+            CreateMap<Attendance, AttendanceViewModel>();
+            
+            CreateMap<Profile, ProfileViewModel>();
+            CreateMap<ProfileViewModel, Profile>();
+            CreateMap<Skill, SkillViewModel>();
+            CreateMap<SkillViewModel, Skill>();
                 
 
 

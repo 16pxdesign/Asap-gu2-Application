@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v2.2": {
       "Application.Repo/1.0.0": {
         "dependencies": {
-          "Application.Data": "1.0.0"
+          "Application.Data": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0.0"
         },
         "runtime": {
           "Application.Repo.dll": {}
@@ -891,6 +892,14 @@
         "runtime": {
           "Application.Data.dll": {}
         }
+      },
+      "Microsoft.AspNetCore.Mvc.ViewFeatures/2.2.0.0": {
+        "runtime": {
+          "Microsoft.AspNetCore.Mvc.ViewFeatures.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
+          }
+        }
       }
     }
   },
@@ -1490,6 +1499,11 @@
     },
     "Application.Data/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.Mvc.ViewFeatures/2.2.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

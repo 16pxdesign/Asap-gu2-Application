@@ -97,11 +97,7 @@
               <e p="Player.cshtml" t="Include" />
             </e>
             <e p="Forms" t="Include">
-              <e p="Address.cshtml" t="Include" />
               <e p="Attendance.cshtml" t="Include" />
-              <e p="Doctor.cshtml" t="Include" />
-              <e p="Kin.cshtml" t="Include" />
-              <e p="Member.cshtml" t="Include" />
               <e p="Training.cshtml" t="Include" />
             </e>
           </e>
@@ -223,8 +219,8 @@
           <e p="Database.db" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="20190422221250_init.cs" t="Include" />
-          <e p="20190422221250_init.Designer.cs" t="Include" />
+          <e p="20190423022019_init.cs" t="Include" />
+          <e p="20190423022019_init.Designer.cs" t="Include" />
           <e p="DatabaseModelModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">

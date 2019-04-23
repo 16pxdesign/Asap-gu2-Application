@@ -7,6 +7,7 @@ namespace Application.Data.Models
 
         //Properties
         public string Name { get; set; }
+        public int TrainingId { get; set; }
 
         //Relations
         public virtual Training Training { get; set; }
