@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Application.Data.Models;
 using Application.Frameworks;
 using Application.Models;
-using Application.Models.ViewModels;
 using Application.Repo;
 using Application.Repo.Contracts;
 using Microsoft.AspNetCore.Mvc;
@@ -24,7 +23,7 @@ namespace Application.Controllers
 
         public IActionResult Index()
         {
-            var listOfTrainings = _unitOfWork.TraingRepositories.GetListOfTrainings();
+            var listOfTrainings = _unitOfWork.TrainingRepositories.GetListOfTrainings();
             var model = AutoMapper.Mapper.Map<List<Training>, List<TrainingViewModel>>(listOfTrainings);
             return View(model);
         }
@@ -42,7 +41,7 @@ namespace Application.Controllers
                     _unitOfWork.MemberRepositories.GetPlayerList());
 
 
-            ViewBag.CoachList = _unitOfWork.TraingRepositories.GetListOfCoaches();
+            ViewBag.CoachList = _unitOfWork.TrainingRepositories.GetListOfCoaches();
             return View(model);
         }
 
@@ -52,8 +51,8 @@ namespace Application.Controllers
             if (ModelState.IsValid)
             {
                 var save = AutoMapper.Mapper.Map<TrainingViewModel, Training>(model);
-                _unitOfWork.TraingRepositories.AddUpdateTraining(save, save.Activities);
-                _unitOfWork.TraingRepositories.InsertUpdateAttendance(save, model.Attended);
+                _unitOfWork.TrainingRepositories.AddUpdateTraining(save, save.Activities);
+                _unitOfWork.TrainingRepositories.InsertUpdateAttendance(save, model.Attended);
                 return RedirectToAction(nameof(Index));
             }
 
@@ -67,10 +66,10 @@ namespace Application.Controllers
                 AutoMapper.Mapper.Map<List<Member>, List<MemberViewModel>>(
                     _unitOfWork.MemberRepositories.GetPlayerList());
 
-            ViewBag.CoachList = _unitOfWork.TraingRepositories.GetListOfCoaches();
-            var training = _unitOfWork.TraingRepositories.GetTraining(id);
+            ViewBag.CoachList = _unitOfWork.TrainingRepositories.GetListOfCoaches();
+            var training = _unitOfWork.TrainingRepositories.GetTraining(id);
             var model = AutoMapper.Mapper.Map<Training, TrainingViewModel>(training);
-            model.Attended = _unitOfWork.TraingRepositories.GetSelectedAttendance(training);
+            model.Attended = _unitOfWork.TrainingRepositories.GetSelectedAttendance(training);
             TempData["Activities"] = JsonConvert.SerializeObject(model);
             return View("CreateUpdate", model);
         }
@@ -81,8 +80,8 @@ namespace Application.Controllers
             if (ModelState.IsValid)
             {
                 var save = AutoMapper.Mapper.Map<TrainingViewModel, Training>(model);
-                _unitOfWork.TraingRepositories.AddUpdateTraining(save, save.Activities);
-                _unitOfWork.TraingRepositories.InsertUpdateAttendance(save, model.Attended);
+                _unitOfWork.TrainingRepositories.AddUpdateTraining(save, save.Activities);
+                _unitOfWork.TrainingRepositories.InsertUpdateAttendance(save, model.Attended);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -94,10 +93,10 @@ namespace Application.Controllers
 
         public IActionResult Details(int Id)
         {
-            var result = _unitOfWork.TraingRepositories.GetTraining(Id);
+            var result = _unitOfWork.TrainingRepositories.GetTraining(Id);
             var model = AutoMapper.Mapper.Map<Training, TrainingViewModel>(result);
 
-            List<Member> attendenceList = _unitOfWork.TraingRepositories.GetAttendenceList(result.Id);
+            List<Member> attendenceList = _unitOfWork.TrainingRepositories.GetAttendenceList(result.Id);
             model.Attendance = AutoMapper.Mapper.Map<List<Member>, List<MemberViewModel>>(attendenceList);
             return View(model);
         }
@@ -105,7 +104,7 @@ namespace Application.Controllers
 
         public IActionResult Delete(int Id)
         {
-            _unitOfWork.TraingRepositories.DeleteTrainingById(Id);
+            _unitOfWork.TrainingRepositories.DeleteTrainingById(Id);
             return RedirectToAction(nameof(Index));
         }
 

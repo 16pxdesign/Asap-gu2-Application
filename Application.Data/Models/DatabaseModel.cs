@@ -18,6 +18,8 @@ namespace Application.Data.Models
         public DbSet<Activities> Activities { get; set; }
         public DbSet<Attendance> Attendance { get; set; }
         public DbSet<Player> Player { get; set; }
+        public DbSet<Profile> Profile { get; set; }
+        public DbSet<Skill> Skill { get; set; }
 
         public DatabaseModel() : base()
         {
