@@ -134,3 +134,8 @@ D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\Forms\Address.
 D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\Forms\Kin.g.cshtml.cs
 D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\Forms\Member.g.cshtml.cs
 D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\Forms\Doctor.g.cshtml.cs
+D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Skill\Index.g.cshtml.cs
+D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Skill\AddEdit.g.cshtml.cs
+D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Skill\Delete.g.cshtml.cs
+D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Profile\Index.g.cshtml.cs
+D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Profile\Evaluate.g.cshtml.cs

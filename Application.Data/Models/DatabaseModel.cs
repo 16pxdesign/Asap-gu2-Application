@@ -180,13 +180,26 @@ namespace Application.Data.Models
                 .HasOne(m => m.Player)
                 .WithOne()
                 .HasForeignKey<Profile>(m => m.PlayerSRU)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Profile>()
                 .HasOne(m => m.Skill)
                 .WithOne()
                 .HasForeignKey<Profile>(m => m.SkillId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
+            
+            //Skill
+            modelBuilder.Entity<Skill>()
+                .Property(m => m.Type)
+                .HasConversion<int>();
+
+            modelBuilder.Entity<Skill>()
+                .HasOne(x => x.Parent)
+                .WithMany()
+                .HasForeignKey(x => x.ParentId)
+                .IsRequired(false);
+                
+                
 
             //Game
             modelBuilder.Entity<Game>()

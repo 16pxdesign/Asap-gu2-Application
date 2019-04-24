@@ -17,6 +17,7 @@
           <e p="IndexController.cs" t="Include" />
           <e p="MemberController.cs" t="Include" />
           <e p="ProfileController.cs" t="Include" />
+          <e p="SkillController.cs" t="Include" />
           <e p="TrainingController.cs" t="Include" />
         </e>
         <e p="Frameworks" t="Include">
@@ -38,6 +39,7 @@
               <e p="SeniorPlayerViewModel.cs" t="Include" />
             </e>
             <e p="ProfileManagement" t="Include">
+              <e p="EvalutationViewModel.cs" t="Include" />
               <e p="ProfileViewModel.cs" t="Include" />
               <e p="SkillViewModel.cs" t="Include" />
             </e>
@@ -55,6 +57,7 @@
             </e>
           </e>
         </e>
+        <e p="Pages" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
@@ -104,12 +107,21 @@
               <e p="Training.cshtml" t="Include" />
             </e>
           </e>
+          <e p="Profile" t="Include">
+            <e p="Evaluate.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
           <e p="Shared" t="Include">
             <e p="_CookieConsentPartial.cshtml" t="Include" />
             <e p="_Layout.cshtml" t="Include" />
             <e p="_NotificationsPartial.cshtml" t="Include" />
             <e p="_ValidationScriptsPartial.cshtml" t="Include" />
             <e p="Error.cshtml" t="Include" />
+          </e>
+          <e p="Skill" t="Include">
+            <e p="AddEdit.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
           </e>
           <e p="Training" t="Include">
             <e p="_Activities.cshtml" t="Include" />
@@ -128,6 +140,7 @@
             </e>
             <e p="Forms.css" t="Include" />
             <e p="site.css" t="Include" />
+            <e p="stars.css" t="Include" />
             <e p="Tabs.css" t="Include" />
           </e>
           <e p="favicon.ico" t="Include" />
@@ -157,6 +170,7 @@
             <e p="modal-member-guardian.js" t="Include" />
             <e p="modal-member-health.js" t="Include" />
             <e p="modal.js" t="Include" />
+            <e p="onCategoryType.js" t="Include" />
             <e p="onUserType.js" t="Include" />
             <e p="site.js" t="Include" />
           </e>
@@ -222,8 +236,8 @@
           <e p="Database.db" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="20190423040835_init.cs" t="Include" />
-          <e p="20190423040835_init.Designer.cs" t="Include" />
+          <e p="20190423235543_init.cs" t="Include" />
+          <e p="20190423235543_init.Designer.cs" t="Include" />
           <e p="DatabaseModelModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
@@ -235,6 +249,7 @@
             <e p="GameTeam.cs" t="Include" />
             <e p="MemberType.cs" t="Include" />
             <e p="PlayerPosition.cs" t="Include" />
+            <e p="SkillType.cs" t="Include" />
           </e>
           <e p="GameManagement" t="Include">
             <e p="Game.cs" t="Include" />

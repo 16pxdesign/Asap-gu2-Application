@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Application.Models
 {
     public class ProfileViewModel
@@ -11,5 +13,7 @@ namespace Application.Models
         
         public  SkillViewModel Skill { get; set; }
         public  PlayerViewModel Player { get; set; }
+        
+        
     }
 }
