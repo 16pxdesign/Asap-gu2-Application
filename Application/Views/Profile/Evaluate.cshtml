@@ -7,15 +7,18 @@
 
 <link rel="stylesheet" href="~/css/stars.css">
 
-
+<form method="post">
+    <div asp-validation-summary="All">
+        
+    </div>
 <div class="card">
     <div class="card-title text-center mt-4">
-        <input asp-for="Player.SRU" type="hidden" class="form-control"/>
+        @Html.HiddenFor(model => model.Player.SRU)
         <h4 class="">@Model.Player.Fullname Scores</h4>
     </div>
     <div class="card-body">
 
-        <form method="post">
+        
             <table class="table mt-1">
                 <thead>
                 <tr>
@@ -26,7 +29,6 @@
                 </tr>
                 </thead>
                 <tbody>
-
 
                 @{ int i = 0; }
                 @foreach (var category in Model.Categories)
@@ -42,24 +44,25 @@
                     foreach (var skill in Model.Skills.Where(x => x.ParentId == category.Id))
                     {
                         
-
+                
                        
                          <td>
                              @skill.Name
                          </td>
                          <td>
                              <fieldset class="rating">
-                                 <input type="radio" id="Scores[@(i)].Score5" name="Scores[@(i)].Score" value="5"/><label for="Scores[@(i)].Score5" title="Outstanding!">5 stars</label>
-                                 <input type="radio" id="Scores[@(i)].Score4" name="Scores[@(i)].Score" value="4"/><label for="Scores[@(i)].Score4" title="Pretty good">4 stars</label>
-                                 <input type="radio" id="Scores[@(i)].Score3" name="Scores[@(i)].Score" value="3"/><label for="Scores[@(i)].Score3" title="Good">3 stars</label>
-                                 <input type="radio" id="Scores[@(i)].Score2" name="Scores[@(i)].Score" value="2"/><label for="Scores[@(i)].Score2" title="Poor">2 stars</label>
-                                 <input type="radio" id="Scores[@(i)].Score1" name="Scores[@(i)].Score" value="1"/><label for="Scores[@(i)].Score1" title="Very Poor">1 star</label>
+                                 <input type="radio" id="Scores[@(i)].Score5" @if(Model.Scores.Any(x => x.SkillId==skill.Id)){if(Model.Scores.Single(x => x.SkillId==skill.Id).Score==5){ @("checked = 'checked'")}} name="Scores[@(i)].Score" value="5"/><label for="Scores[@(i)].Score5" title="Outstanding!">5 stars</label>
+                                 <input type="radio" id="Scores[@(i)].Score4" @if(Model.Scores.Any(x => x.SkillId==skill.Id)){if(Model.Scores.Single(x => x.SkillId==skill.Id).Score==4){ @("checked = 'checked'")}} name="Scores[@(i)].Score" value="4"/><label for="Scores[@(i)].Score4" title="Pretty good">4 stars</label>
+                                 <input type="radio" id="Scores[@(i)].Score3" @if(Model.Scores.Any(x => x.SkillId==skill.Id)){if(Model.Scores.Single(x => x.SkillId==skill.Id).Score==3){ @("checked = 'checked'")}}  name="Scores[@(i)].Score" value="3"/><label for="Scores[@(i)].Score3" title="Good">3 stars</label>
+                                 <input type="radio" id="Scores[@(i)].Score2" @if(Model.Scores.Any(x => x.SkillId==skill.Id)){if(Model.Scores.Single(x => x.SkillId==skill.Id).Score==2){ @("checked = 'checked'")}} name="Scores[@(i)].Score" value="2"/><label for="Scores[@(i)].Score2" title="Poor">2 stars</label>
+                                 <input type="radio" id="Scores[@(i)].Score1" @if(Model.Scores.Any(x => x.SkillId==skill.Id)){if(Model.Scores.Single(x => x.SkillId==skill.Id).Score==1){ @("checked = 'checked'")}} name="Scores[@(i)].Score" value="1"/><label for="Scores[@(i)].Score1" title="Very Poor">1 star</label>
                              </fieldset>
                          </td>
                          <td>
                              @if (@Model.Scores.Any(x => x.SkillId == skill.Id))
                              {
-                                 <input name='Scores[@(i)].Description' type='text' value='@Model.Scores.Where(x => x.SkillId == skill.Id).Select(x => x.Description)'/>
+                                
+                                 <input name='Scores[@(i)].Description' type='text' value="@(Model.Scores.Single(x => x.SkillId == skill.Id).Description)" />
                              }
                              else
                              {
@@ -85,7 +88,10 @@
                     <input type="submit" class="btn btn-primary " id="Save" value="Save"/>
                 </div>
             </div>
-        </form>
+       
 
     </div>
+    
 </div>
+
+</form>

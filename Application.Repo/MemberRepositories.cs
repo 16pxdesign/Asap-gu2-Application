@@ -92,5 +92,10 @@ namespace Application.Repo
             var exits = _context.Members.Where(x => x.SRU == sru).AsNoTracking().FirstOrDefault();
             return exits != null;
         }
+
+        public bool IsPlayer(string id)
+        {
+            return _context.Player.Any(x=>x.SRU == id);
+        }
     }
 }

@@ -34,6 +34,7 @@
               <e p="HealthIssueViewModel.cs" t="Include" />
               <e p="JuniorPlayerViewModel.cs" t="Include" />
               <e p="KinViewModel.cs" t="Include" />
+              <e p="MemberShortViewModel.cs" t="Include" />
               <e p="MemberViewModel.cs" t="Include" />
               <e p="PlayerViewModel.cs" t="Include" />
               <e p="SeniorPlayerViewModel.cs" t="Include" />
@@ -236,8 +237,8 @@
           <e p="Database.db" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="20190423235543_init.cs" t="Include" />
-          <e p="20190423235543_init.Designer.cs" t="Include" />
+          <e p="20190424105753_init.cs" t="Include" />
+          <e p="20190424105753_init.Designer.cs" t="Include" />
           <e p="DatabaseModelModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">

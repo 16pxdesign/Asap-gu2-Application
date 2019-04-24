@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Application.Data.Models;
 using Application.Models;
 using Application.Repo;
@@ -24,21 +25,27 @@ namespace Application.Controllers
             return View(list);
         }
 
-        public IActionResult Evaluate(int? id)
+        public IActionResult Evaluate(string id)
         {
-            var model = new EvalutationViewModel();
-            model.Player = new MemberViewModel()
+            if (id == null || _unitOfWork.MemberRepositories.IsPlayer(id))
             {
-                SRU = "123",
-                Name = "Ok"
-                
-            };
+                return RedirectToAction(nameof(Index));
+
+            }
+            
+            var model = new EvalutationViewModel();
+          
+       
+            var playerRaw = _unitOfWork.MemberRepositories.FindBySRU(id);
+            model.Player = AutoMapper.Mapper.Map<Member, MemberShortViewModel>(playerRaw);
+            
+            List<Profile> skillsScores = _unitOfWork.ProfileRepository.GetPlayerSkillsScores(id);
+            model.Scores = AutoMapper.Mapper.Map<List<Profile>, List<ProfileViewModel>>(skillsScores);
+            
             model.Categories = AutoMapper.Mapper.Map<List<Skill>,List<SkillViewModel>>( _unitOfWork.ProfileRepository.GetCategories());
             model.Skills = AutoMapper.Mapper.Map<List<Skill>,List<SkillViewModel>>( _unitOfWork.ProfileRepository.GetSkills());
             
-            model.Scores = new List<ProfileViewModel>();
-            model.Scores.Add(new ProfileViewModel(){});
-
+       
 
             return View(model);
         }
@@ -46,8 +53,31 @@ namespace Application.Controllers
         [HttpPost]
         public IActionResult Evaluate(EvalutationViewModel model)
         {
+            ModelState.Remove("Player");
+            ModelState.Remove("Categories");
+            ModelState.Remove("Skills");
+            
+            if (ModelState.IsValid)
+            {
+                if (model.Scores.Any())
+                {
+                    
+                    var profiles = AutoMapper.Mapper.Map<List<ProfileViewModel>,List<Profile>>(model.Scores);
+                    _unitOfWork.ProfileRepository.SaveListOfScores(profiles);
+                }
+               
+                return RedirectToAction(nameof(Index));
+            }
+            
+            var playerRaw = _unitOfWork.MemberRepositories.FindBySRU(model.Player.SRU);
+            model.Player = AutoMapper.Mapper.Map<Member, MemberShortViewModel>(playerRaw);
+            
+     
+            model.Categories = AutoMapper.Mapper.Map<List<Skill>,List<SkillViewModel>>( _unitOfWork.ProfileRepository.GetCategories());
+            model.Skills = AutoMapper.Mapper.Map<List<Skill>,List<SkillViewModel>>( _unitOfWork.ProfileRepository.GetSkills());
             
             return View(model);
+            
         }
 
     }

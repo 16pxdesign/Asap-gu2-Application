@@ -177,6 +177,11 @@ namespace Application.Data.Models
                 .HasKey(c => new {c.PlayerSRU, c.SkillId});
 
             modelBuilder.Entity<Profile>()
+                .HasIndex(x=>x.SkillId).IsUnique(false);
+            modelBuilder.Entity<Profile>()
+                .HasIndex(x=>x.PlayerSRU).IsUnique(false);
+   
+            modelBuilder.Entity<Profile>()
                 .HasOne(m => m.Player)
                 .WithOne()
                 .HasForeignKey<Profile>(m => m.PlayerSRU)

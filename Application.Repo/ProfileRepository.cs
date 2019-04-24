@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 using Application.Data.Models;
 using Application.Repo.Contracts;
 
@@ -76,6 +77,30 @@ namespace Application.Repo
         public List<Profile> GetProfileList()
         {
             throw new NotImplementedException();
+        }
+
+        public List<Profile> GetPlayerSkillsScores(string id)
+        {
+            return _context.Profile.Where(x => x.PlayerSRU == id).ToList();
+        }
+
+        public void SaveListOfScores(List<Profile> profiles)
+        {
+            foreach (var p in profiles)
+            {
+               // p.Player = _context.Player.First(x => x.SRU == p.PlayerSRU);
+               // p.Skill = _context.Skill.Find(p.SkillId);
+                if (_context.Profile.Any(x => x.PlayerSRU==p.PlayerSRU && x.SkillId == p.SkillId))
+                {
+                    _context.Profile.Update(p);
+                }
+                else
+                {
+                    _context.Profile.Add(p);
+                }
+
+                _context.SaveChanges();
+            }
         }
     }
 }

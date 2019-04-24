@@ -17,7 +17,9 @@ namespace Application.Models
         [Required]
         public string SRU { get; set; }
         public MemberType Type { get; set; }
+        [Required]
         public string Name { get; set; }
+        [Required]
         public string Surname { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
