@@ -211,8 +211,9 @@ namespace Application.Data.Models
             //Game
             modelBuilder.Entity<Game>()
                 .HasMany(m => m.Scores)
-                .WithOne()
-                .OnDelete(DeleteBehavior.Restrict);
+                .WithOne(x=>x.Game)
+                .HasForeignKey(x=>x.GameId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Game>()
                 .Property(m => m.Location)

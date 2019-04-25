@@ -73,7 +73,9 @@
           <e p="Game" t="Include">
             <e p="_AddScore.cshtml" t="Include" />
             <e p="_Score.cshtml" t="Include" />
+            <e p="_ScoreTable.cshtml" t="Include" />
             <e p="AddEdit.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
           </e>
           <e p="Index" t="Include">
@@ -243,8 +245,8 @@
           <e p="Database.db" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="20190424105753_init.cs" t="Include" />
-          <e p="20190424105753_init.Designer.cs" t="Include" />
+          <e p="20190425214222_init.cs" t="Include" />
+          <e p="20190425214222_init.Designer.cs" t="Include" />
           <e p="DatabaseModelModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">

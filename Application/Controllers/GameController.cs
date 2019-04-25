@@ -28,20 +28,16 @@ namespace Application.Controllers
 
         public IActionResult AddEdit(int? id)
         {
-            GameViewModel model = null;
-
+            GameViewModel model = new GameViewModel {Scores = new List<ScoreViewModel>()};
+            TempData["Scores"] = JsonConvert.SerializeObject(model);
             if (id != null)
             {
                 var game = _unitOfWork.MemberRepositories.FindGame((int) id);
                 model = AutoMapper.Mapper.Map<Game, GameViewModel>(game);
+                var gameScores = _unitOfWork.GameRepositories.GetGameScores(game);
+                model.Scores = AutoMapper.Mapper.Map<List<Scores>, List<ScoreViewModel>>(gameScores);
+                TempData["Scores"] = JsonConvert.SerializeObject(model);
             }
-
-
-            if (model == null)
-            {
-                model = new GameViewModel {Scores = new List<ScoreViewModel>()};
-            }
-
 
             return View(model);
         }
@@ -53,22 +49,27 @@ namespace Application.Controllers
             {
                 var save = AutoMapper.Mapper.Map<GameViewModel, Game>(model);
                 _unitOfWork.GameRepositories.AddUpdateGame(save, save.Scores);
-                //_unitOfWork.TrainingRepositories.InsertUpdateAttendance(save, model.Attended);
 
                 return RedirectToAction(nameof(Index));
             }
-            
+
             return View(model);
         }
 
         public IActionResult Details(int id)
         {
-            throw new System.NotImplementedException();
+            var result = _unitOfWork.GameRepositories.GetById(id);
+            var model = AutoMapper.Mapper.Map<Game, GameViewModel>(result);
+
+            return View(model);
+            
         }
 
         public IActionResult Delete(int id)
         {
-            throw new System.NotImplementedException();
+            _unitOfWork.GameRepositories.DeleteGame(id);
+            return RedirectToAction(nameof(Index));
+            
         }
 
         public IActionResult AddScore(int? id)
@@ -134,7 +135,13 @@ namespace Application.Controllers
 
         private void DeleteScoreFromList(int id)
         {
-            throw new System.NotImplementedException();
+            TempData.TryGetValue("Scores", out object value);
+            var data = value as string ?? "";
+            var list = JsonConvert.DeserializeObject<GameViewModel>(data) ??
+                       new GameViewModel();
+            list.Scores.RemoveAt(id);
+            string json = JsonConvert.SerializeObject(list);
+            TempData["Scores"] = json;
         }
 
         public IActionResult ModalFillTable(string table = null)
@@ -142,7 +149,7 @@ namespace Application.Controllers
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest" && table == "Scores")
             {
                 var scorePartialList = OnAjaxScoreTablePartialViewResult();
-                return PartialView("_Score", scorePartialList);
+                return PartialView("_ScoreTable", scorePartialList);
             }
 
             return null;
@@ -157,6 +164,7 @@ namespace Application.Controllers
             if (table.Scores == null)
                 table.Scores = new List<ScoreViewModel>();
             TempData["Scores"] = JsonConvert.SerializeObject(table);
+            table.Scores = table.Scores.OrderBy(x => x.Half).ToList();
             return table;
         }
     }

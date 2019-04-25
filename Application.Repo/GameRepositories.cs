@@ -5,7 +5,7 @@ using Application.Repo.Contracts;
 
 namespace Application.Repo
 {
-    public class GameRepositories: GenericRepository<Game>, IGameRepositories
+    public class GameRepositories : GenericRepository<Game>, IGameRepositories
     {
         private readonly DatabaseModel _context;
 
@@ -19,20 +19,18 @@ namespace Application.Repo
         public List<Game> GetListOfGames()
         {
             return _context.Game.ToList();
-
-            
         }
 
         public void AddUpdateGame(Game save, List<Scores> list = null)
         {
             if (_context.Game.Any(x => x.Id == save.Id))
             {
-                var rootActivities = _context.Activities.Where(x => x.TrainingId == save.Id).ToList();
-                foreach (var score in rootActivities)
+                var rootScores = _context.Scores.Where(x => x.GameId == save.Id).ToList();
+                foreach (var score in rootScores)
                 {
                     if (list.Exists(x => x.Id == score.Id))
                     {
-                        _context.Activities.Remove(score);
+                        _context.Scores.Remove(score);
                     }
                 }
 
@@ -43,7 +41,18 @@ namespace Application.Repo
 
             _context.SaveChanges();
         }
+
+        public List<Scores> GetGameScores(Game game)
+        {
+            return _context.Scores.Where(x => x.GameId == game.Id).OrderBy(x => x.Half).ToList();
+        }
+
+        public void DeleteGame(int id)
+        {
+            var result = _context.Game.Find(id);
+
+            _context.Remove(result);
+            _context.SaveChanges();
+        }
     }
-
-
 }

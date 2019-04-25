@@ -13,5 +13,7 @@ namespace Application.Data.Models
         public GameTeam Team { get; set; }
         public string Comment { get; set; }
         //Relations
+        public virtual int GameId { get; set; }
+        public virtual Game Game { get; set; }
     }
 }

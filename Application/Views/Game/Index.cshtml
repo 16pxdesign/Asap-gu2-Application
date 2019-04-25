@@ -41,23 +41,23 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayNameFor(model => model.Date)
+                        @Html.DisplayFor(modelItem =>  item.Date)
                     </td>
                     <td>
-                        @Html.DisplayNameFor(model => model.KO)
+                        @Html.DisplayFor(modelItem =>  item.KO)
                     </td>
                     <td>
-                        @Html.DisplayNameFor(model => model.Opposition)
+                        @Html.DisplayFor(modelItem =>  item.Opposition)
                     </td>
                     <td>
-                        @Html.DisplayNameFor(model => model.Location)
+                        @Html.DisplayFor(modelItem =>  item.Location)
                     </td>
                     <td>
-                        @Html.DisplayNameFor(model => model.Result)
+                        @Html.DisplayFor(modelItem =>  item.Result)
                     </td>
                     <td>
                         <a asp-action="AddEdit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                         <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                     </td>
                 </tr>

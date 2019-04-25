@@ -94,8 +94,8 @@ namespace Application.Controllers
             var result = _unitOfWork.TrainingRepositories.GetTraining(Id);
             var model = AutoMapper.Mapper.Map<Training, TrainingViewModel>(result);
 
-            List<Member> attendenceList = _unitOfWork.TrainingRepositories.GetAttendenceList(result.Id);
-            model.Attendance = AutoMapper.Mapper.Map<List<Member>, List<MemberViewModel>>(attendenceList);
+            List<Member> attendanceList = _unitOfWork.TrainingRepositories.GetAttendenceList(result.Id);
+            model.Attendance = AutoMapper.Mapper.Map<List<Member>, List<MemberViewModel>>(attendanceList);
             return View(model);
         }
 

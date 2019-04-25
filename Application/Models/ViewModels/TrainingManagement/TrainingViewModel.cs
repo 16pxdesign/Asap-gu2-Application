@@ -7,6 +7,10 @@ namespace Application.Models
 {
     public class TrainingViewModel
     {
+        public TrainingViewModel()
+        {
+            Date = DateTime.Now;
+        }
         public int? Id { get; set; }
         [Required]
         [DataType(DataType.Date)]
