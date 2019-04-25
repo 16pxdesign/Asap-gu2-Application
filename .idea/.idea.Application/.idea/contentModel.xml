@@ -71,6 +71,7 @@
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
           <e p="Game" t="Include">
+            <e p="_AddScore.cshtml" t="Include" />
             <e p="_Score.cshtml" t="Include" />
             <e p="AddEdit.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
@@ -174,6 +175,7 @@
             <e p="modal-activity.js" t="Include" />
             <e p="modal-member-guardian.js" t="Include" />
             <e p="modal-member-health.js" t="Include" />
+            <e p="modal-score.js" t="Include" />
             <e p="modal.js" t="Include" />
             <e p="onCategoryType.js" t="Include" />
             <e p="onUserType.js" t="Include" />

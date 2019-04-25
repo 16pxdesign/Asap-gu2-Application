@@ -1,9 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.Data.Models;
-using Application.Frameworks;
 using Application.Models;
 using Application.Repo;
 using Application.Repo.Contracts;
@@ -166,14 +164,14 @@ namespace Application.Controllers
         {
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest" && table == "Activity")
             {
-                var healthIssuePartialList = OnAjaxHealthTablePartialViewResult();
-                return PartialView("_ActivitiesTable", healthIssuePartialList);
+                var activityPartialList = OnAjaxActivityTablePartialViewResult();
+                return PartialView("_ActivitiesTable", activityPartialList);
             }
 
             return null;
         }
 
-        private TrainingViewModel OnAjaxHealthTablePartialViewResult()
+        private TrainingViewModel OnAjaxActivityTablePartialViewResult()
         {
             TempData.TryGetValue("Activities", out object value);
             var data = value as string ?? "";
