@@ -22,6 +22,8 @@ namespace Application.Data.Models
         public DbSet<Senior> Senior { get; set; }
         public DbSet<Profile> Profile { get; set; }
         public DbSet<Skill> Skill { get; set; }
+        public DbSet<Game> Game { get; set; }
+        public DbSet<Scores> Scores { get; set; }
 
         public DatabaseModel() : base()
         {

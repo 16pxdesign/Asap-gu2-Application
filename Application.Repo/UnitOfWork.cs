@@ -13,6 +13,7 @@ namespace Application.Repo
         public MemberRepositories MemberRepositories { get; private set; }
         public TrainingRepositories TrainingRepositories { get; private set; }
         public ProfileRepository ProfileRepository { get; private set; }
+        public GameRepositories GameRepositories { get; private set; }
 
         public UnitOfWork(DatabaseModel context)
         {
@@ -20,6 +21,7 @@ namespace Application.Repo
             this.MemberRepositories = new MemberRepositories(context);
             this.TrainingRepositories = new TrainingRepositories(context);
             this.ProfileRepository = new ProfileRepository(context);
+            this.GameRepositories = new GameRepositories(context);
         }
 
         

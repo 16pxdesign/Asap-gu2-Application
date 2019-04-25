@@ -23,9 +23,8 @@ namespace Application.Repo
 
         public Member FindBySRU(string sru)
         {
-            var member = _context.Members.Find(sru);
+            return _context.Members.Find(sru);
 
-            return member;
         }
 
 
@@ -95,7 +94,13 @@ namespace Application.Repo
 
         public bool IsPlayer(string id)
         {
-            return _context.Player.Any(x=>x.SRU == id);
+            var any = _context.Player.Any(x=>x.SRU == id);
+            return any;
+        }
+
+        public Game FindGame(int id)
+        {
+            return _context.Game.Find(id);
         }
     }
 }

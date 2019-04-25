@@ -27,10 +27,13 @@ namespace Application.Controllers
 
         public IActionResult Evaluate(string id)
         {
-            if (id == null || _unitOfWork.MemberRepositories.IsPlayer(id))
+            if (id == null )
             {
                 return RedirectToAction(nameof(Index));
 
+            }else if (!_unitOfWork.MemberRepositories.IsPlayer(id))
+            {
+                return RedirectToAction(nameof(Index));
             }
             
             var model = new EvalutationViewModel();

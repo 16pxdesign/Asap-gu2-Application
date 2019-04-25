@@ -15677,7 +15677,6 @@
       "Application.Repo >= 1.0.0",
       "AutoMapper >= 8.0.0",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 6.0.0",
-      "Microsoft.AspNet.Mvc >= 5.2.7",
       "Microsoft.AspNetCore.All >= 2.2.4",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
@@ -15740,10 +15739,6 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
             "version": "[6.0.0, )"
-          },
-          "Microsoft.AspNet.Mvc": {
-            "target": "Package",
-            "version": "[5.2.7, )"
           },
           "Microsoft.AspNetCore.All": {
             "target": "Package",

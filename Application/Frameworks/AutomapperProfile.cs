@@ -52,6 +52,12 @@ namespace Application.Frameworks
 
             CreateMap<Member, MemberShortViewModel>();
             CreateMap<MemberShortViewModel, Member>();
+            
+            CreateMap<Game, GameViewModel>();
+            CreateMap<GameViewModel, Game>();
+            
+            CreateMap<Scores, ScoreViewModel>();
+            CreateMap<ScoreViewModel, Scores>();
         }
 
 

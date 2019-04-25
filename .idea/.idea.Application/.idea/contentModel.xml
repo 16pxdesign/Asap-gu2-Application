@@ -13,7 +13,7 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
-          <e p="HomeController.cs" t="Include" />
+          <e p="GameController.cs" t="Include" />
           <e p="IndexController.cs" t="Include" />
           <e p="MemberController.cs" t="Include" />
           <e p="ProfileController.cs" t="Include" />
@@ -24,9 +24,12 @@
           <e p="AutomapperProfile.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
-          <e p="Contact.cs" t="Include" />
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="ViewModels" t="Include">
+            <e p="GameManagement" t="Include">
+              <e p="GameViewModel.cs" t="Include" />
+              <e p="ScoreViewModel.cs" t="Include" />
+            </e>
             <e p="MemberManagement" t="Include">
               <e p="AddressViewModel.cs" t="Include" />
               <e p="DoctorViewModel.cs" t="Include" />
@@ -67,9 +70,9 @@
         <e p="Views" t="Include">
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
-          <e p="Home" t="Include">
-            <e p="_ContactModalPartial.cshtml" t="Include" />
-            <e p="_Table.cshtml" t="Include" />
+          <e p="Game" t="Include">
+            <e p="_Score.cshtml" t="Include" />
+            <e p="AddEdit.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
           </e>
           <e p="Index" t="Include">
@@ -103,6 +106,7 @@
               <e p="Address.cshtml" t="Include" />
               <e p="Attendance.cshtml" t="Include" />
               <e p="Doctor.cshtml" t="Include" />
+              <e p="Game.cshtml" t="Include" />
               <e p="Kin.cshtml" t="Include" />
               <e p="Member.cshtml" t="Include" />
               <e p="Training.cshtml" t="Include" />
@@ -290,12 +294,14 @@
         <e p="Application.Repo.csproj" t="IncludeRecursive" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Contracts" t="Include">
+          <e p="IGameRepositories.cs" t="Include" />
           <e p="IMemberRepositories.cs" t="Include" />
           <e p="IProfileRepository.cs" t="Include" />
           <e p="IRepository.cs" t="Include" />
           <e p="ITrainingRepository.cs" t="Include" />
           <e p="IUnitOfWork.cs" t="Include" />
         </e>
+        <e p="GameRepositories.cs" t="Include" />
         <e p="GenericRepository.cs" t="Include" />
         <e p="MemberRepositories.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">

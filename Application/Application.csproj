@@ -9,7 +9,6 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="8.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
-    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.2.4" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
@@ -49,6 +48,9 @@
     <_ContentIncludedByDefault Remove="Views\Partial\OLD\Guardian.cshtml" />
     <_ContentIncludedByDefault Remove="Views\Partial\OLD\Health.cshtml" />
     <_ContentIncludedByDefault Remove="Views\Partial\OLD\HealthIssues.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\_ContactModalPartial.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\_Table.cshtml" />
   </ItemGroup>
 
 

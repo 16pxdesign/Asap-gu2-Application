@@ -86,9 +86,6 @@ D:\github\Application\obj\Debug\netcoreapp2.2\Application.AssemblyInfo.cs
 D:\github\Application\obj\Debug\netcoreapp2.2\Application.TagHelpers.input.cache
 D:\github\Application\obj\Debug\netcoreapp2.2\Application.TagHelpers.output.cache
 D:\github\Application\obj\Debug\netcoreapp2.2\Application.RazorCoreGenerate.cache
-D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
-D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Home\_ContactModalPartial.g.cshtml.cs
-D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Home\_Table.g.cshtml.cs
 D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Index\Index.g.cshtml.cs
 D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Index\Privacy.g.cshtml.cs
 D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Member\CreateUpdate.g.cshtml.cs
@@ -139,3 +136,7 @@ D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Skill\AddEdit.g.cshtml
 D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Skill\Delete.g.cshtml.cs
 D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Profile\Index.g.cshtml.cs
 D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Profile\Evaluate.g.cshtml.cs
+D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Game\Index.g.cshtml.cs
+D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Game\AddEdit.g.cshtml.cs
+D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Game\_Score.g.cshtml.cs
+D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\Forms\Game.g.cshtml.cs
