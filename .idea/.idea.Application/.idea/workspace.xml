@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="999a844f-46e6-4f1b-8635-eac70f0a4d69" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/Views/Member/MemberRelation.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Application/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Application/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Application/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Application/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application.Repo/MemberRepositories.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application.Repo/MemberRepositories.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application.Repo/bin/Debug/netcoreapp2.2/Application.Repo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application.Repo/bin/Debug/netcoreapp2.2/Application.Repo.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application.Repo/bin/Debug/netcoreapp2.2/Application.Repo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application.Repo/bin/Debug/netcoreapp2.2/Application.Repo.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application.Repo/obj/Debug/netcoreapp2.2/Application.Repo.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application.Repo/obj/Debug/netcoreapp2.2/Application.Repo.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application.Repo/obj/Debug/netcoreapp2.2/Application.Repo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application.Repo/obj/Debug/netcoreapp2.2/Application.Repo.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application.Repo/obj/Debug/netcoreapp2.2/Application.Repo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application.Repo/obj/Debug/netcoreapp2.2/Application.Repo.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Controllers/MemberController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Controllers/MemberController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Views/Partial/Forms/Member.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Views/Partial/Forms/Member.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.Repo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.Repo.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.Repo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.Repo.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.Views.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/netcoreapp2.2/Application.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.RazorCoreGenerate.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.RazorCoreGenerate.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.Views.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Application.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Razor/Views/Partial/Forms/Member.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/netcoreapp2.2/Razor/Views/Partial/Forms/Member.g.cshtml.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -957,7 +933,7 @@
       <workItem from="1555851195245" duration="78125000" />
       <workItem from="1555988979976" duration="37836000" />
       <workItem from="1556181055123" duration="22736000" />
-      <workItem from="1556234202552" duration="45833000" />
+      <workItem from="1556234202552" duration="46536000" />
     </task>
     <task id="LOCAL-00001" summary="some views">
       <created>1555427123727</created>
@@ -1148,11 +1124,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556429127104</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="exception">
+      <created>1556430868473</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1556430868473</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="372439000" />
+    <option name="totallyTimeSpent" value="373142000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1309,7 +1292,8 @@
     <MESSAGE value="Game/Half forms" />
     <MESSAGE value="battery low" />
     <MESSAGE value="Game all except details" />
-    <option name="LAST_COMMIT_MESSAGE" value="Game all except details" />
+    <MESSAGE value="exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="exception" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2352,6 +2336,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controllers/MemberController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="87" column="17" selection-start-line="87" selection-start-column="17" selection-end-line="87" selection-end-column="17" />
+          <folding>
+            <marker date="1556430762991" expanded="true" signature="6:411" ph="..." />
+            <marker date="1556430762991" expanded="true" signature="446:11507" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="495:11505" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="607:679" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="761:1409" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="887:1117" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="1494:3112" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="1553:1645" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="1695:1794" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="1844:1943" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="1980:3068" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="2190:2743" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="2232:2357" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="2397:2664" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="2838:2996" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="3186:3790" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="3290:3477" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="3574:3754" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="3882:4283" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="3943:4273" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="4060:4259" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="4374:4851" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="4900:5665" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="4991:5500" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="5517:5596" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="5753:6766" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="5799:6698" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="6361:6461" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="6482:6568" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="6840:6923" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="6974:7408" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="7459:8208" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="7547:8044" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="8061:8137" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="8294:9286" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="8340:9216" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="8888:8985" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="9006:9089" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="9361:9452" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="9517:10071" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="10158:10539" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="10577:10800" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="10851:11055" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="11104:11499" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="11130:11224" ph="{...}" />
+            <marker date="1556430762991" expanded="true" signature="11256:11437" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application.Repo/MemberRepositories.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -2408,61 +2447,6 @@
             <marker date="1556430414873" expanded="true" signature="13830:13983" ph="{...}" />
             <marker date="1556430414873" expanded="true" signature="14024:14129" ph="{...}" />
             <marker date="1556430414873" expanded="true" signature="14167:14230" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controllers/MemberController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="87" column="17" selection-start-line="87" selection-start-column="17" selection-end-line="87" selection-end-column="17" />
-          <folding>
-            <marker date="1556430762991" expanded="true" signature="6:411" ph="..." />
-            <marker date="1556430762991" expanded="true" signature="446:11507" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="495:11505" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="607:679" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="761:1409" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="887:1117" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="1494:3112" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="1553:1645" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="1695:1794" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="1844:1943" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="1980:3068" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="2190:2743" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="2232:2357" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="2397:2664" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="2838:2996" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="3186:3790" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="3290:3477" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="3574:3754" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="3882:4283" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="3943:4273" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="4060:4259" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="4374:4851" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="4900:5665" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="4991:5500" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="5517:5596" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="5753:6766" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="5799:6698" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="6361:6461" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="6482:6568" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="6840:6923" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="6974:7408" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="7459:8208" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="7547:8044" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="8061:8137" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="8294:9286" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="8340:9216" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="8888:8985" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="9006:9089" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="9361:9452" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="9517:10071" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="10158:10539" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="10577:10800" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="10851:11055" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="11104:11499" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="11130:11224" ph="{...}" />
-            <marker date="1556430762991" expanded="true" signature="11256:11437" ph="{...}" />
           </folding>
         </state>
       </provider>
