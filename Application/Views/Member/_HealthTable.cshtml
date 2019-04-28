@@ -17,7 +17,7 @@
     @for (var i = 0; i < Model.HealthIssues.Count; i++)
     {
         <tr>
-
+            <input name='Player.HealthIssues[@(i)].Id' type='hidden' value='@Model.HealthIssues[i].Id'/>
             <td><input name='Player.HealthIssues[@(i)].Date' type='hidden' value='@Model.HealthIssues[i].Date'/>@Model.HealthIssues[i].Date.ToString("dd/MM/yyyy")</td>
             <td><input name='Player.HealthIssues[@(i)].Name' type='hidden' value='@Model.HealthIssues[i].Name'/>@Model.HealthIssues[i].Name</td>
             <td style='display: none'><textarea hidden  name='Player.HealthIssues[@(i)].Description' >@Model.HealthIssues[i].Description</textarea></td>

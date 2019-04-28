@@ -14,8 +14,11 @@ namespace Application.Data.Models
         public string Relationship { get; set; }
         public DateTime Signature { get; set; }
 
+        public string JuniorId { get; set; }
+
         //Relations
         public virtual Junior Junior { get; set; }
         public virtual Address Address { get; set; }
+        public int AddressId { get; set; }
     }
 }

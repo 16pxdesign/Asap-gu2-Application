@@ -16,6 +16,9 @@
                 <form id="add-Health-form" asp-action="AddHealth" enctype="multipart/form-data" onsubmit="event.preventDefault();">
                     
                     <input name="IsValid" type="hidden" value="@ViewData.ModelState.IsValid.ToString()"/>
+
+                    <input id="Id" name="Id" type="hidden" value="@Model.Id">
+                    
                     <div class="form-group">
                         <label asp-for="Name"></label>
                         <input asp-for="Name" class="form-control"/>

@@ -5,6 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Application.Data.Models;
+using EFLogging;
+using Microsoft.Extensions.Logging;
+using SQLitePCL;
 
 namespace Application.Data.Models
 {
@@ -24,6 +27,11 @@ namespace Application.Data.Models
         public DbSet<Skill> Skill { get; set; }
         public DbSet<Game> Game { get; set; }
         public DbSet<Scores> Scores { get; set; }
+        public DbSet<Doctor> Doctor { get; set; }
+        public DbSet<HealthIssue> HealthIssues { get; set; }
+        public DbSet<Guardian> Guardians { get; set; }
+        public DbSet<Address> Address { get; set; }
+        public DbSet<Kin> Kin { get; set; }
 
         public DatabaseModel() : base()
         {
@@ -32,13 +40,18 @@ namespace Application.Data.Models
         public DatabaseModel(DbContextOptions<DatabaseModel> options)
             : base(options)
         {
-        }
+        } 
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
+                var lf = new LoggerFactory();
+                lf.AddProvider(new MyLoggerProvider());
+                optionsBuilder.UseLoggerFactory(lf);
+                
+                optionsBuilder.EnableSensitiveDataLogging();
                 optionsBuilder.UseLazyLoadingProxies();
                 optionsBuilder.UseSqlite(
                     @"Data Source=C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Data\Data\Database.db");
@@ -62,7 +75,7 @@ namespace Application.Data.Models
             modelBuilder.Entity<Member>()
                 .HasOne(m => m.Address)
                 .WithOne()
-                .HasForeignKey<Member>();
+                .HasForeignKey<Member>(m=>m.AddressId);
 
             //Player
      
@@ -85,12 +98,13 @@ namespace Application.Data.Models
             modelBuilder.Entity<Player>()
                 .HasOne(m => m.Doctor)
                 .WithOne(m => m.Player)
-                .HasForeignKey<Doctor>()
+                .HasForeignKey<Doctor>(m=>m.PlayerSRU)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<Player>()
-                .HasMany(m => m.HealthIssues)
-                .WithOne(m => m.Player)
+            modelBuilder.Entity<HealthIssue>()
+                .HasOne(m => m.Player)
+                .WithMany(m => m.HealthIssues)
+                .HasForeignKey(m=>m.PlayerSRU)
                 .OnDelete(DeleteBehavior.Cascade);
 
            //Senior
@@ -106,7 +120,7 @@ namespace Application.Data.Models
             modelBuilder.Entity<Senior>()
                 .HasOne(s => s.Kin)
                 .WithOne(m => m.Senior)
-                .HasForeignKey<Kin>()
+                .HasForeignKey<Kin>(m=>m.SeniorSRU)
                 .OnDelete(DeleteBehavior.Cascade);
 
             //Junior
@@ -122,27 +136,28 @@ namespace Application.Data.Models
             modelBuilder.Entity<Junior>()
                 .HasMany(m => m.Guardians)
                 .WithOne(m => m.Junior)
+                .HasForeignKey(m=>m.JuniorId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             //Doctor
             modelBuilder.Entity<Doctor>()
                 .HasOne(m => m.Address)
                 .WithOne()
-                .HasForeignKey<Doctor>("AddressId")
+                .HasForeignKey<Doctor>(x=>x.AddressId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             //Kin
             modelBuilder.Entity<Kin>()
-                .HasOne<Address>(m => m.Address)
+                .HasOne(m => m.Address)
                 .WithOne()
-                .HasForeignKey<Kin>("AddressId")
+                .HasForeignKey<Kin>(m=>m.AddressId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             //Guradian
             modelBuilder.Entity<Guardian>()
                 .HasOne<Address>(m => m.Address)
                 .WithOne()
-                .HasForeignKey<Guardian>("AddressId")
+                .HasForeignKey<Guardian>(x=>x.AddressId)
                 .OnDelete(DeleteBehavior.Cascade);
             //Training
             modelBuilder.Entity<Training>()

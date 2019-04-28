@@ -8,6 +8,7 @@ using Application.Data.Models;
 using Application.Repo.Contracts;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace Application.Repo
 {
@@ -24,7 +25,6 @@ namespace Application.Repo
         public Member FindBySRU(string sru)
         {
             return _context.Members.Find(sru);
-
         }
 
 
@@ -46,43 +46,300 @@ namespace Application.Repo
             _context.SaveChanges();
         }
 
-        public Exception InsertEditMember(Member member)
+        public Exception InsertEditMember(Member save)
         {
-            var isMemberExist = IsMemberExist(member.SRU);
-
-            switch (member.Type)
-            {
-                case MemberType.Senior:
-                    if ( _context.Junior.Any(o => o.SRU == member.SRU))
-                        _context.Junior.Remove(_context.Junior.Single(x=>x.SRU==member.SRU));
-                    _context.SaveChanges();
-                    member.Player.Junior = null;
-                    break;
-                case MemberType.Junior:
-                    if ( _context.Senior.Any(o => o.SRU == member.SRU))
-                    _context.Senior.Remove(_context.Senior.Single(x=>x.SRU==member.SRU));
-
-                    _context.SaveChanges();
-                    member.Player.Senior = null;
-                    break;
-                case MemberType.Member:
-                    if ( _context.Player.Any(o => o.SRU == member.SRU))
-                    _context.Player.Remove(_context.Player.Single(x=>x.SRU==member.SRU));
-                    _context.SaveChanges();
-                    member.Player = null;
-                    break;
-            }
+            var isMemberExist = IsMemberExist(save.SRU);
 
             if (!isMemberExist)
-                _context.Members.Add(member);
+            {
+                _context.Members.Add(save);
+                _context.SaveChanges();
+                return null;
+            }
             else
             {
-                
-                _context.Members.Update(member);
+                var dbMember = _context.Members.AsNoTracking().Single(x => x.SRU == save.SRU);
+                Doctor dbDoctor = null;
+                if (_context.Doctor.AsNoTracking().Any(x => x.PlayerSRU == save.SRU))
+                {
+                    dbDoctor = _context.Doctor.AsNoTracking().Single(x => x.PlayerSRU == save.SRU);
+                }
+                Kin dbKin = null;
+                if (_context.Kin.AsNoTracking().Any(x => x.SeniorSRU == save.SRU))
+                {
+                    dbKin = _context.Kin.AsNoTracking().Single(x => x.SeniorSRU == save.SRU);
+                }
+
+                var dbHealth = _context.HealthIssues.AsNoTracking().Where(x => x.PlayerSRU == save.SRU).ToList();
+                var dbGuardian = _context.Guardians.AsNoTracking().Where(x => x.JuniorId == save.SRU).ToList();
+
+                save.AddressId = dbMember.AddressId;
+                _context.Entry(save).State = EntityState.Modified;
+                save.AddressId = dbMember.AddressId;
+                _context.Entry(save).State = EntityState.Modified;
+                save.Address.Id = dbMember.AddressId;
+                _context.Entry(save.Address).State = EntityState.Modified;
+
+                switch (save.Type)
+                {
+                    case MemberType.Member:
+                        if (_context.Player.Any(x => x.SRU == save.SRU))
+                        {
+                            _context.Player.Remove(_context.Player.First(x => x.SRU == save.SRU));
+                        }
+
+                        break;
+                    case MemberType.Junior:
+                        if (_context.Senior.AsNoTracking().Any(x => x.SRU == save.SRU))
+                            _context.Senior.Remove(_context.Senior.Find(save.SRU));
+
+                        if (_context.Player.Any(x => x.SRU == save.SRU))
+                        {
+                            save.Player.SRU = save.SRU;
+                            _context.Entry(save.Player).State = EntityState.Modified;
+                        }
+                        else
+                        {
+                            save.Player.SRU = save.SRU;
+                            _context.Entry(save.Player).State = EntityState.Added;
+                        }
+
+
+                        if (dbDoctor != null)
+                        {
+                            save.Player.Doctor.Id = dbDoctor.Id;
+                            save.Player.Doctor.PlayerSRU = dbDoctor.PlayerSRU;
+                            save.Player.Doctor.AddressId = dbDoctor.AddressId;
+                            _context.Entry(save.Player.Doctor).State = EntityState.Modified;
+
+
+                            save.Player.Doctor.Address.Id = dbDoctor.AddressId;
+                            _context.Entry(save.Player.Doctor.Address).State = EntityState.Modified;
+                        }
+                        else
+                        {
+                            save.Player.Doctor.PlayerSRU = save.SRU;
+                            _context.Doctor.Add(save.Player.Doctor);
+                        }
+
+                        if (_context.Junior.Any(x => x.SRU == save.SRU))
+                        {
+                            save.Player.Junior.SRU = save.SRU;
+                            _context.Entry(save.Player.Junior).State = EntityState.Modified;
+                        }
+                        else
+                        {
+                            save.Player.Junior.SRU = save.SRU;
+                            _context.Entry(save.Player.Junior).State = EntityState.Added;
+                        }
+
+
+                        //health
+                        foreach (var t in dbHealth)
+                        {
+                            if (!save.Player.HealthIssues.Exists(x => x.Id == t.Id))
+                            {
+                                _context.HealthIssues.Remove(t);
+                                _context.SaveChanges();
+                            }
+                        }
+
+                        foreach (var t in save.Player.HealthIssues)
+                        {
+                            if (dbHealth.Exists(x => x.Id == t.Id))
+                            {
+                                t.PlayerSRU = save.SRU;
+
+                                _context.HealthIssues.Update(t);
+                                _context.SaveChanges();
+                            }
+                            else
+                            {
+                                _context.HealthIssues.Add(t);
+                                _context.SaveChanges();
+                            }
+                        }
+
+                        //guardian
+                        foreach (var t in dbGuardian)
+                        {
+                            if (!save.Player.Junior.Guardians.Exists(x => x.Id == t.Id))
+                            {
+                                _context.Guardians.Remove(t);
+                                _context.SaveChanges();
+                            }
+                        }
+
+                        foreach (var t in save.Player.Junior.Guardians)
+                        {
+                            if (dbGuardian.Exists(x => x.Id == t.Id))
+                            {
+                                t.JuniorId = save.SRU;
+                                t.AddressId = _context.Guardians.AsNoTracking().First(x => x.Id == t.Id).AddressId;
+                                t.Address.Id = t.AddressId;
+                                _context.Guardians.Update(t);
+                                _context.Address.Update(t.Address);
+                                _context.SaveChanges();
+                            }
+                            else
+                            {
+                                _context.Guardians.Add(t);
+                                _context.SaveChanges();
+                            }
+                        }
+
+                        break;
+                    case MemberType.Senior:
+
+                        if (_context.Junior.AsNoTracking().Any(x => x.SRU == save.SRU))
+                            _context.Junior.Remove(_context.Junior.Find(save.SRU));
+
+                        if (_context.Player.Any(x => x.SRU == save.SRU))
+                        {
+                            save.Player.SRU = save.SRU;
+                            _context.Entry(save.Player).State = EntityState.Modified;
+                        }
+                        else
+                        {
+                            save.Player.SRU = save.SRU;
+                            _context.Entry(save.Player).State = EntityState.Added;
+                        }
+
+
+                        if (dbDoctor != null)
+                        {
+                            save.Player.Doctor.Id = dbDoctor.Id;
+                            save.Player.Doctor.PlayerSRU = dbDoctor.PlayerSRU;
+                            save.Player.Doctor.AddressId = dbDoctor.AddressId;
+                            _context.Entry(save.Player.Doctor).State = EntityState.Modified;
+
+
+                            save.Player.Doctor.Address.Id = dbDoctor.AddressId;
+                            _context.Entry(save.Player.Doctor.Address).State = EntityState.Modified;
+                        }
+                        else
+                        {
+                            save.Player.Doctor.PlayerSRU = save.SRU;
+                            _context.Doctor.Add(save.Player.Doctor);
+                        }
+
+                        if (_context.Senior.Any(x => x.SRU == save.SRU))
+                        {
+                            save.Player.Senior.SRU = save.SRU;
+                            _context.Entry(save.Player.Senior).State = EntityState.Modified;
+                        }
+                        else
+                        {
+                            save.Player.Senior.SRU = save.SRU;
+                            _context.Entry(save.Player.Senior).State = EntityState.Added;
+                        }
+
+                        if (dbKin != null)
+                        {
+                            save.Player.Senior.Kin.Id = dbKin.Id;
+                            save.Player.Senior.Kin.SeniorSRU = dbKin.SeniorSRU;
+                            save.Player.Senior.Kin.AddressId = dbKin.AddressId;
+                            _context.Entry(save.Player.Senior.Kin).State = EntityState.Modified;
+
+
+                            save.Player.Senior.Kin.Address.Id = dbKin.AddressId;
+                            _context.Entry(save.Player.Senior.Kin.Address).State = EntityState.Modified;
+                        }
+                        else
+                        {
+                            
+                            save.Player.Senior.Kin.SeniorSRU = save.SRU;
+                            _context.Kin.Add(save.Player.Senior.Kin);
+                        }
+
+                        //health
+                        foreach (var t in dbHealth)
+                        {
+                            if (!save.Player.HealthIssues.Exists(x => x.Id == t.Id))
+                            {
+                                _context.HealthIssues.Remove(t);
+                                _context.SaveChanges();
+                            }
+                        }
+
+                        foreach (var t in save.Player.HealthIssues)
+                        {
+                            if (dbHealth.Exists(x => x.Id == t.Id))
+                            {
+                                t.PlayerSRU = save.SRU;
+
+                                _context.HealthIssues.Update(t);
+                                _context.SaveChanges();
+                            }
+                            else
+                            {
+                                _context.HealthIssues.Add(t);
+                                _context.SaveChanges();
+                            }
+                        }
+
+
+                        break;
+                }
+
+                //member
+                _context.SaveChanges();
+
+
+                //address
             }
 
-            _context.SaveChanges();
+/*  var single = _context.Members.AsNoTracking().Single(x => x.SRU == member.SRU);
+  member.Player.SRU = member.SRU;
+  member.Player.Junior= null;
+  member.Player.Doctor = null;
+  member.Player.Senior = null;
+  member.Address.Id = single.Address.Id;
+  
 
+  
+  _context.Members.Update(member);
+  _context.SaveChangesAsync().Wait();*/
+
+
+            /*  switch (member.Type)
+              {
+                  case MemberType.Senior:
+                      if ( _context.Junior.Any(o => o.SRU == member.SRU))
+                          _context.Junior.Remove(_context.Junior.Single(x=>x.SRU==member.SRU));
+                      _context.SaveChanges();
+                      member.Player.Junior = null;
+                      member.Player.SRU = member.SRU;
+                      member.Player.Senior.SRU = member.SRU;
+                      break;
+                  case MemberType.Junior:
+                      if ( _context.Senior.Any(o => o.SRU == member.SRU))
+                      _context.Senior.Remove(_context.Senior.Single(x=>x.SRU==member.SRU));
+  
+                      _context.SaveChanges();
+                      member.Player.Senior = null;
+                      member.Player.SRU = member.SRU;
+                      member.Player.Junior.SRU = member.SRU;
+                      break;
+                  case MemberType.Member:
+                      if ( _context.Player.Any(o => o.SRU == member.SRU))
+                      _context.Player.Remove(_context.Player.Single(x=>x.SRU==member.SRU));
+                      _context.SaveChanges();
+                      member.Player = null;
+                      break;
+              }
+  
+              if (!isMemberExist)
+                  _context.Members.Add(member);
+              else
+              {
+                 
+                  //_context.Entry(member).State = EntityState.Modified;
+                   _context.Update(member);
+              }
+  
+              _context.SaveChangesAsync().Wait(); 
+  */
             return null;
         }
 
@@ -94,7 +351,7 @@ namespace Application.Repo
 
         public bool IsPlayer(string id)
         {
-            var any = _context.Player.Any(x=>x.SRU == id);
+            var any = _context.Player.Any(x => x.SRU == id);
             return any;
         }
 

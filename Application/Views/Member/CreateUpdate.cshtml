@@ -31,7 +31,8 @@
                             @Html.EditorFor(m=>m.Address,"~/Views/Partial/Forms/Address.cshtml")
                         </div>
                         <div class="tab-pane p-2 fade" id="nav-Doctor" role="tabpanel" aria-labelledby="nav-Doctor-tab">
-                            @Html.EditorFor(m=>m.Player.Doctor,"~/Views/Partial/Forms/Doctor.cshtml")
+                            
+                            @Html.EditorFor(m => m.Player.Doctor, "~/Views/Partial/Forms/Doctor.cshtml")
                         </div>
                         <div class="tab-pane p-2 fade" id="nav-Kin" role="tabpanel" aria-labelledby="nav-Kin-tab">
                             @Html.EditorFor(m=>m.Player.Senior.Kin,"~/Views/Partial/Forms/Kin.cshtml")

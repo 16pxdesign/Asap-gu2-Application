@@ -12,8 +12,10 @@ namespace Application.Models
         {
             Signature = DateTime.Today;
         }
-
-        [Required] public string Name { get; set; }
+        
+        public int Id { get; set; }
+        [Required] 
+        public string Name { get; set; }
         public string Surname { get; set; }
         public string Phone { get; set; }
         public string Relationship { get; set; }

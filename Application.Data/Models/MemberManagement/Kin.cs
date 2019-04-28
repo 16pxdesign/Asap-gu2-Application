@@ -2,6 +2,9 @@ namespace Application.Data.Models
 {
     public class Kin
     {
+        public string SeniorSRU { get; set; }
+        public int AddressId { get; set; }
+
         //Primary
         public int Id { get; set; }
        

@@ -15,6 +15,7 @@ namespace Application.Data.Models
         public string Phone { get; set; }
         public string Mobile { get; set; }
         public bool Active { get; set; }
+        public int AddressId { get; set; }
 
         //Relations
         public virtual Player Player { get; set; }

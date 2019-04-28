@@ -28,3 +28,15 @@
         @Html.DisplayFor(model => model.Relationship)
     </dd>
 </dl>
+
+<div class="card mt-3">
+    <div class="card-body">
+        <dl class="row">
+           
+            <dd class="col-sm-9">
+                    
+                @Html.DisplayFor(model => model.Address, "~/Views/Partial/Display/Address.cshtml")
+            </dd>
+        </dl>
+    </div>
+</div>

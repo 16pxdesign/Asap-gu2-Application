@@ -11,5 +11,6 @@ namespace Application.Models
         public string Surname { get; set; }
         public string Phone { get; set; }
         public string Relationship { get; set; }
+        public AddressViewModel Address { get; set; }
     }
 }

@@ -45,12 +45,14 @@ namespace Application.Repo
         {
             if (_context.Training.Any(x => x.Id == training.Id))
             {
-                var rootActivities = _context.Activities.Where(x => x.TrainingId == training.Id).ToList();
+                var rootActivities = _context.Activities.AsNoTracking().Where(x => x.TrainingId == training.Id).ToList();
                 foreach (var activity in rootActivities)
                 {
-                    if (list.Exists(x => x.Name == activity.Name))
+                    if (!list.Exists(x => x.Name == activity.Name))
                     {
                         _context.Activities.Remove(activity);
+                        _context.SaveChanges();
+
                     }
                 }
 

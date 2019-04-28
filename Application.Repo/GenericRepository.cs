@@ -16,6 +16,7 @@ namespace Application.Repo
 
         public GenericRepository(DatabaseModel context)
         {
+            
             this._DBContext = context;
             this._DBSet = this._DBContext.Set<T>();
 

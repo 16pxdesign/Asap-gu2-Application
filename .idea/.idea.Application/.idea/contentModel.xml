@@ -99,11 +99,13 @@
               <e p="Address.cshtml" t="Include" />
               <e p="Attendance.cshtml" t="Include" />
               <e p="Doctor.cshtml" t="Include" />
+              <e p="Game.cshtml" t="Include" />
               <e p="Guardians.cshtml" t="Include" />
               <e p="HealthIssues.cshtml" t="Include" />
               <e p="Kin.cshtml" t="Include" />
               <e p="Member.cshtml" t="Include" />
               <e p="Player.cshtml" t="Include" />
+              <e p="Score.cshtml" t="Include" />
             </e>
             <e p="Forms" t="Include">
               <e p="Address.cshtml" t="Include" />
@@ -142,6 +144,8 @@
         </e>
         <e p="wwwroot" t="Include">
           <e p="css" t="Include">
+            <e p="data-details.css" t="Include" />
+            <e p="data-details.js" t="Include" />
             <e p="datepicker-css" t="Include">
               <e p="datepicker.css" t="Include" />
               <e p="datepicker.min.css" t="Include" />
@@ -245,8 +249,8 @@
           <e p="Database.db" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="20190425214222_init.cs" t="Include" />
-          <e p="20190425214222_init.Designer.cs" t="Include" />
+          <e p="20190428050953_init.cs" t="Include" />
+          <e p="20190428050953_init.Designer.cs" t="Include" />
           <e p="DatabaseModelModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
@@ -286,6 +290,7 @@
             <e p="Training.cs" t="Include" />
           </e>
         </e>
+        <e p="MyLoggerProvider.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">

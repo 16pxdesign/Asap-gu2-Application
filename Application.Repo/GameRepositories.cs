@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Application.Data.Models;
 using Application.Repo.Contracts;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.Repo
 {
@@ -25,19 +26,25 @@ namespace Application.Repo
         {
             if (_context.Game.Any(x => x.Id == save.Id))
             {
-                var rootScores = _context.Scores.Where(x => x.GameId == save.Id).ToList();
+                var rootScores = _context.Scores.AsNoTracking().Where(x => x.GameId == save.Id).ToList();
                 foreach (var score in rootScores)
                 {
-                    if (list.Exists(x => x.Id == score.Id))
-                    {
-                        _context.Scores.Remove(score);
-                    }
+                    if (list.Exists(x => x.Id == score.Id)) continue;
+                    _context.Scores.Remove(score);
+                    _context.SaveChanges();
                 }
 
                 _context.Game.Update(save);
+                _context.SaveChanges();
+
             }
             else
+            {
                 _context.Game.Add(save);
+                _context.SaveChanges(); 
+            }
+            
+
 
             _context.SaveChanges();
         }

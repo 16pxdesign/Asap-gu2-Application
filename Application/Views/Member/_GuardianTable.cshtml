@@ -14,6 +14,7 @@
     @for (var i = 0; i < Model.Guardians.Count; i++)
     {
         <tr>
+            <input name='Player.Junior.Guardians[@(i)].Id' type='hidden' value='@Model.Guardians[i].Id'/>
             <td><input name='Player.Junior.Guardians[@(i)].Name' type='hidden' value='@Model.Guardians[i].Name'/>@Model.Guardians[i].Name @Model.Guardians[i].Surname</td>
             <td style='display: none'><input name='Player.Junior.Guardians[@(i)].Surname' type='hidden' value='@Model.Guardians[i].Surname'/></td>
             <td style='display: none'><input name='Player.Junior.Guardians[@(i)].Phone' type='hidden' value='@Model.Guardians[i].Phone'/></td>

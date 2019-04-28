@@ -62,7 +62,7 @@ namespace Application.Controllers
             
             if (ModelState.IsValid)
             {
-                if (model.Scores.Any())
+                if (model.Scores!= null && model.Scores.Any())
                 {
                     
                     var profiles = AutoMapper.Mapper.Map<List<ProfileViewModel>,List<Profile>>(model.Scores);
