@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -67,27 +68,31 @@ namespace Application.Controllers
                 bool isEdit = (bool) (TempData["EditMember"] ?? false);
                 var member = AutoMapper.Mapper.Map<MemberViewModel, Member>(model);
 
+          
                 if (isEdit)
                 {
-                    _unitOfWork.MemberRepositories.InsertEditMember(member);
-
-                    return RedirectToAction(nameof(Index));
-                }
-                else
-                {
-                    if (!_unitOfWork.MemberRepositories.IsMemberExist(member.SRU))
+                    try
                     {
                         _unitOfWork.MemberRepositories.InsertEditMember(member);
                     }
-                    else
+                    catch (Exception e)
                     {
-                        ModelState.AddModelError("Exist", "User with this id exist");
-                        return View(model);
+                        return View("MemberRelation",
+                            new Exception(
+                                "Can not to do modification on member if member is assigned to any training or other page"));
                     }
-
 
                     return RedirectToAction(nameof(Index));
                 }
+                
+                if (_unitOfWork.MemberRepositories.IsMemberExist(member.SRU))
+                {
+                    ModelState.AddModelError("Exist", "User with this id exist");
+                    return View(model);
+                }
+
+
+                return RedirectToAction(nameof(Index));
             }
 
 
@@ -321,7 +326,15 @@ namespace Application.Controllers
 
         public IActionResult Delete(string sru)
         {
-            _unitOfWork.MemberRepositories.DeleteBySRU(sru);
+            try
+            {
+                _unitOfWork.MemberRepositories.DeleteBySRU(sru);
+
+            }
+            catch (Exception e)
+            {
+                return View("MemberRelation",new Exception("Can not to do modification on member if member is assigned to any training or other page"));
+            }
             return RedirectToAction(nameof(Index));
         }
     }

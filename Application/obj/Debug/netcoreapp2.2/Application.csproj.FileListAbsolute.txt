@@ -145,3 +145,4 @@ D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Game\_ScoreTable.g.csh
 D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Game\Details.g.cshtml.cs
 D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\Display\Game.g.cshtml.cs
 D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Partial\Display\Score.g.cshtml.cs
+D:\github\Application\obj\Debug\netcoreapp2.2\Razor\Views\Member\MemberRelation.g.cshtml.cs

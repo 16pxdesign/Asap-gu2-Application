@@ -7,6 +7,7 @@ using System.Xml.Linq;
 using Application.Data.Models;
 using Application.Repo.Contracts;
 using AutoMapper;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 
@@ -43,7 +44,15 @@ namespace Application.Repo
             var member = _context.Members.Find(sru);
 
             _context.Remove(member);
-            _context.SaveChanges();
+            try
+            {
+                _context.SaveChanges();
+
+            }
+            catch (SqliteException e)
+            {
+                throw new Exception("Delete member error",e);
+            }
         }
 
         public Exception InsertEditMember(Member save)

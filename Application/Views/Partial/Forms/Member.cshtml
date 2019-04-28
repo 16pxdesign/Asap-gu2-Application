@@ -13,13 +13,26 @@
 
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label asp-for="SRU"  ></label>
-                        <input asp-for="SRU" class="form-control" />
-                        <span asp-validation-for="SRU" class="text-danger"></span>
+                @if(Model.SRU==null){
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="SRU"  ></label>
+                            <input asp-for="SRU" class="form-control" />
+                            <span asp-validation-for="SRU" class="text-danger"></span>
+                        </div>
                     </div>
-                </div>
+                }
+                else
+                {
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="SRU"  ></label>
+                            <input asp-for="SRU" type="hidden" class="form-control" />
+                            <br/><strong>@Model.SRU</strong>
+                            <span asp-validation-for="SRU" class="text-danger"></span>
+                        </div>
+                    </div>
+                }
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label asp-for="Type"  ></label>

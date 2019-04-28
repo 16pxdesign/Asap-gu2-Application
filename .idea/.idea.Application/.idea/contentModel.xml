@@ -92,6 +92,7 @@
             <e p="CreateUpdate.cshtml" t="Include" />
             <e p="Details.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
+            <e p="MemberRelation.cshtml" t="Include" />
           </e>
           <e p="Partial" t="Include">
             <e p="Display" t="Include">
