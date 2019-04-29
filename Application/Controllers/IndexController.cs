@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Application.Controllers
 {
-    [SessionAuthorize]
     public class IndexController : Controller
     {
 

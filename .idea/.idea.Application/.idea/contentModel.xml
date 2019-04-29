@@ -23,7 +23,6 @@
         </e>
         <e p="Frameworks" t="Include">
           <e p="AutomapperProfile.cs" t="Include" />
-          <e p="SessionAuthorize.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="ErrorViewModel.cs" t="Include" />

@@ -17,10 +17,6 @@ namespace Application.Controllers
 
         public GameController(IUnitOfWork unitOfWork)
         {
-            var auth = HttpContext.Session.GetString("Auth");
-            if(auth== null || auth!="login")
-                Response.Redirect("/login");
-               
             _unitOfWork = unitOfWork as UnitOfWork;
         }
 

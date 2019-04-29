@@ -39,8 +39,6 @@ namespace Application.Controllers
             return View();
         }
         
-        [Route("logout")]
-        [HttpGet]
         public IActionResult Logout()
         {
             HttpContext.Session.Remove("Auth");

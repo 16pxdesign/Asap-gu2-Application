@@ -73,12 +73,11 @@ namespace Application
             app.UseCookiePolicy();
             app.UseSession();
 
-
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Training}/{action=Index}/{id?}");
+                    template: "{controller=Login}/{action=Index}/{id?}");
             });
         }
     }
