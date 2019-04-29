@@ -11,7 +11,10 @@ namespace Application.Models
     {
         [Required]
         public string Name { get; set; }
+        [Required]
         public string Surname { get; set; }
+        [DataType(DataType.PhoneNumber)] 
+        [Phone] 
         public string Phone { get; set; }
         public AddressViewModel Address { get; set; }
 

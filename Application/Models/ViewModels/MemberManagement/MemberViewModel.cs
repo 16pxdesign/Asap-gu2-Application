@@ -16,13 +16,21 @@ namespace Application.Models
 
         [Required]
         public string SRU { get; set; }
+        [Display(Name = "Member Type")]
         public MemberType Type { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
         public string Surname { get; set; }
+        [Display(Name = "E-mail")]
+        [DataType(DataType.EmailAddress)] 
+        [EmailAddress] 
         public string Email { get; set; }
+        [DataType(DataType.PhoneNumber)] 
+        [Phone] 
         public string Phone { get; set; }
+        [DataType(DataType.PhoneNumber)] 
+        [Phone] 
         public string Mobile { get; set; }
         public AddressViewModel Address { get; set; }
         public virtual PlayerViewModel Player { get; set; }

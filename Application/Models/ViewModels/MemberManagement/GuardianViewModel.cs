@@ -16,10 +16,14 @@ namespace Application.Models
         public int Id { get; set; }
         [Required] 
         public string Name { get; set; }
+        [Required] 
         public string Surname { get; set; }
+        [DataType(DataType.PhoneNumber)] 
+        [Phone] 
         public string Phone { get; set; }
         public string Relationship { get; set; }
-        [DataType(DataType.Date)] public DateTime Signature { get; set; }
+        [DataType(DataType.Date)] 
+        public DateTime Signature { get; set; }
         public AddressViewModel Address { get; set; }
     }
 }

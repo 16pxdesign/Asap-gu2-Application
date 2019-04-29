@@ -65,9 +65,12 @@ namespace Application.Controllers
 
             if (ModelState.IsValid)
             {
+                
                 bool isEdit = (bool) (TempData["EditMember"] ?? false);
+                TempData["EditMember"] = isEdit;
                 var member = AutoMapper.Mapper.Map<MemberViewModel, Member>(model);
 
+               
           
                 if (isEdit)
                 {
@@ -87,13 +90,14 @@ namespace Application.Controllers
                 
                 if (_unitOfWork.MemberRepositories.IsMemberExist(member.SRU))
                 {
-                    ModelState.AddModelError("Exist", "User with this id exist");
+                    ModelState.AddModelError("SRU", "User with this SRU exist");
                     return View(model);
                 }
+              
 
 
-                return RedirectToAction(nameof(Index));
             }
+            ViewBag.DidValidationFail="Yes";
 
 
             return View(model);

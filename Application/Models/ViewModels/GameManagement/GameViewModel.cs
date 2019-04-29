@@ -8,7 +8,11 @@ namespace Application.Models
 {
     public class GameViewModel
     {
-        
+        public GameViewModel()
+        {
+            Date = DateTime.Today;
+        }
+
         public int Id { get; set; }
 
         //Properties
@@ -16,6 +20,7 @@ namespace Application.Models
         [Required]
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
+        [Display(Name = "Kick off")]
         [DataType(DataType.Time)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:HH:mm}")]
         public DateTime KO { get; set; }

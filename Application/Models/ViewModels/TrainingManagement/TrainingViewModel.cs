@@ -15,10 +15,12 @@ namespace Application.Models
         [Required]
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
+        [Required]
         [DataType(DataType.Time)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:HH:mm}")]
         public DateTime Time { get; set; }
         public string Location { get; set; }
+        [Display(Name = "Coach")]
         public string CoachSRU { get; set; }
         public MemberViewModel Coach { get; set; }
         public List<ActivitiesViewModel> Activities { get; set; }
