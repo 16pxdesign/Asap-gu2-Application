@@ -15,6 +15,7 @@
         <e p="Controllers" t="Include">
           <e p="GameController.cs" t="Include" />
           <e p="IndexController.cs" t="Include" />
+          <e p="LoginController.cs" t="Include" />
           <e p="MemberController.cs" t="Include" />
           <e p="ProfileController.cs" t="Include" />
           <e p="SkillController.cs" t="Include" />
@@ -22,9 +23,11 @@
         </e>
         <e p="Frameworks" t="Include">
           <e p="AutomapperProfile.cs" t="Include" />
+          <e p="SessionAuthorize.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="ErrorViewModel.cs" t="Include" />
+          <e p="LoginViewModel.cs" t="Include" />
           <e p="ViewModels" t="Include">
             <e p="GameManagement" t="Include">
               <e p="GameViewModel.cs" t="Include" />
@@ -81,6 +84,9 @@
           <e p="Index" t="Include">
             <e p="Index.cshtml" t="Include" />
             <e p="Privacy.cshtml" t="Include" />
+          </e>
+          <e p="Login" t="Include">
+            <e p="Index.cshtml" t="Include" />
           </e>
           <e p="Member" t="Include">
             <e p="_GuardianAddForm.cshtml" t="Include" />

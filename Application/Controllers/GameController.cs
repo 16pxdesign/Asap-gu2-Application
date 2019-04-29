@@ -5,6 +5,7 @@ using Application.Data.Models;
 using Application.Models;
 using Application.Repo;
 using Application.Repo.Contracts;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -16,6 +17,10 @@ namespace Application.Controllers
 
         public GameController(IUnitOfWork unitOfWork)
         {
+            var auth = HttpContext.Session.GetString("Auth");
+            if(auth== null || auth!="login")
+                Response.Redirect("/login");
+               
             _unitOfWork = unitOfWork as UnitOfWork;
         }
 

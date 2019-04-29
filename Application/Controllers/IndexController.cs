@@ -1,11 +1,15 @@
 using System.Diagnostics;
+using Application.Frameworks;
 using Application.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Application.Controllers
 {
+    [SessionAuthorize]
     public class IndexController : Controller
     {
+
         // GET
         public IActionResult Index()
         {

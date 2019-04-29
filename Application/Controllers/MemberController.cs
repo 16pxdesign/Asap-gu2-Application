@@ -93,11 +93,13 @@ namespace Application.Controllers
                     ModelState.AddModelError("SRU", "User with this SRU exist");
                     return View(model);
                 }
-              
+                
+                _unitOfWork.MemberRepositories.InsertEditMember(member);
+                return RedirectToAction(nameof(Index));
+
 
 
             }
-            ViewBag.DidValidationFail="Yes";
 
 
             return View(model);

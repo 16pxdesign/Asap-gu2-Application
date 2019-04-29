@@ -29,7 +29,7 @@ namespace Application
             
             services.AddDistributedMemoryCache();
 
-        /*    services.AddSession(options =>
+            services.AddSession(options =>
             {
                 // Set a short timeout for easy testing.
                 options.IdleTimeout = TimeSpan.FromSeconds(10);
@@ -37,7 +37,7 @@ namespace Application
                 // Make the session cookie essential
                 options.Cookie.IsEssential = true;
             });
-            
+            /*
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -46,6 +46,8 @@ namespace Application
             });
             */
 
+    
+        
             services.AddDbContext<DatabaseModel>();
             services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
@@ -69,6 +71,7 @@ namespace Application
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseSession();
 
 
             app.UseMvc(routes =>

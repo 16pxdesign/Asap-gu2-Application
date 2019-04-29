@@ -1,0 +1,14 @@
+@model LoginViewModel
+
+<!DOCTYPE html>
+
+<html>
+<body>
+    <p>Login using form below:</p>
+    <form method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        Password: <input asp-for="Password" value="password" /><br />
+        <input type="submit" value="Login" />
+    </form>
+</body>
+</html>
