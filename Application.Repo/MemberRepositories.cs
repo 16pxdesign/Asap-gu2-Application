@@ -307,57 +307,7 @@ namespace Application.Repo
                 //address
             }
 
-/*  var single = _context.Members.AsNoTracking().Single(x => x.SRU == member.SRU);
-  member.Player.SRU = member.SRU;
-  member.Player.Junior= null;
-  member.Player.Doctor = null;
-  member.Player.Senior = null;
-  member.Address.Id = single.Address.Id;
-  
 
-  
-  _context.Members.Update(member);
-  _context.SaveChangesAsync().Wait();*/
-
-
-            /*  switch (member.Type)
-              {
-                  case MemberType.Senior:
-                      if ( _context.Junior.Any(o => o.SRU == member.SRU))
-                          _context.Junior.Remove(_context.Junior.Single(x=>x.SRU==member.SRU));
-                      _context.SaveChanges();
-                      member.Player.Junior = null;
-                      member.Player.SRU = member.SRU;
-                      member.Player.Senior.SRU = member.SRU;
-                      break;
-                  case MemberType.Junior:
-                      if ( _context.Senior.Any(o => o.SRU == member.SRU))
-                      _context.Senior.Remove(_context.Senior.Single(x=>x.SRU==member.SRU));
-  
-                      _context.SaveChanges();
-                      member.Player.Senior = null;
-                      member.Player.SRU = member.SRU;
-                      member.Player.Junior.SRU = member.SRU;
-                      break;
-                  case MemberType.Member:
-                      if ( _context.Player.Any(o => o.SRU == member.SRU))
-                      _context.Player.Remove(_context.Player.Single(x=>x.SRU==member.SRU));
-                      _context.SaveChanges();
-                      member.Player = null;
-                      break;
-              }
-  
-              if (!isMemberExist)
-                  _context.Members.Add(member);
-              else
-              {
-                 
-                  //_context.Entry(member).State = EntityState.Modified;
-                   _context.Update(member);
-              }
-  
-              _context.SaveChangesAsync().Wait(); 
-  */
             return null;
         }
 

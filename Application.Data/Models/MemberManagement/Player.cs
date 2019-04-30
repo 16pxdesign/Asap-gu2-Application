@@ -14,10 +14,9 @@ namespace Application.Data.Models
     public class Player
     {
         //Primary
-        public int Elo { get; set; }
+        public string SRU { get; set; }
 
         //Properties
-        public string SRU { get; set; }
         public PlayerPosition? Position { get; set; }
 
         //Relations

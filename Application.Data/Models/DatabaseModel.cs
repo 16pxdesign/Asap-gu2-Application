@@ -65,7 +65,7 @@ namespace Application.Data.Models
                 optionsBuilder.EnableSensitiveDataLogging();
                 optionsBuilder.UseLazyLoadingProxies();
                 optionsBuilder.UseSqlite(
-                    @"Data Source=C:\Users\pingu\Documents\GitHub\Asap-gu2-Application\Application.Data\Data\Database.db");
+                    @"Data Source=D:\github\Application.Data\Data\Database.db");
             }
         }
 
