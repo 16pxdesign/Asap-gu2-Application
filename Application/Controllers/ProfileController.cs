@@ -6,8 +6,18 @@ using Application.Models;
 using Application.Repo;
 using Application.Repo.Contracts;
 using Microsoft.AspNetCore.Mvc;
+/**
+ * 
+ * name         :   ProfileController.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Controllers
 {
+    /// <summary>
+    /// This controller is responsible for displaying and getting data from the user related to the player evaluation.
+    /// </summary>
     public class ProfileController : Controller
     {
         
@@ -18,6 +28,10 @@ namespace Application.Controllers
             _unitOfWork = unitOfWork as UnitOfWork;
         }
 
+        /// <summary>
+        /// Method return view with all players 
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
         {
             var memberList = _unitOfWork.MemberRepositories.GetPlayerList();
@@ -25,6 +39,11 @@ namespace Application.Controllers
             return View(list);
         }
 
+        /// <summary>
+        /// Method return view with evaluation form for specific player
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IActionResult Evaluate(string id)
         {
             if (id == null )
@@ -53,6 +72,11 @@ namespace Application.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Method save passed player evaluation
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Evaluate(EvalutationViewModel model)
         {

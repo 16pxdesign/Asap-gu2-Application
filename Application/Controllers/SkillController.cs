@@ -5,9 +5,18 @@ using Application.Models;
 using Application.Repo;
 using Application.Repo.Contracts;
 using Microsoft.AspNetCore.Mvc;
-
+/**
+ * 
+ * name         :   SkillController.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Controllers
 {
+    /// <summary>
+    /// This controller is responsible for displaying and getting data from the user related to the Skills and Skills categories.
+    /// </summary>
     public class SkillController : Controller
     {
         
@@ -18,7 +27,10 @@ namespace Application.Controllers
             _unitOfWork = unitOfWork as UnitOfWork;
         }
         
-        // GET
+        /// <summary>
+        /// Method return list of all categories and skills
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
         {
             List<Skill> list = _unitOfWork.ProfileRepository.GetSkillList();
@@ -28,6 +40,11 @@ namespace Application.Controllers
 
       
 
+        /// <summary>
+        /// Method return form to add or edit skill or category
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IActionResult AddEdit(int? id)
         {
             var model = new SkillViewModel();
@@ -47,6 +64,11 @@ namespace Application.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Method check and save passed form data
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult AddEdit(SkillViewModel model)
         {
@@ -64,6 +86,11 @@ namespace Application.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Method delete skill or category
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IActionResult Delete(int id)
         {
             try

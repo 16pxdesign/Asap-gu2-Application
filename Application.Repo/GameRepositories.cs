@@ -3,9 +3,18 @@ using System.Linq;
 using Application.Data.Models;
 using Application.Repo.Contracts;
 using Microsoft.EntityFrameworkCore;
-
+/**
+ * 
+ * name         :   GameRepositories.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Repo
 {
+    /// <summary>
+    /// This class is repository class for game
+    /// </summary>
     public class GameRepositories : GenericRepository<Game>, IGameRepositories
     {
         private readonly DatabaseModel _context;

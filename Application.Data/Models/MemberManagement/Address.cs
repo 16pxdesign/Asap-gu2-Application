@@ -1,7 +1,16 @@
 using System;
-
+/**
+ * 
+ * name         :   Address.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Data.Models
 {
+    /// <summary>
+    /// This class representing model for address
+    /// </summary>
     public class Address
     {
         //Primary

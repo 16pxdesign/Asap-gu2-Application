@@ -7,7 +7,13 @@ using Application.Data.Models;
 using Application.Repo.Contracts;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-
+/**
+ * 
+ * name         :   ITrainingRepository.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Repo.Contracts
 {
     public interface ITrainingRepository

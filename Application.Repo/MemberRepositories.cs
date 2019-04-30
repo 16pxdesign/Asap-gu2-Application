@@ -10,9 +10,18 @@ using AutoMapper;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
-
+/**
+ * 
+ * name         :   MemberRepositories.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Repo
 {
+    /// <summary>
+    /// This class is repository class for member
+    /// </summary>
     public class MemberRepositories : GenericRepository<Member>, IMemberRepositories
     {
         private readonly DatabaseModel _context;

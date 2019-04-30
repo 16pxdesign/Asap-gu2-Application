@@ -5,9 +5,19 @@ using System.Text;
 using Application.Data.Models;
 using Application.Repo.Contracts;
 using Microsoft.EntityFrameworkCore;
-
+/**
+ * 
+ * name         :   GenericRepository.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Repo
 {
+    /// <summary>
+    /// This class is generic repository class
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class GenericRepository<T> : IRepository<T> where T : class
 
     {

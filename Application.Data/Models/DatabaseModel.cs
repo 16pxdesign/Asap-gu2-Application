@@ -9,11 +9,20 @@ using EFLogging;
 using Microsoft.Extensions.Logging;
 using SQLitePCL;
 
+/**
+ * 
+ * name         :   DatabaseModel.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
+
+
 namespace Application.Data.Models
 {
-    /*
-     * 
-     */
+    /// <summary>
+    /// The database model represents the database context and all the options associated with it
+    /// </summary>
     public class DatabaseModel : DbContext
     {
         public DbSet<Member> Members { get; set; }
@@ -40,17 +49,19 @@ namespace Application.Data.Models
         public DatabaseModel(DbContextOptions<DatabaseModel> options)
             : base(options)
         {
-        } 
+        }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
+                /*
                 var lf = new LoggerFactory();
                 lf.AddProvider(new MyLoggerProvider());
                 optionsBuilder.UseLoggerFactory(lf);
-                
+                */
+
                 optionsBuilder.EnableSensitiveDataLogging();
                 optionsBuilder.UseLazyLoadingProxies();
                 optionsBuilder.UseSqlite(
@@ -75,16 +86,13 @@ namespace Application.Data.Models
             modelBuilder.Entity<Member>()
                 .HasOne(m => m.Address)
                 .WithOne()
-                .HasForeignKey<Member>(m=>m.AddressId);
+                .HasForeignKey<Member>(m => m.AddressId);
 
             //Player
-     
-            
-            
             modelBuilder.Entity<Player>()
                 .HasKey(k => k.SRU);
-        
-            
+
+
             modelBuilder.Entity<Player>()
                 .HasOne(s => s.Member)
                 .WithOne(m => m.Player)
@@ -98,16 +106,16 @@ namespace Application.Data.Models
             modelBuilder.Entity<Player>()
                 .HasOne(m => m.Doctor)
                 .WithOne(m => m.Player)
-                .HasForeignKey<Doctor>(m=>m.PlayerSRU)
+                .HasForeignKey<Doctor>(m => m.PlayerSRU)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<HealthIssue>()
                 .HasOne(m => m.Player)
                 .WithMany(m => m.HealthIssues)
-                .HasForeignKey(m=>m.PlayerSRU)
+                .HasForeignKey(m => m.PlayerSRU)
                 .OnDelete(DeleteBehavior.Cascade);
 
-           //Senior
+            //Senior
             modelBuilder.Entity<Senior>()
                 .HasKey(k => k.SRU);
 
@@ -120,7 +128,7 @@ namespace Application.Data.Models
             modelBuilder.Entity<Senior>()
                 .HasOne(s => s.Kin)
                 .WithOne(m => m.Senior)
-                .HasForeignKey<Kin>(m=>m.SeniorSRU)
+                .HasForeignKey<Kin>(m => m.SeniorSRU)
                 .OnDelete(DeleteBehavior.Cascade);
 
             //Junior
@@ -136,28 +144,28 @@ namespace Application.Data.Models
             modelBuilder.Entity<Junior>()
                 .HasMany(m => m.Guardians)
                 .WithOne(m => m.Junior)
-                .HasForeignKey(m=>m.JuniorId)
+                .HasForeignKey(m => m.JuniorId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             //Doctor
             modelBuilder.Entity<Doctor>()
                 .HasOne(m => m.Address)
                 .WithOne()
-                .HasForeignKey<Doctor>(x=>x.AddressId)
+                .HasForeignKey<Doctor>(x => x.AddressId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             //Kin
             modelBuilder.Entity<Kin>()
                 .HasOne(m => m.Address)
                 .WithOne()
-                .HasForeignKey<Kin>(m=>m.AddressId)
+                .HasForeignKey<Kin>(m => m.AddressId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            //Guradian
+            //Guardian
             modelBuilder.Entity<Guardian>()
                 .HasOne<Address>(m => m.Address)
                 .WithOne()
-                .HasForeignKey<Guardian>(x=>x.AddressId)
+                .HasForeignKey<Guardian>(x => x.AddressId)
                 .OnDelete(DeleteBehavior.Cascade);
             //Training
             modelBuilder.Entity<Training>()
@@ -171,7 +179,6 @@ namespace Application.Data.Models
                 .WithMany()
                 .HasForeignKey(m => m.CoachSRU)
                 .OnDelete(DeleteBehavior.Restrict);
-
 
             //Attendance
             modelBuilder.Entity<Attendance>()
@@ -187,17 +194,17 @@ namespace Application.Data.Models
                 .HasOne(m => m.Training)
                 .WithMany()
                 .HasForeignKey(m => m.TrainingId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             //Profile
             modelBuilder.Entity<Profile>()
                 .HasKey(c => new {c.PlayerSRU, c.SkillId});
 
             modelBuilder.Entity<Profile>()
-                .HasIndex(x=>x.SkillId).IsUnique(false);
+                .HasIndex(x => x.SkillId).IsUnique(false);
             modelBuilder.Entity<Profile>()
-                .HasIndex(x=>x.PlayerSRU).IsUnique(false);
-   
+                .HasIndex(x => x.PlayerSRU).IsUnique(false);
+
             modelBuilder.Entity<Profile>()
                 .HasOne(m => m.Player)
                 .WithOne()
@@ -209,7 +216,7 @@ namespace Application.Data.Models
                 .WithOne()
                 .HasForeignKey<Profile>(m => m.SkillId)
                 .OnDelete(DeleteBehavior.Cascade);
-            
+
             //Skill
             modelBuilder.Entity<Skill>()
                 .Property(m => m.Type)
@@ -220,14 +227,12 @@ namespace Application.Data.Models
                 .WithMany()
                 .HasForeignKey(x => x.ParentId)
                 .IsRequired(false);
-                
-                
 
             //Game
             modelBuilder.Entity<Game>()
                 .HasMany(m => m.Scores)
-                .WithOne(x=>x.Game)
-                .HasForeignKey(x=>x.GameId)
+                .WithOne(x => x.Game)
+                .HasForeignKey(x => x.GameId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Game>()

@@ -4,6 +4,9 @@ using System.IO;
 
 namespace EFLogging
 {
+    /// <summary>
+    /// Provider class helps to track all logs to file during development
+    /// </summary>
     public class MyLoggerProvider : ILoggerProvider
     {
         public ILogger CreateLogger(string categoryName)

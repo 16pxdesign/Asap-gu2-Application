@@ -3,9 +3,18 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using Application.Data.Models;
-
+/**
+ * 
+ * name         :   GameViewModel.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Models
 {
+    /// <summary>
+    ///This class representing view model for game
+    /// </summary>
     public class GameViewModel
     {
         public GameViewModel()
@@ -16,14 +25,18 @@ namespace Application.Models
         public int Id { get; set; }
 
         //Properties
+        [Required]
+        [Display(Name = "Opposition team")]
         public string Opposition { get; set; }
         [Required]
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
+        [Required]
         [Display(Name = "Kick off")]
         [DataType(DataType.Time)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:HH:mm}")]
         public DateTime KO { get; set; }
+        [Required]
         public GameLocation Location { get; set; }
         public GameResult Result { get; set; }
 

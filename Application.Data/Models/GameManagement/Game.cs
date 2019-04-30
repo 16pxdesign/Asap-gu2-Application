@@ -1,8 +1,17 @@
 using System;
 using System.Collections.Generic;
-
+/**
+ * 
+ * name         :   Game.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Data.Models
 {
+    /// <summary>
+    /// This class representing model for game
+    /// </summary>
     public class Game
     {
         //Primary

@@ -4,9 +4,18 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.Data.Models;
-
+/**
+ * 
+ * name         :   MemberViewModel.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Models
 {
+    /// <summary>
+    /// This class representing view model for member
+    /// </summary>
     public class MemberViewModel
     {
         public MemberViewModel()

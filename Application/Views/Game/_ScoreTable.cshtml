@@ -18,7 +18,7 @@
                 <input name='Scores[@(i)].Id' type='hidden' value='@Model.Scores[i].Id'/>
                 
                 <td><input name='Scores[@(i)].Half' type='hidden' value='@Model.Scores[i].Half'/>@Model.Scores[i].Half</td>
-                <td><input name='Scores[@(i)].Time' type='hidden' value='@Model.Scores[i].Time'/>@Model.Scores[i].Time</td>
+                <td><input name='Scores[@(i)].Time' type='hidden' value='@Model.Scores[i].Time'/>@Model.Scores[i].Time.ToString("t")</td>
                 <td><input name='Scores[@(i)].Team' type='hidden' value='@Model.Scores[i].Team'/>@Model.Scores[i].Team</td>
                 <td><input name='Scores[@(i)].Points' type='hidden' value='@Model.Scores[i].Points'/>@Model.Scores[i].Points</td>
                 

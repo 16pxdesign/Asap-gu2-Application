@@ -1,9 +1,18 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
+/**
+ * 
+ * name         :   Training.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Data.Models
 {
+    /// <summary>
+    /// This class representing model for training
+    /// </summary>
     public class Training
     {
         //Primary

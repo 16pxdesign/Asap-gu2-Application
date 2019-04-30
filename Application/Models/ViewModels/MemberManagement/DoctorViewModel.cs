@@ -4,9 +4,18 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.Data.Models;
-
+/**
+ * 
+ * name         :   DoctorViewModel.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Models
 {
+    /// <summary>
+    /// This class representing view model for players doctor
+    /// </summary>
     public class DoctorViewModel
     {
         [Required]

@@ -1,5 +1,15 @@
+/**
+ * 
+ * name         :   Kin.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Data.Models
 {
+    /// <summary>
+    /// This class representing model for senior kin
+    /// </summary>
     public class Kin
     {
         public string SeniorSRU { get; set; }

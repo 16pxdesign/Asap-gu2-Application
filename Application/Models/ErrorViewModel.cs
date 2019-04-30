@@ -1,5 +1,10 @@
-using System;
-
+/**
+ * 
+ * name         :   ErrorViewModel.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Models
 {
     public class ErrorViewModel

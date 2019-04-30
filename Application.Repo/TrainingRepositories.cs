@@ -7,9 +7,18 @@ using Application.Data.Models;
 using Application.Repo.Contracts;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-
+/**
+ * 
+ * name         :   TrainingRepositories.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Repo
 {
+    /// <summary>
+    /// This class is repository class for training 
+    /// </summary>
     public class TrainingRepositories : GenericRepository<Training>, ITrainingRepository
     {
         private readonly DatabaseModel _context;

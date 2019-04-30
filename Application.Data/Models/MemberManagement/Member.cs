@@ -1,7 +1,15 @@
-using System;
-
+/**
+ * 
+ * name         :   Member.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Data.Models
 {
+    /// <summary>
+    /// This class representing model for member
+    /// </summary>
     public class Member
     {
         //Primary

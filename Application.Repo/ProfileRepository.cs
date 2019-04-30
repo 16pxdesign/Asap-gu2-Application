@@ -4,9 +4,18 @@ using System.Linq;
 using System.Xml.Linq;
 using Application.Data.Models;
 using Application.Repo.Contracts;
-
+/**
+ * 
+ * name         :   ProfileRepository.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Repo
 {
+    /// <summary>
+    /// This class is repository class for player evaluation
+    /// </summary>
     public class ProfileRepository : GenericRepository<Profile>, IProfileRepository
     {
         private readonly DatabaseModel _context;

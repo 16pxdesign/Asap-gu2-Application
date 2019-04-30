@@ -4,9 +4,18 @@ using System.Text;
 using System.Threading.Tasks;
 using Application.Data.Models;
 using Application.Repo.Contracts;
-
+/**
+ * 
+ * name         :   UnitOfWork.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Repo
 {
+    /// <summary>
+    /// This class provide to access repository methods
+    /// </summary>
     public class UnitOfWork : IUnitOfWork
     {
         private readonly DatabaseModel _context;

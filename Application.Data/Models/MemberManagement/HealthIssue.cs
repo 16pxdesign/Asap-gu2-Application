@@ -1,8 +1,17 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-
+/**
+ * 
+ * name         :   HealthIssue.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Data.Models
 {
+    /// <summary>
+    /// This class representing model for player health issue
+    /// </summary>
     public class HealthIssue
     {
         //Primary

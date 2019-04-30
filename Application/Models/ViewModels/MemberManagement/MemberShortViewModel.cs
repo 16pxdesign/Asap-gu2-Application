@@ -1,5 +1,15 @@
+/**
+ * 
+ * name         :   MemberShortViewModel.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Models
 {
+    /// <summary>
+    /// This class representing view model for member
+    /// </summary>
     public class MemberShortViewModel
     {
         

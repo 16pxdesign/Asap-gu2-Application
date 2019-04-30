@@ -7,9 +7,18 @@ using Application.Repo;
 using Application.Repo.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-
+/**
+ * 
+ * name         :   TrainingController.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Controllers
 {
+    /// <summary>
+    /// This controller is responsible for displaying and getting data from the user related to the Trainings.
+    /// </summary>
     public class TrainingController : Controller
     {
         private readonly UnitOfWork _unitOfWork;
@@ -19,6 +28,10 @@ namespace Application.Controllers
             _unitOfWork = unitOfWork as UnitOfWork;
         }
 
+        /// <summary>
+        /// This method returns view with all trainings stored in database
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
         {
             var listOfTrainings = _unitOfWork.TrainingRepositories.GetListOfTrainings();
@@ -26,7 +39,11 @@ namespace Application.Controllers
             return View(model);
         }
 
-        public IActionResult CreateUpdate()
+        /// <summary>
+        /// Method return form to create new training
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult Create()
         {
             var model = new TrainingViewModel()
             {
@@ -43,8 +60,13 @@ namespace Application.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Method check correctness of training data and save to database
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
-        public IActionResult CreateUpdate(TrainingViewModel model)
+        public IActionResult Create(TrainingViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +79,10 @@ namespace Application.Controllers
 
             return View(model);
         }
-
+        /// <summary>
+        /// Method return form to edit exiting training
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Edit(int id)
         {
             ViewBag.PlayerList =
@@ -69,9 +94,13 @@ namespace Application.Controllers
             var model = AutoMapper.Mapper.Map<Training, TrainingViewModel>(training);
             model.Attended = _unitOfWork.TrainingRepositories.GetSelectedAttendance(training);
             TempData["Activities"] = JsonConvert.SerializeObject(model);
-            return View("CreateUpdate", model);
+            return View("Create", model);
         }
-
+        /// <summary>
+        /// Method check correctness of training data and save to database
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Edit(TrainingViewModel model)
         {
@@ -85,10 +114,14 @@ namespace Application.Controllers
             }
 
 
-            return View("CreateUpdate", model);
+            return View("Create", model);
         }
 
-
+         /// <summary>
+         /// Method retrieves data from repository about specific training and return view with this data 
+         /// </summary>
+         /// <param name="Id"></param>
+         /// <returns></returns>
         public IActionResult Details(int Id)
         {
             var result = _unitOfWork.TrainingRepositories.GetTraining(Id);
@@ -99,13 +132,22 @@ namespace Application.Controllers
             return View(model);
         }
 
-
+        /// <summary>
+        /// Method removes the training
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         public IActionResult Delete(int Id)
         {
             _unitOfWork.TrainingRepositories.DeleteTrainingById(Id);
             return RedirectToAction(nameof(Index));
         }
 
+        /// <summary>
+        /// Method return form to add or edit Activity
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IActionResult AddActivity(int? id)
         {
             var model = new ActivitiesViewModel();
@@ -130,6 +172,11 @@ namespace Application.Controllers
             return PartialView("_ActivityAddForm", model);
         }
 
+        /// <summary>
+        /// Method check form to add or edit Activity and save it if correct
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult AddActivity(ActivitiesViewModel model)
         {
@@ -160,6 +207,11 @@ namespace Application.Controllers
             return PartialView("_ActivityAddForm", model);
         }
 
+        /// <summary>
+        /// Method generate table with Activities
+        /// </summary>
+        /// <param name="table"></param>
+        /// <returns></returns>
         public IActionResult ModalFillTable(string table = null)
         {
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest" && table == "Activity")
@@ -171,6 +223,10 @@ namespace Application.Controllers
             return null;
         }
 
+        /// <summary>
+        /// Method return list of Activities form temp data
+        /// </summary>
+        /// <returns></returns>
         private TrainingViewModel OnAjaxActivityTablePartialViewResult()
         {
             TempData.TryGetValue("Activities", out object value);
@@ -184,13 +240,23 @@ namespace Application.Controllers
         }
 
 
+        /// <summary>
+        /// Method delete from temp data specific activity
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<bool> DeleteActivity(int id)
         {
             DeleteActivityFromList(id);
             return true;
         }
-
+        
+        /// <summary>
+        /// Method delete from temp data specific activity
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private bool DeleteActivityFromList(int id)
         {
             TempData.TryGetValue("Activities", out object value);

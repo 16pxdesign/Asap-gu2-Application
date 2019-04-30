@@ -2,9 +2,19 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Application.Data.Models;
-
+using Newtonsoft.Json;
+/**
+ * 
+ * name         :   TrainingViewModel.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Models
 {
+    /// <summary>
+    /// This class representing view model for training 
+    /// </summary>
     public class TrainingViewModel
     {
         public TrainingViewModel()
@@ -20,6 +30,7 @@ namespace Application.Models
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:HH:mm}")]
         public DateTime Time { get; set; }
         public string Location { get; set; }
+        [Required]
         [Display(Name = "Coach")]
         public string CoachSRU { get; set; }
         public MemberViewModel Coach { get; set; }

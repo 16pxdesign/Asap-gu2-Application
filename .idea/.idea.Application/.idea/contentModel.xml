@@ -63,7 +63,6 @@
             </e>
           </e>
         </e>
-        <e p="Pages" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
@@ -143,7 +142,7 @@
             <e p="_Activities.cshtml" t="Include" />
             <e p="_ActivitiesTable.cshtml" t="Include" />
             <e p="_ActivityAddForm.cshtml" t="Include" />
-            <e p="CreateUpdate.cshtml" t="Include" />
+            <e p="Create.cshtml" t="Include" />
             <e p="Details.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
           </e>

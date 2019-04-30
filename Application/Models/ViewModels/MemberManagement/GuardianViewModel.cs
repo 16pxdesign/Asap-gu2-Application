@@ -3,9 +3,18 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-
+/**
+ * 
+ * name         :   GuardianViewModel.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Models
 {
+    /// <summary>
+    /// This class representing view model for junior players guardian
+    /// </summary>
     public class GuardianViewModel
     {
         public GuardianViewModel()

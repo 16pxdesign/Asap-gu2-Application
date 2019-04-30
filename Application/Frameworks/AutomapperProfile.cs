@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection;
-using System.Threading.Tasks;
-using Application.Data.Models;
+﻿using Application.Data.Models;
 using Application.Models;
-using AutoMapper;
 using Profile = AutoMapper.Profile;
-
+/**
+ * 
+ * name         :   AutomapperProfile.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Frameworks
 {
     public class AutomapperProfile : AutoMapper.Profile

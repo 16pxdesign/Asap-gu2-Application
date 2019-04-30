@@ -10,9 +10,18 @@ using Application.Repo;
 using Newtonsoft.Json;
 using Controller = Microsoft.AspNetCore.Mvc.Controller;
 using ModelStateDictionary = Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary;
-
+/**
+ * 
+ * name         :   MemberController.cs
+ * author       :   Aleksy Ruszala
+ * date         :   29/04/2019
+ *
+ * */
 namespace Application.Controllers
 {
+    /// <summary>
+    /// This controller is responsible for displaying and getting data from the user related to the members.
+    /// </summary>
     public class MemberController : Controller
     {
         private readonly UnitOfWork _unitOfWork;
@@ -22,6 +31,12 @@ namespace Application.Controllers
             _unitOfWork = unitOfWork as UnitOfWork;
         }
 
+        /// <summary>
+        /// Method return view with form for new or existing member if id is provided
+        /// </summary>
+        /// <param name="id">Member SRU</param>
+        /// <param name="table"></param>
+        /// <returns></returns>
         public IActionResult CreateUpdate(string id = null, string table = null)
         {
 
@@ -45,6 +60,11 @@ namespace Application.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Method check data from member form and try to save new or update existing member
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult CreateUpdate(MemberViewModel model)
         {
@@ -69,8 +89,6 @@ namespace Application.Controllers
                 bool isEdit = (bool) (TempData["EditMember"] ?? false);
                 TempData["EditMember"] = isEdit;
                 var member = AutoMapper.Mapper.Map<MemberViewModel, Member>(model);
-
-               
           
                 if (isEdit)
                 {
@@ -97,14 +115,16 @@ namespace Application.Controllers
                 _unitOfWork.MemberRepositories.InsertEditMember(member);
                 return RedirectToAction(nameof(Index));
 
-
-
             }
-
 
             return View(model);
         }
         
+        /// <summary>
+        /// Method return view with table of health issues or guardians 
+        /// </summary>
+        /// <param name="table"></param>
+        /// <returns></returns>
         public IActionResult ModalFillTable(string table = null)
         {
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest" && table == "Health")
@@ -122,6 +142,11 @@ namespace Application.Controllers
             return null;
         }
 
+        /// <summary>
+        /// Method set ModelState properties to ignore
+        /// </summary>
+        /// <param name="modelState"></param>
+        /// <param name="key"></param>
         private void IgnoreModelStateProperty(ModelStateDictionary modelState, string key)
         {
             foreach (var modelError in modelState)
@@ -138,6 +163,10 @@ namespace Application.Controllers
         }
 
 
+        /// <summary>
+        /// Method generate table with Health Issues, based on temp data 
+        /// </summary>
+        /// <returns></returns>
         [NonAction]
         private PlayerViewModel OnAjaxHealthTablePartialViewResult()
         {
@@ -151,6 +180,11 @@ namespace Application.Controllers
             return table;
         }
 
+        /// <summary>
+        /// Method return view for new or exist Health Issues form 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IActionResult AddHealth(int? id)
         {
             var model = new HealthIssueViewModel();
@@ -175,7 +209,11 @@ namespace Application.Controllers
             return PartialView("_HealthAddForm", model);
         }
 
-
+        /// <summary>
+        /// Method on submit add Health Issue to list for later save
+        /// </summary>
+        /// <param name="model">Data form js form</param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult AddHealth(HealthIssueViewModel model)
         {
@@ -206,14 +244,22 @@ namespace Application.Controllers
             return PartialView("_HealthAddForm", model);
         }
 
-
+        /// <summary>
+        /// Method delete form temp list Health Issue
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<bool> DeleteHealth(int id)
         {
             DeleteHealthFromList(id);
             return true;
         }
-
+        /// <summary>
+        /// Method delete form temp list Health Issue
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private bool DeleteHealthFromList(int id)
         {
             TempData.TryGetValue("HealthIssues", out object value);
@@ -225,7 +271,11 @@ namespace Application.Controllers
             TempData["HealthIssues"] = json;
             return true;
         }
-
+        /// <summary>
+        /// Method return view for new or exist Guardian form 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IActionResult AddGuardian(int? id)
         {
             var model = new GuardianViewModel();
@@ -250,6 +300,11 @@ namespace Application.Controllers
             return PartialView("_GuardianAddForm", model);
         }
 
+        /// <summary>
+        /// Method on submit add Guardian to list for later save
+        /// </summary>
+        /// <param name="model">Data form js form</param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult AddGuardian(GuardianViewModel model)
         {
@@ -280,14 +335,22 @@ namespace Application.Controllers
 
             return PartialView("_GuardianAddForm", model);
         }
-
+        /// <summary>
+        /// Method delete form temp list Guardian
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<bool> DeleteGuardian(int id)
         {
             await DeleteGuardianFromList(id);
             return true;
         }
-
+        /// <summary>
+        /// Method delete form temp list Guardian
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private async Task<bool> DeleteGuardianFromList(int id)
         {
             TempData.TryGetValue("Guardians", out object value);
@@ -303,6 +366,10 @@ namespace Application.Controllers
             return true;
         }
 
+        /// <summary>
+        /// Method return table of Guardian
+        /// </summary>
+        /// <returns></returns>
         [NonAction]
         private JuniorViewModel OnAjaxGuardianPartialViewResult()
         {
@@ -315,6 +382,10 @@ namespace Application.Controllers
             return table;
         }
 
+        /// <summary>
+        /// This method returns view with all members stored in database
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
         {
             var memberList = _unitOfWork.MemberRepositories.GetMemberList();
@@ -322,7 +393,11 @@ namespace Application.Controllers
             return View(list);
         }
 
-
+        /// <summary>
+        /// Method retrieves data from repository about specific member and return view with this data 
+        /// </summary>
+        /// <param name="id">Game id</param>
+        /// <returns></returns>
         public IActionResult Details(string sru)
         {
             var member = _unitOfWork.MemberRepositories.FindBySRU(sru);
