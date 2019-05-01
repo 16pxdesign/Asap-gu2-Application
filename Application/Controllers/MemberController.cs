@@ -10,6 +10,8 @@ using Application.Repo;
 using Newtonsoft.Json;
 using Controller = Microsoft.AspNetCore.Mvc.Controller;
 using ModelStateDictionary = Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary;
+using ViewResult = System.Web.Mvc.ViewResult;
+
 /**
  * 
  * name         :   MemberController.cs
@@ -172,12 +174,12 @@ namespace Application.Controllers
         {
             TempData.TryGetValue("HealthIssues", out object value);
             var data = value as string ?? "";
-            var table = JsonConvert.DeserializeObject<PlayerViewModel>(data) ??
+            var playerWithIssues = JsonConvert.DeserializeObject<PlayerViewModel>(data) ??
                         new PlayerViewModel();
-            if (table.HealthIssues == null)
-                table.HealthIssues = new List<HealthIssueViewModel>();
-            TempData["HealthIssues"] = JsonConvert.SerializeObject(table);
-            return table;
+            if (playerWithIssues.HealthIssues == null)
+                playerWithIssues.HealthIssues = new List<HealthIssueViewModel>();
+            TempData["HealthIssues"] = JsonConvert.SerializeObject(playerWithIssues);
+            return playerWithIssues;
         }
 
         /// <summary>
@@ -418,5 +420,7 @@ namespace Application.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
+
+    
     }
 }

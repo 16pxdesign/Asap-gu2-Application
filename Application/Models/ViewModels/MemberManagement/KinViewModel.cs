@@ -17,8 +17,11 @@ namespace Application.Models
     /// </summary>
     public class KinViewModel
     {
+        [Required]
         public string Name { get; set; }
+        [Required]
         public string Surname { get; set; }
+        [Required]
         [DataType(DataType.PhoneNumber)] 
         [Phone] 
         public string Phone { get; set; }
