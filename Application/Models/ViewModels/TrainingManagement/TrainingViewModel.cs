@@ -20,6 +20,7 @@ namespace Application.Models
         public TrainingViewModel()
         {
             Date = DateTime.Now;
+            Time = DateTime.Now;
         }
         public int? Id { get; set; }
         [Required]
